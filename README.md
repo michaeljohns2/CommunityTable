@@ -18,7 +18,7 @@ CommunityTableTN
 The most vulnerable among us often suffer alone, with limited resources and often without hope. Community Tables builds highly localizable software to strengthen and renew the social contract among neighbors, so that no one struggles in isolation again.
 
 ## Goals <!-- TODO -->
-Meal once a week possibly, at least every other week. Sharing, breaking of bread, fellowship. Bring encouragement to neighbors, they get discouraged, disconnected, keep a continuity between people. Meal at her home for low income; also offer seasonal (e.g. fall) baskets / boxes. Provide a bright spot, encouragement. Focused on the elderly, then maybe disabled, and single moms. There is elderly housing nearby.
+For our initial customer, Community Table TN, the primary goals are as follows: Meal once a week possibly, at least every other week. Sharing, breaking of bread, fellowship. Bring encouragement to neighbors, they get discouraged, disconnected, keep a continuity between people. Meal at her home for low income; also offer seasonal (e.g. fall) baskets / boxes. Provide a bright spot, encouragement. Focused on the elderly, then maybe disabled, and single moms. There is elderly housing nearby.
 
 Meals: customer initally will pay for
 Boxes: food donations
@@ -26,7 +26,7 @@ Boxes: food donations
 Future would be a building, gardening, canning classes, 1-2 meals a week. Products that are generated
 
 ## Near Vision
-To allow community members to sign up for an email list to receive updates about Community Table initiatives.
+Community Cloud Tables is a software platform to facilitate, support, and encourage neighbors helping neighbors. Through CCT's highly localizable site templates and features, community organizers can easily customize their site to raise awareness, harness membership, and communicate tailored services to those in need.
 
 ## Stakeholders
 1. Head Organizer of Community Table - Michelle (Real Person)
@@ -99,9 +99,6 @@ __Quote__ _We’ll know we’ve done a good job when this persona tells us:_
 ## Product Backlog
 [Community Table on Trello](https://trello.com/b/i9TmhPfB/final-project-community-table)
 
-## Rationale for Backlog Order <!-- TODO -->
-
-
 ## Definition of Ready
 - Title
 - User story opening sentence
@@ -111,9 +108,21 @@ __Quote__ _We’ll know we’ve done a good job when this persona tells us:_
 - Architecture
 
 ## Whole Team Relative Size Estimating Activity
-We used the online tool [Pointing Poker](https://www.pointingpoker.com). After filling a PBI's Definition of Ready and discussing a few details, *only* the development team estimated the relative size of that PBI. The high and low votes got a chance to share their reasoning. If a consensus was not reached, a second vote was taken. Convergence happened each time and the story points were recorded.
+We used the online tool [Pointing Poker](https://www.pointingpoker.com). After filling a PBI's Definition of Ready and discussing a few details, the development team estimated the relative size of that PBI. The high and low votes got a chance to share their reasoning. If a consensus was not reached, a second vote was taken. Convergence happened each time and the story points were recorded.
 
+## Rationale for Backlog Order
+The backlog is ordered by value generated to our stakeholders, namely Community Table TN (the first customer for our open source products). Here are the first 10 product backlog items along with their key value propositions listed. These pbis have been groomed to represent excellent users stories within our team Definition of Ready and have been estimated by the development team. _Note: this is a snapshot as of 31 OCT 2016 and should not be used for any live data needs._ 
 
+1. Site landing page {8 pts} ==> As site owner, I want a compelling landing page so that Community Table can be found by people online and they can learn about our mission and services.
+2. Member email signup {5 pts} ==> As a member I want to register for the Community Table email list so that I can receive news and updates.
+3. Welcome email on Member signup {5 pts} ==> As site owner, I want members to receive a welcome email when they sign-up, so that they know that we received their email address and so we can provide them with additional Community Table information.
+4. Member unsubscribe email address {3 pts} ==> As a member, I want emails from CommunityTable to include an unsubscribe link, so I can remove myself from future mailings.
+5. 'About' content {2 pts} ==> As site owner, I want a page that communicates the mission of Community Table and provides visitors with key information so that they can better understand our vision and know who to contact to get involved.
+6. Admin portal (login required) {8 pts} ==> As a admin I want to log in to an administrative portal so that I can perform functions that should be restricted to admins.
+7. Admin list Member emails {3 pts} ==> As site owner, I want to be able to communicate to members via the email list, so that I can keep them informed about Community Table.
+8. Admin create blog entry {13 pts} ==> As site owner, I want to post a variety of articles about events, outcomes, and needs so that community members can be inspired and informed.
+9. Admin delete blog entry {5 pts} ==> As site owner, I want to be able to delete previously created blog entries, so that I can remove older content or modify posts.
+10. Public view blog entries {8 pts} ==> As a member, I want to view a list of all blog entries, ordered by date, newest to oldest.
 
 
 ###### Built with love in Austin, Boston, Washington D.C., San Francisco, Rhode Island...
