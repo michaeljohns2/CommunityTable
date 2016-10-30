@@ -1,6 +1,10 @@
 # CommunityTableTN
 Open source project in support of the Community Table initiative.
 
+## Name
+
+CommunityTableTN
+
 ## Team
 - Scrum Master / Developer (Front End): Melvin Tercan
 - Product Owner / Developer (Back End/Front End): Michael Johns
@@ -27,11 +31,11 @@ Boxes: food donations
 
 Future would be a building, gardening, canning classes, 1-2 meals a week. Products that are generated
 
-## Near Vision <!-- TODO -->
+## Near Vision
 To allow community members to sign up for an email list to receive updates about Community Table initiatives.
 
-## Stakeholders <!-- TODO -->
-1. Head Organizer of Community Table - Michelle (Johns)
+## Stakeholders
+1. Head Organizer of Community Table - Michelle (Real Person)
 2. Elderly neighbors
 3. Neighbors in need
 
