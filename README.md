@@ -1,39 +1,16 @@
-# CommunityTableTN
-Open source project in support of the Community Table initiative.
-
-## Name
-
-CommunityTableTN
-
-## Team
-- Scrum Master / Developer (Front End): Melvin Tercan
-- Product Owner / Developer (Back End/Front End): Michael Johns
-- Developer (Back end) / Meeting Facilitator: Kelly J. Doyle
-- Developer (Back end/Front End) / DevOps: Dairai Nyabando
-- Developer (Back end): Paul Laskorski
-- Developer (Front End/Back End) / DevOps: Vinod Halaharvi
-- Developer (Front End) / UX Designer: Shawn Roe
+# CommunityTable
+An open source project organized by the Community Tables initiative. It is a technical expression of a much more essential human drive to support _neighbors helping neighbors._
 
 ## Far Vision
 The most vulnerable among us often suffer alone, with limited resources and often without hope. Community Tables builds highly localizable software to strengthen and renew the social contract among neighbors, so that no one struggles in isolation again.
 
-## Goals <!-- TODO -->
-For our initial customer, Community Table TN, the primary goals are as follows: Meal once a week possibly, at least every other week. Sharing, breaking of bread, fellowship. Bring encouragement to neighbors, they get discouraged, disconnected, keep a continuity between people. Meal at her home for low income; also offer seasonal (e.g. fall) baskets / boxes. Provide a bright spot, encouragement. Focused on the elderly, then maybe disabled, and single moms. There is elderly housing nearby.
+## Product Iteration Name (OCT-DEC 2016)
+Community Cloud Table
 
-Meals: customer initally will pay for
-Boxes: food donations
-
-Future would be a building, gardening, canning classes, 1-2 meals a week. Products that are generated
-
-## Near Vision
+## Product Iteration Near Vision
 Community Cloud Tables is a software platform to facilitate, support, and encourage neighbors helping neighbors. Through CCT's highly localizable site templates and features, community organizers can easily customize their site to raise awareness, harness membership, and communicate tailored services to those in need.
 
-## Stakeholders
-1. Head Organizer of Community Table - Michelle (Real Person)
-2. Elderly neighbors
-3. Neighbors in need
-
-## User Personas
+## Stakeholders (User Personas)
 Persona template adapted from [orangebus](http://orangebus.co.uk/insights/the-power-of-proto-personas).
 
 ### Michelle (Site Owner)
@@ -97,7 +74,7 @@ __Quote__ _We’ll know we’ve done a good job when this persona tells us:_
 > I have something to look forward to each week because of the volunteer work I am doing through Community Table TN.
 
 ## Product Backlog
-[Community Table on Trello](https://trello.com/b/i9TmhPfB/final-project-community-table)
+Community Tables current product backlog is available to development team members and management at [Trello](https://trello.com/b/i9TmhPfB/final-project-community-table)
 
 ## Definition of Ready
 - Title
@@ -108,10 +85,10 @@ __Quote__ _We’ll know we’ve done a good job when this persona tells us:_
 - Architecture
 
 ## Whole Team Relative Size Estimating Activity
-We used the online tool [Pointing Poker](https://www.pointingpoker.com). After filling a PBI's Definition of Ready and discussing a few details, the development team estimated the relative size of that PBI. The high and low votes got a chance to share their reasoning. If a consensus was not reached, a second vote was taken. Convergence happened each time and the story points were recorded.
+We used the online tool [Pointing Poker](https://www.pointingpoker.com). After filling a PBI's Definition of Ready and discussing a few details, _only_ the development team estimated the relative size of that PBI (those wearing dual hats switched to their development hat). The high and low votes got a chance to share their reasoning. If a consensus was not reached, a second vote was taken. Convergence happened each time and the story points were recorded.
 
 ## Rationale for Backlog Order
-The backlog is ordered by value generated to our stakeholders, namely Community Table TN (the first customer for our open source products). Here are the first 10 product backlog items along with their key value propositions listed. These pbis have been groomed to represent excellent users stories within our team Definition of Ready and have been estimated by the development team. _Note: this is a snapshot as of 31 OCT 2016 and should not be used for any live data needs._ 
+The backlog is ordered by value generated to our stakeholders, namely Community Table TN (the first customer for our open source products). We (as well as our key stakeholder) are starting from scratch (with the help of other open source software). Here are the first 10 product backlog items along with their key value propositions listed to indicate which features offer more value sooner. These pbis have been groomed to represent excellent users stories within our team Definition of Ready and have been estimated by the development team. This is our first product increment. _Note: this is a snapshot as of 31 OCT 2016 and should not be used for any live data needs._ 
 
 1. Site landing page {8 pts} ==> As site owner, I want a compelling landing page so that Community Table can be found by people online and they can learn about our mission and services.
 2. Member email signup {5 pts} ==> As a member I want to register for the Community Table email list so that I can receive news and updates.
@@ -124,6 +101,14 @@ The backlog is ordered by value generated to our stakeholders, namely Community 
 9. Admin delete blog entry {5 pts} ==> As site owner, I want to be able to delete previously created blog entries, so that I can remove older content or modify posts.
 10. Public view blog entries {8 pts} ==> As a member, I want to view a list of all blog entries, ordered by date, newest to oldest.
 
+## Team
+- Scrum Master / Developer (Front End): Melvin Tercan
+- Product Owner / Developer (Back End/Front End): Michael Johns
+- Developer (Back end) / Meeting Facilitator: Kelly J. Doyle
+- Developer (Back end/Front End) / DevOps: Dairai Nyabando
+- Developer (Back end): Paul Laskorski
+- Developer (Front End/Back End) / DevOps: Vinod Halaharvi
+- Developer (Front End) / UX Designer: Shawn Roe
 
 ###### Built with love in Austin, Boston, Washington D.C., San Francisco, Rhode Island...
 
