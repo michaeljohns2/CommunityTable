@@ -33,8 +33,34 @@ To allow community members to sign up for an email list to receive updates about
 2. Elderly neighbors
 3. Neighbors in need
 
-## User Persona <!-- TODO -->
-*Your team has constructed a detailed user persona for your real stakeholder.*
+## User Personas
+
+### Michelle Founder, Community Table TN
+_Persona type_ female
+_Age_ 47
+_Location_ Elizabethton, TN
+_Technical comfort_ fair to good 
+
+__Backstory__
+_Tell us a bit about their responsibilities and interests._
+Michelle is married, a mother of three grown sons, has an undergraduate degree in the social services field, has worked/volunteered in nonprofit organizations for 7 plus years and has developed a passion to help the underserved in her Appalachian community.
+
+__Motivations__
+_How have they found or heard about the website/service? Why would they be interested?_
+She is interested because the organization does not have a web presence or an effective way to communicate the message and needs of Community Table.
+
+__Goals__
+_What do they want to get out of this service? What are they aiming to achieve?_
+To bring awareness to the public and the community about the organization and to have a viable way to sell products online and to gain financial donors to build the organization.
+
+__Barriers__
+_What would annoy them as they use it?_
+If the site is incomplete or hard to maneuver.
+
+__Quote__
+_We’ll know we’ve done a good job when this persona tells us_
+This website really helped bring awareness to the needs of Community Table and is something that the organization can use for future growth as well.
+
 
 ## Product Backlog
 [Community Table on Trello](https://trello.com/b/i9TmhPfB/final-project-community-table)
