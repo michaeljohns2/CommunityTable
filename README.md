@@ -52,7 +52,9 @@ __Goals__ _What do they want to get out of this service? What are they aiming to
 
 __Barriers__ _What would annoy them as they use it?_ If the site is incomplete or hard to maneuver.
 
-__Quote__ _We’ll know we’ve done a good job when this persona tells us:_ "This website really helped bring awareness to the needs of Community Table TN and is something that the organization can use for future growth as well."
+__Quote__ _We’ll know we’ve done a good job when this persona tells us:_ 
+
+> This website really helped bring awareness to the needs of Community Table TN and is something that the organization can use for future growth as well.
 
 ### Ruby (Neighbor in Need)
 
@@ -70,7 +72,9 @@ __Goals__ _What do they want to get out of this service? What are they aiming to
 
 __Barriers__ _What would stop them from visiting, choosing and using the website/service._ Distrust or it does not meet their needs. _What would annoy them as they use it?_ If the services are inconsistent or not taking their needs into consideration.
 
-__Quote__ _We’ll know we’ve done a good job when this persona tells us:_ "The baskets and neighborhood meals have given me hope and something to look forward to on a regular basis. I feel connected and valued."
+__Quote__ _We’ll know we’ve done a good job when this persona tells us:_ 
+
+> The baskets and neighborhood meals have given me hope and something to look forward to on a regular basis. I feel connected and valued.
 
 ### Linda (Community Member)
 
@@ -88,7 +92,9 @@ __Goals__ _What do they want to get out of this service? What are they aiming to
 
 __Barriers__ _What would stop them from visiting, choosing and using the website/service._ If it is too complicated or unclear. _What would annoy them as they use it?_ Not having the resources provided to do the volunteer work effectively or if there are too many changes or cancellations by Community Table.
 
-__Quote__ _We’ll know we’ve done a good job when this persona tells us:_ "I have something to look forward to each week because of the volunteer work I am doing through Community Table TN."
+__Quote__ _We’ll know we’ve done a good job when this persona tells us:_ 
+
+> I have something to look forward to each week because of the volunteer work I am doing through Community Table TN.
 
 ## Product Backlog
 [Community Table on Trello](https://trello.com/b/i9TmhPfB/final-project-community-table)
