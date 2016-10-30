@@ -4,12 +4,6 @@ An open source project organized by the Community Tables initiative. It is a tec
 ## Far Vision
 The most vulnerable among us often suffer alone, with limited resources and often without hope. Community Tables builds highly localizable software to strengthen and renew the social contract among neighbors, so that no one struggles in isolation again.
 
-## Product Iteration Name (OCT-DEC 2016)
-Community Cloud Table
-
-## Product Iteration Near Vision
-Community Cloud Tables is a software platform to facilitate, support, and encourage neighbors helping neighbors. Through CCT's highly localizable site templates and features, community organizers can easily customize their site to raise awareness, harness membership, and communicate tailored services to those in need.
-
 ## Stakeholders (User Personas)
 Persona template adapted from [orangebus](http://orangebus.co.uk/insights/the-power-of-proto-personas).
 
@@ -72,6 +66,11 @@ __Barriers__ _What would stop them from visiting, choosing and using the website
 __Quote__ _We’ll know we’ve done a good job when this persona tells us:_ 
 
 > I have something to look forward to each week because of the volunteer work I am doing through Community Table TN.
+
+## Product Iteration (OCT-DEC 2016)
+
+* __Name:__ Community Cloud Tables
+* __Product Iteration Near Vision:__ Community Cloud Tables is a software platform to facilitate, support, and encourage neighbors helping neighbors. Through CCT's highly localizable site templates and features, community organizers can easily customize their site to raise awareness, harness membership, and communicate tailored services to those in need.
 
 ## Product Backlog
 Community Tables current product backlog is available to development team members and management at [Trello](https://trello.com/b/i9TmhPfB/final-project-community-table)
