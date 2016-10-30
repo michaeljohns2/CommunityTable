@@ -118,6 +118,6 @@ The backlog is ordered by value generated to our stakeholders, namely Community 
 
 We can also be found in Canvas [Project Group 6](https://canvas.harvard.edu/courses/18031/groups) and on our [Slack](https://agilefall2016.slack.com/messages/community_tables) channel. 
 
-##### This is a project for [Harvard Extension School](http://www.extension.harvard.edu/) [Agile Software Development CSCI-E71](http://agilesoftwarecourse.org/).
+##### This is a final project for [Agile Software Development CSCI-E71](http://agilesoftwarecourse.org/) as part of degree requirements for  [Harvard Extension School](http://www.extension.harvard.edu/).
 
 ###### Built with love in Austin, Boston, Washington D.C., San Francisco, Rhode Island...
