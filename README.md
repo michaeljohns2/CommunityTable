@@ -34,15 +34,19 @@ To allow community members to sign up for an email list to receive updates about
 3. Neighbors in need
 
 ## User Personas
+Persona template adapted from [orangebus](http://orangebus.co.uk/insights/the-power-of-proto-personas).
 
-### Michelle Founder, Community Table TN
-_Persona type_ female
+### Michelle (Site Owner)
 
 _Age_ 47
 
+_Gender_ Female
+
 _Location_ Elizabethton, TN
 
-_Technical comfort_ fair to good 
+_Technical Comfort_ fair to good 
+
+_Job Title_ Founder, Community Table TN
 
 __Backstory__ _Tell us a bit about their responsibilities and interests._ Michelle is married, a mother of three grown sons, has an undergraduate degree in the social services field, has worked/volunteered in nonprofit organizations for 7 plus years and has developed a passion to help the underserved in her Appalachian community.
 
@@ -52,7 +56,29 @@ __Goals__ _What do they want to get out of this service? What are they aiming to
 
 __Barriers__ _What would annoy them as they use it?_ If the site is incomplete or hard to maneuver.
 
-__Quote__ _We’ll know we’ve done a good job when this persona tells us_ This website really helped bring awareness to the needs of Community Table and is something that the organization can use for future growth as well.
+__Quote__ _We’ll know we’ve done a good job when this persona tells us:_ "This website really helped bring awareness to the needs of Community Table and is something that the organization can use for future growth as well."
+
+### Ruby (Neighbor in Need)
+
+_Age_ 77
+
+_Gender_ Female
+
+_Location_ Elizabethton, TN
+
+_Technical Comfort_ computer illiterate
+
+_Job Title_ retired retail sales
+
+__Backstory__ _Tell us a bit about their responsibilities and interests._ Ruby is retired now for many years and has become isolated, struggling with health issues as well as the challenges of living on a social security income. Ruby feels lost after losing two daughters to cancer and the remaining daughter lives in another state. Ruby enjoys reading and occasional outings with her granddaughter whenever circumstances afford.
+
+__Motivations__ _How have they found or heard about the website/service? Why would they be interested?_ Ruby has heard about the services through neighborhood outreach attempts. She is interested due to the resources offered and the social interaction.
+
+__Goals__ _What do they want to get out of this service? What are they aiming to achieve?_ Mostly the social connection and the feeling that someone cares for them and will stay in consistent contact.
+
+__Barriers__ _What would stop them from visiting, choosing and using the website/service._ Distrust or it does not meet their needs. _What would annoy them as they use it?_ If the services are inconsistent or not taking their needs into consideration.
+
+__Quote__ _We’ll know we’ve done a good job when this persona tells us:_ "The baskets and neighborhood meals have given me hope and something to look forward to on a regular basis. I feel connected and valued."
 
 ## Product Backlog
 [Community Table on Trello](https://trello.com/b/i9TmhPfB/final-project-community-table)
