@@ -120,4 +120,4 @@ We can also be found in Canvas [Project Group 6](https://canvas.harvard.edu/cour
 
 ##### This is a final project for [Agile Software Development CSCI-E71](http://agilesoftwarecourse.org/) as part of degree requirements for  [Harvard Extension School](http://www.extension.harvard.edu/).
 
-###### Built with love in Austin, Boston, Washington D.C., San Francisco, Rhode Island...
+###### Built with love in Austin, Boston, Washington DC, San Francisco, Rhode Island, and Toronto.
