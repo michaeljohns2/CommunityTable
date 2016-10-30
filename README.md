@@ -5,7 +5,7 @@ CommunityTable is an open source project organized by the Community Tables initi
 The most vulnerable among us often suffer alone, with limited resources and often without hope. Community Tables builds highly localizable software to strengthen and renew the social contract among neighbors, so that no one struggles in isolation again.
 
 ## Stakeholders (User Personas)
-We have identified 3 stakeholders which drive our initiatives. While we are building CommunityTable products to be easily customized by any local community organizer -- captured by the term _localized_ -- our initial efforts are grounded by Michelle, the Founder of Community Table TN. Michelle is our first customer and viewed as our primary stakeholder during this initial product increment. The other two stakeholders are composites of known neighbors in need and community members, respectively. Persona template adapted from [orangebus](http://orangebus.co.uk/insights/the-power-of-proto-personas).
+We have identified 3 stakeholders which drive our initiatives. We are building Community Tables products to be easily customized by any local community organizer -- captured by the term _localized_. Our initial efforts are grounded by Michelle, the Founder of Community Table TN. Michelle is our first customer and viewed as our primary stakeholder during this initial product increment. The other two stakeholders are composites of known neighbors in need and community members, respectively. Persona template adapted from [orangebus](http://orangebus.co.uk/insights/the-power-of-proto-personas).
 
 ### Michelle (Site Owner)
 
@@ -78,7 +78,7 @@ __Quote__ _We’ll know we’ve done a good job when this persona tells us:_
   * JavaScript:  Bootstrap / jQuery / ReactJS
 
 ## Product Backlog
-Community Tables current product backlog is available to development team members and management at [Trello](https://trello.com/b/i9TmhPfB/final-project-community-table)
+Community Tables current product backlog is available to our Scrum Team members and management at [Trello](https://trello.com/b/i9TmhPfB/final-project-community-table)
 
 ## Definition of Ready
 - Title
@@ -92,7 +92,7 @@ Community Tables current product backlog is available to development team member
 We used the online tool [Pointing Poker](https://www.pointingpoker.com). After filling a PBI's Definition of Ready and discussing a few details, _only_ the development team estimated the relative size of that PBI (those wearing dual hats switched to their development hat). The high and low votes got a chance to share their reasoning. If a consensus was not reached, a second vote was taken. Convergence happened each time and the story points were recorded.
 
 ## Rationale for Backlog Order
-The backlog is ordered by value generated to our stakeholders, namely Community Table TN (the first customer for our open source products). We (as well as our key stakeholder) are starting from scratch (with the help of other open source software). Here are the first 10 product backlog items along with their key value propositions listed to indicate which features offer more value sooner. These pbis have been groomed to represent excellent users stories within our team Definition of Ready and have been estimated by the development team. This is our first product increment. _Note: this is a snapshot as of 31 OCT 2016 and should not be used for any live data needs._ 
+The backlog is ordered by value generated to our stakeholders, namely Community Table TN (the first customer for our open source products). We (as well as our key stakeholder) are starting from scratch (levering other open source software frameworks where feasible). Here are the first 10 product backlog items along with their key value propositions listed to indicate which features offer more value sooner for our stakeholders. These pbis have been groomed to represent excellent users stories within our team's Definition of Ready and have been estimated by the development team. _Note: this is a snapshot as of 31 OCT 2016 and should not be used for any live data needs._ 
 
 | __Number__ | __Title__ | __Story Points__ | __Summary__
 | --- | --- | --- | --- |
