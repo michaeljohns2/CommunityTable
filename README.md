@@ -15,13 +15,7 @@ CommunityTableTN
 - Developer (Front End) / UX Designer: Shawn Roe
 
 ## Far Vision
-Community helping one another. Community Table is a platform to facilitate, support, and encourage neighbors helping neighbors.
-
-Community Table is where people get together to share life, stories, and smiles over food.
-
-Community Table seeks to model what it means to be a good neighbor and inspire others to open their hearts and homes to neighbors in need.
-
-Community Table focuses on the neighborhood as a domain of friendly companions.
+The most vulnerable among us often suffer alone, with limited resources and often without hope. Community Tables builds highly localizable software to strengthen and renew the social contract among neighbors, so that no one struggles in isolation again.
 
 ## Goals <!-- TODO -->
 Meal once a week possibly, at least every other week. Sharing, breaking of bread, fellowship. Bring encouragement to neighbors, they get discouraged, disconnected, keep a continuity between people. Meal at her home for low income; also offer seasonal (e.g. fall) baskets / boxes. Provide a bright spot, encouragement. Focused on the elderly, then maybe disabled, and single moms. There is elderly housing nearby.
