@@ -62,6 +62,6 @@ We used the online tool [Pointing Poker](https://www.pointingpoker.com). After f
 
 
 
-###### Built with love in Austin, Boston, Washington D.C., San Francisco, ...
+###### Built with love in Austin, Boston, Washington D.C., San Francisco, Rhode Island...
 
 
