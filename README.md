@@ -1,11 +1,11 @@
 # CommunityTable
-An open source project organized by the Community Tables initiative. It is a technical expression of a much more essential human drive to support _neighbors helping neighbors._
+CommunityTable is an open source project organized by the Community Tables initiative. It is a technical expression of a much more essential human drive to support _neighbors helping neighbors._
 
 ## Far Vision
 The most vulnerable among us often suffer alone, with limited resources and often without hope. Community Tables builds highly localizable software to strengthen and renew the social contract among neighbors, so that no one struggles in isolation again.
 
 ## Stakeholders (User Personas)
-Persona template adapted from [orangebus](http://orangebus.co.uk/insights/the-power-of-proto-personas).
+We have identified 3 stakeholders which drive our initiatives. While we are building CommunityTable products to be easily customized by any local community organizer -- captured by the term _localized_ -- our initial efforts are grounded by Michelle, the Founder of Community Table TN. Michelle is our first customer and viewed as our primary stakeholder during this initial product increment. The other two stakeholders are composites of known neighbors in need and community members, respectively. Persona template adapted from [orangebus](http://orangebus.co.uk/insights/the-power-of-proto-personas).
 
 ### Michelle (Site Owner)
 
@@ -71,6 +71,11 @@ __Quote__ _We’ll know we’ve done a good job when this persona tells us:_
 
 * __Name:__ Community Cloud Tables
 * __Product Iteration Near Vision:__ Community Cloud Tables is a software platform to facilitate, support, and encourage neighbors helping neighbors. Through CCT's highly localizable site templates and features, community organizers can easily customize their site to raise awareness, harness membership, and communicate tailored services to those in need.
+* __Key Architecture:__ 
+  * Infrastructure: Amazon AWS Cloud Services
+  * Java:  Spring MVC / Tomcat
+  * Persistence: Mongo DB
+  * JavaScript:  Bootstrap / jQuery / ReactJS
 
 ## Product Backlog
 Community Tables current product backlog is available to development team members and management at [Trello](https://trello.com/b/i9TmhPfB/final-project-community-table)
