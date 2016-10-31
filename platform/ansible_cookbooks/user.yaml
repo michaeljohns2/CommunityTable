@@ -1,0 +1,13 @@
+- hosts: localhost
+  vars:
+    password: $1$SomeSalt$LUdJpZN7IYTMIRJx20fvb.
+  tasks:
+    - group: name=admins state=present system=yes
+    - group: name=developers state=present
+    - user: name=vhalaharvi password={{password}} state=present groups=admins,developers append=yes
+    - user: name=melvin password={{password}} state=present groups=admins,developers append=yes
+    - user: name=michael.johns2 password={{password}} state=present groups=admins,developers append=yes
+    - user: name=keljdoyle password={{password}} state=present groups=admins,developers append=yes
+    - user: name=shawnroe password={{password}} state=present groups=admins,developers append=yes
+    - user: name=plaskorski password={{password}} state=present groups=admins,developers append=yes
+    - user: name=dairai.nyabando password={{password}} state=present groups=admins,developers append=yes
