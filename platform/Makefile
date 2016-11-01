@@ -72,5 +72,11 @@ start-tomcat:
 		--network=ct-network -h tomcat \
 		--link=ct-mongodb:mongodb \
 		-d  \
+		-v /usr/local/tomcat/logs:/usr/local/tomcat/logs \
 		-v /usr/local/tomcat/lib:/usr/local/tomcat/lib \
+		-v /usr/local/tomcat/conf:/usr/local/tomcat/conf \
+		-v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps \
 		-p 8080:8080 tomcat:8.0
+
+bash-tomcat: 
+	docker exec -it ct-tomcat bash
