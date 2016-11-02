@@ -1,6 +1,10 @@
 
 /*  This is a sample CSS file, feel free to change it. */
 
+body {
+	font: 18px/30px Helvetica, Arial, sans-serif;
+}
+
 .error {
     color: #ff0000;
 }
