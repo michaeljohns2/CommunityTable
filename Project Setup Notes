@@ -13,9 +13,14 @@ Opening and running the project in IntelliJ
 6) You should be able to build the project without error.
 7( Now you should be able to drop the WAR file into a Tomcat 8 webapps folder on a local server and run it (tested on Tomcat 8 / Windows 10 machine).
 
+NOTE: The WAR file that IntelliJ generates did not seem to run on AWS instance.
+However, you can build the WAR running command line "mvn clean install", which does work on AWS.
 
 Project Structure
-In a Spring MVC project, we don't usually reference JSP files directly. We access them through route mappings, which are mapped to a controller. 
+In a Spring MVC project, we don't usually reference JSP files directly. 
+We access them through route mappings, which are mapped to a controller. 
+
+
 
 
 
