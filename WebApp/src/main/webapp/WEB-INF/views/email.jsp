@@ -7,19 +7,19 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Event Page</title>
+    <title>Mailing list sign-up</title>
     <link rel="stylesheet" type="text/css" href="/css/community.css">
 </head>
 <body>
 
 
-<form:form commandName="event">
+<form:form modelAttribute="emailModel">
     <form:errors path="*" cssClass="errorBlock" element="div" />
-    <label for="name">Enter Event Name:</label>
-    <form:input path="name"  cssErrorClass="error" />
-    <form:errors path="name" cssClass="error"  />
+    <label for="emailAddress">Enter Email Address:</label>
+    <form:input path="emailAddress"  cssErrorClass="error" />
+    <form:errors path="emailAddress" cssClass="error"  />
     <br>
-    <input type="submit" value="Enter Event" />
+    <input type="submit" value="Enter Email" />
 </form:form>
 
 

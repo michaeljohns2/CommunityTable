@@ -12,3 +12,8 @@
     padding: 8px;
     margin: 16px;
 }
+
+h1 {
+	font-family: verdana, sans-serif;
+	color: #ccddee;
+}
