@@ -1,0 +1,21 @@
+There are a lot of online tutorials for Spring MVC. 
+In this doc, I'm just going to describe the bare minimum needed to start work on the project.
+
+
+
+Opening and running the project in IntelliJ
+
+1) Start IntelliJ Idea and select Import Project.
+2) Import the project as a Maven project (select the room pom.xml file)
+3) If IntelliJ lists warnings about Java 1.5 being obsolete, go to File->Settings->Java Compiler and set bytecode version to 1.8 for Project and Target.
+4) Also go to Project Structure->Project Settings-> Modules and change language level from 5 to 8.
+5) To have IntelliJ generate a WAR file on Make go to File->Project Structure->Artifacts and check "Build on Make".
+6) You should be able to build the project without error.
+7( Now you should be able to drop the WAR file into a Tomcat 8 webapps folder on a local server and run it (tested on Tomcat 8 / Windows 10 machine).
+
+
+Project Structure
+In a Spring MVC project, we don't usually reference JSP files directly. We access them through route mappings, which are mapped to a controller. 
+
+
+
