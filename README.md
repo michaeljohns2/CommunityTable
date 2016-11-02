@@ -116,6 +116,10 @@ The backlog is ordered by value generated to our stakeholders, namely Community 
 - Developer (Front End/Back End) / DevOps: Vinod Halaharvi
 - Developer (Front End) / UX Designer: Shawn Roe
 
+## Sprint Burndown
+![Burndown Chart Sprint 1](https://image-charts.com/chart?cht=lc&chd=t:21.00,18.67,16.33,14.00,11.67,9.33,7.00,4.67,2.33,0.00|21,21&chco=2196F3,FF5722&chxt=x,y&chxl=0:|1|2|3|4|5|6|7|8|9|10|&chs=600x200&chtt=Burndown%20Chart%20Sprint%201&chg=20,0,1,3)
+
+
 We can also be found in Canvas [Project Group 6](https://canvas.harvard.edu/courses/18031/groups) and on our [Slack](https://agilefall2016.slack.com/messages/community_tables) channel. 
 
 ##### This is a final project for [Agile Software Development CSCI-E71](http://agilesoftwarecourse.org/) as part of degree requirements for  [Harvard Extension School](http://www.extension.harvard.edu/).
