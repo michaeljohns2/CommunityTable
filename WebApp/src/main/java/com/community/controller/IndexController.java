@@ -11,6 +11,7 @@ public class IndexController {
     public String hello(Model model) {
         
         model.addAttribute("greeting", "Welcome to Community Tables");
+        model.addAttribute("details", "Loren ipsom...");
         
         return "index";
         
@@ -18,4 +19,5 @@ public class IndexController {
  
 }
 	
+
 
