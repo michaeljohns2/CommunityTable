@@ -16,7 +16,7 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
- 
+
         <!-- Servlet Library -->
         <!-- http://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
         <dependency>
@@ -61,6 +61,21 @@
 					<warSourceDirectory>src/main/webapp</warSourceDirectory>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
+        </plugin>
+
+        <!-- Tomcat as embedded works for 7 or 8!!!
+             mvn tomcat7:run
+             see http://viralpatel.net/blogs/embed-tomcat-maven-project-run-tomcat-maven/
+        -->
+        <plugin>
+            <groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat7-maven-plugin</artifactId>
+            <version>2.2</version>
+            <!--
+            <configuration>
+                <port>9090</port>
+            </configuration>
+            -->
         </plugin>
     </plugins>
   </build>
