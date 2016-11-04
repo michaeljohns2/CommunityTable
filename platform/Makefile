@@ -99,6 +99,8 @@ start-tomcat-test:
 
 
 deploy:
+	cd /root/CommunityTable/ && \
+	git pull &&  \
 	cd /root/CommunityTable/WebApp/ && \
 		mvn clean install && \
 		cp /root/CommunityTable/WebApp/target/CommunityTables.war /usr/local/tomcat/webapps/  && \
