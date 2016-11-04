@@ -10,13 +10,6 @@
   
   <dependencies>
 
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
-
         <!-- Servlet Library -->
         <!-- http://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
         <dependency>
@@ -47,7 +40,47 @@
             <artifactId>spring-webmvc</artifactId>
             <version>4.3.1.RELEASE</version>
         </dependency>
-        
+
+      <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+      <dependency>
+          <groupId>org.mongodb</groupId>
+          <artifactId>mongo-java-driver</artifactId>
+          <version>3.3.0</version>
+      </dependency>
+
+
+      <!-- ##### TEST DEPENDENCIES ##### -->
+
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>3.8.1</version>
+          <scope>test</scope>
+      </dependency>
+
+      <!-- Embedded Mongo (Fongo) -->
+      <!-- https://github.com/fakemongo/fongo -->
+      <dependency>
+          <groupId>com.github.fakemongo</groupId>
+          <artifactId>fongo</artifactId>
+          <version>2.0.9</version>
+          <scope>test</scope>
+      </dependency>
+
+      <!-- SLF4J dependency for Fongo (may not be needed ultimately) -->
+      <dependency>
+          <groupId>ch.qos.logback</groupId>
+          <artifactId>logback-classic</artifactId>
+          <version>1.1.1</version>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.12</version>
+          <scope>test</scope>
+      </dependency>
+
   </dependencies>
   
   <build>
@@ -64,7 +97,7 @@
         </plugin>
 
         <!-- Tomcat as embedded works for 7 or 8!!!
-             mvn tomcat7:run
+             usage `mvn tomcat7:run`
              see http://viralpatel.net/blogs/embed-tomcat-maven-project-run-tomcat-maven/
         -->
         <plugin>
