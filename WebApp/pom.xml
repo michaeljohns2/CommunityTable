@@ -51,13 +51,6 @@
 
       <!-- ##### TEST DEPENDENCIES ##### -->
 
-      <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>3.8.1</version>
-          <scope>test</scope>
-      </dependency>
-
       <!-- Embedded Mongo (Fongo) -->
       <!-- https://github.com/fakemongo/fongo -->
       <dependency>
@@ -74,6 +67,7 @@
           <version>1.1.1</version>
           <scope>test</scope>
       </dependency>
+
       <dependency>
           <groupId>junit</groupId>
           <artifactId>junit</artifactId>
