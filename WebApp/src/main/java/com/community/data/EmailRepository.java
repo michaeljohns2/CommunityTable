@@ -6,6 +6,7 @@ import org.bson.types.ObjectId;
 import org.springframework.stereotype.Component;
 
 import java.net.UnknownHostException;
+import java.util.ResourceBundle;
 
 /**
  * Created by keljd on 11/3/2016.
@@ -16,6 +17,13 @@ public class EmailRepository {
     private static final String EMAIL_COLLECTION = "emailCollection";
     private static final String EMAIL_FIELD = "emailAddress";
     private static final String DB_NAME = "CommunityTables";
+
+    private String mongoServerName = null;
+
+    public EmailRepository() {
+        ResourceBundle resources = ResourceBundle.getBundle("Messages");
+        mongoServerName = resources.getString("mongo.server");
+    }
 
     /**
      * Attempts to save an EmailModel as a MongoDB email entry.
@@ -28,7 +36,7 @@ public class EmailRepository {
             throw new IllegalArgumentException("EmailAddress cannot be null.");
         }
 
-        MongoClient mongo = new MongoClient( "localhost" , 27017 );
+        MongoClient mongo = new MongoClient( mongoServerName , 27017 );
         DB db = mongo.getDB(DB_NAME);
 
         BasicDBObject emailDoc = new BasicDBObject();
@@ -48,7 +56,7 @@ public class EmailRepository {
     public EmailModel getEmail(String emailAddress) throws UnknownHostException {
 
 
-        MongoClient mongo = new MongoClient( "localhost" , 27017 );
+        MongoClient mongo = new MongoClient( mongoServerName , 27017 );
         DB db = mongo.getDB(DB_NAME);
         DBCollection emailCollection = db.getCollection(EMAIL_COLLECTION);
         BasicDBObject query = new BasicDBObject();
