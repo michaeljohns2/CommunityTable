@@ -11,18 +11,17 @@ import static com.mongodb.client.model.Filters.*;
 import org.springframework.stereotype.Component;
 
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Created by keljd on 11/3/2016.
+ * This repository class provides access to Email data.
  */
 @Component
 public class EmailRepository extends BaseRepository {
 
     private static final String EMAIL_COLLECTION = "emailCollection";
     private static final String EMAIL_FIELD = "emailAddress";
-
-
-
 
     /**
      * Attempts to save an EmailModel as a MongoDB email entry.
@@ -53,7 +52,6 @@ public class EmailRepository extends BaseRepository {
      */
     public EmailModel getEmail(String emailAddress) throws UnknownHostException {
 
-
         MongoDatabase db = this.getMongoDatabase();
         MongoCollection<Document> emailCollection = db.getCollection(EMAIL_COLLECTION);
 
@@ -71,5 +69,28 @@ public class EmailRepository extends BaseRepository {
         EmailModel foundEmail = new EmailModel();
         foundEmail.setEmailAddress(email.get(EMAIL_FIELD).toString());
         return foundEmail;
+    }
+
+    public List<EmailModel> getAllEmails() {
+        List<EmailModel> emails = new ArrayList<EmailModel>();
+        MongoDatabase db = this.getMongoDatabase();
+        MongoCollection<Document> emailCollection = db.getCollection(EMAIL_COLLECTION);
+
+        FindIterable<Document> results = emailCollection.find();
+        for (Document result : results) {
+            emails.add(mapEmail(result));
+        }
+
+        return emails;
+    }
+
+    private EmailModel mapEmail(Document emailDoc) {
+        if (emailDoc.get(EMAIL_FIELD) == null) {
+            throw new RuntimeException("Stored email object is invalid.");
+        }
+
+        EmailModel emailModel = new EmailModel();
+        emailModel.setEmailAddress(emailDoc.get(EMAIL_FIELD).toString());
+        return emailModel;
     }
 }

@@ -48,12 +48,19 @@
           <version>3.3.0</version>
       </dependency>
 
+      <!-- Guava: various useful tools -->
       <dependency>
           <groupId>com.google.guava</groupId>
           <artifactId>guava</artifactId>
           <version>20.0</version>
       </dependency>
 
+      <!-- Helpful for JSON formatting -->
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <version>2.5.0</version>
+      </dependency>
 
       <!-- ##### TEST DEPENDENCIES ##### -->
 
@@ -98,6 +105,7 @@
             </configuration>
         </plugin>
         -->
+
 
         <plugin>
 				<artifactId>maven-war-plugin</artifactId>
