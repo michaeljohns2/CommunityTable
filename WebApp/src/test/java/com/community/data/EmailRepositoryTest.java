@@ -31,7 +31,7 @@ public class EmailRepositoryTest extends EmailRepository {
         return fongoRule.getFongo().getDatabase(DB_NAME);
     }
 
-    protected EmailModel saveEmailInternal(String addr) throws UnknownHostException {
+    public EmailModel saveEmailInternal(String addr) throws UnknownHostException {
         EmailModel emailModel = new EmailModel();
         emailModel.setEmailAddress(addr);
         this.saveEmail(emailModel);

@@ -63,6 +63,12 @@
       </dependency>
 
       <!-- ##### TEST DEPENDENCIES ##### -->
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.12</version>
+          <scope>test</scope>
+      </dependency>
 
       <!-- Embedded Mongo (Fongo) -->
       <!-- https://github.com/fakemongo/fongo -->
@@ -81,10 +87,19 @@
           <scope>test</scope>
       </dependency>
 
+      <!-- Cucumber-Java -->
+      <!-- within https://github.com/cucumber/cucumber-jvm -->
       <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>4.12</version>
+          <groupId>info.cukes</groupId>
+          <artifactId>cucumber-java</artifactId>
+          <version>1.2.5</version>
+          <scope>test</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>info.cukes</groupId>
+          <artifactId>cucumber-junit</artifactId>
+          <version>1.2.5</version>
           <scope>test</scope>
       </dependency>
 
