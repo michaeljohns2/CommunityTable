@@ -32,7 +32,7 @@ public class EmailController {
     }
 
     @RequestMapping(value="/email", method=RequestMethod.POST)
-    public String processEvent(EmailModel emailModel, BindingResult result, Model model) {
+    public String processEmail(EmailModel emailModel, BindingResult result, Model model) {
 
         if (result.hasErrors()) {
             model.addAttribute("emailModel", emailModel);

@@ -1,29 +1,24 @@
 package com.community.data;
 
 import com.community.model.EmailModel;
+import com.google.common.collect.Iterables;
 import com.mongodb.*;
-import org.bson.types.ObjectId;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+import static com.mongodb.client.model.Filters.*;
 import org.springframework.stereotype.Component;
 
 import java.net.UnknownHostException;
-import java.util.ResourceBundle;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Created by keljd on 11/3/2016.
+ * This repository class provides access to Email data.
  */
 @Component
-public class EmailRepository {
-
-    private static final String EMAIL_COLLECTION = "emailCollection";
-    private static final String EMAIL_FIELD = "emailAddress";
-    private static final String DB_NAME = "CommunityTables";
-
-    private String mongoServerName = null;
-
-    public EmailRepository() {
-        ResourceBundle resources = ResourceBundle.getBundle("Messages");
-        mongoServerName = resources.getString("mongo.server");
-    }
+public class EmailRepository extends BaseRepository {
 
     /**
      * Attempts to save an EmailModel as a MongoDB email entry.
@@ -36,14 +31,13 @@ public class EmailRepository {
             throw new IllegalArgumentException("EmailAddress cannot be null.");
         }
 
-        MongoClient mongo = new MongoClient( mongoServerName , 27017 );
-        DB db = mongo.getDB(DB_NAME);
+        MongoDatabase db = this.getMongoDatabase();
 
-        BasicDBObject emailDoc = new BasicDBObject();
+        Document emailDoc = new Document();
         emailDoc.put(EMAIL_FIELD, emailModel.getEmailAddress());
 
-        DBCollection table = db.getCollection(EMAIL_COLLECTION);
-        table.insert(emailDoc);
+        MongoCollection<Document> emailCollection = db.getCollection(EMAIL_COLLECTION);
+        emailCollection.insertOne(emailDoc);
 
     }
 
@@ -55,24 +49,45 @@ public class EmailRepository {
      */
     public EmailModel getEmail(String emailAddress) throws UnknownHostException {
 
+        MongoDatabase db = this.getMongoDatabase();
+        MongoCollection<Document> emailCollection = db.getCollection(EMAIL_COLLECTION);
 
-        MongoClient mongo = new MongoClient( mongoServerName , 27017 );
-        DB db = mongo.getDB(DB_NAME);
-        DBCollection emailCollection = db.getCollection(EMAIL_COLLECTION);
-        BasicDBObject query = new BasicDBObject();
-        query.put(EMAIL_FIELD, emailAddress);
+        FindIterable<Document> results = emailCollection.find(eq("emailAddress", emailAddress));
 
-        DBObject dbObject = emailCollection.findOne(query);
-        if (dbObject == null) {
+        if (Iterables.size(results) < 1) {
             return null;
         }
+        Document email = results.first();
 
-        if (dbObject.get(EMAIL_FIELD) == null) {
+        if (email.get(EMAIL_FIELD) == null) {
             throw new RuntimeException("Stored email object is invalid.");
         }
 
         EmailModel foundEmail = new EmailModel();
-        foundEmail.setEmailAddress(dbObject.get(EMAIL_FIELD).toString());
+        foundEmail.setEmailAddress(email.get(EMAIL_FIELD).toString());
         return foundEmail;
+    }
+
+    public List<EmailModel> getAllEmails() {
+        final List<EmailModel> emails = new ArrayList<EmailModel>();
+        MongoDatabase db = this.getMongoDatabase();
+        MongoCollection<Document> emailCollection = db.getCollection(EMAIL_COLLECTION);
+
+        FindIterable<Document> results = emailCollection.find();
+        for (Document result : results) {
+            emails.add(mapEmail(result));
+        }
+
+        return emails;
+    }
+
+    private EmailModel mapEmail(Document emailDoc) {
+        if (emailDoc.get(EMAIL_FIELD) == null) {
+            throw new RuntimeException("Stored email object is invalid.");
+        }
+
+        EmailModel emailModel = new EmailModel();
+        emailModel.setEmailAddress(emailDoc.get(EMAIL_FIELD).toString());
+        return emailModel;
     }
 }

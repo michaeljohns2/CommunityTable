@@ -48,8 +48,27 @@
           <version>3.3.0</version>
       </dependency>
 
+      <!-- Guava: various useful tools -->
+      <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+          <version>20.0</version>
+      </dependency>
+
+      <!-- Helpful for JSON formatting -->
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <version>2.5.0</version>
+      </dependency>
 
       <!-- ##### TEST DEPENDENCIES ##### -->
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.12</version>
+          <scope>test</scope>
+      </dependency>
 
       <!-- Embedded Mongo (Fongo) -->
       <!-- https://github.com/fakemongo/fongo -->
@@ -68,10 +87,19 @@
           <scope>test</scope>
       </dependency>
 
+      <!-- Cucumber-Java -->
+      <!-- within https://github.com/cucumber/cucumber-jvm -->
       <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>4.12</version>
+          <groupId>info.cukes</groupId>
+          <artifactId>cucumber-java</artifactId>
+          <version>1.2.5</version>
+          <scope>test</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>info.cukes</groupId>
+          <artifactId>cucumber-junit</artifactId>
+          <version>1.2.5</version>
           <scope>test</scope>
       </dependency>
 
@@ -80,7 +108,20 @@
   <build>
     <finalName>CommunityTables</finalName>
     <plugins>
-    
+
+        <!-- This can be used to tell IntelliJ to build using Java 8 BUT it seems to break the server deploy...
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.3.2</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+        -->
+
+
         <plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.4</version>
