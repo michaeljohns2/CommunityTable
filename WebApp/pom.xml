@@ -48,6 +48,12 @@
           <version>3.3.0</version>
       </dependency>
 
+      <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+          <version>20.0</version>
+      </dependency>
+
 
       <!-- ##### TEST DEPENDENCIES ##### -->
 
@@ -80,7 +86,19 @@
   <build>
     <finalName>CommunityTables</finalName>
     <plugins>
-    
+
+        <!-- This can be used to tell IntelliJ to build using Java 8 BUT it seems to break the server deploy...
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.3.2</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+        -->
+
         <plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.4</version>
