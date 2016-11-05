@@ -20,9 +20,6 @@ import java.util.List;
 @Component
 public class EmailRepository extends BaseRepository {
 
-    private static final String EMAIL_COLLECTION = "emailCollection";
-    private static final String EMAIL_FIELD = "emailAddress";
-
     /**
      * Attempts to save an EmailModel as a MongoDB email entry.
      *
@@ -72,7 +69,7 @@ public class EmailRepository extends BaseRepository {
     }
 
     public List<EmailModel> getAllEmails() {
-        List<EmailModel> emails = new ArrayList<EmailModel>();
+        final List<EmailModel> emails = new ArrayList<EmailModel>();
         MongoDatabase db = this.getMongoDatabase();
         MongoCollection<Document> emailCollection = db.getCollection(EMAIL_COLLECTION);
 
