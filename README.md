@@ -145,7 +145,7 @@ _What will you do today?_
 > I hope to upload an example of Java->Mongo DB connection
 
 _What obstacles are impeding your progress?_
-none atm
+> none atm
 
 #### Shawn
 _What did you accomplish yesterday?_
