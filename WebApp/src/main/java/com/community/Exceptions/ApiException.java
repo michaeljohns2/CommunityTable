@@ -1,7 +1,7 @@
 package com.community.Exceptions;
 
 /**
- * This class represents a general exception in the REST API.
+ * This class represents a general exception thrown by the REST API.
  */
 public class ApiException extends RuntimeException {
 

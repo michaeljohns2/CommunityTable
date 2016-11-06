@@ -1,6 +1,7 @@
 package com.community.controller.rest;
 
 import com.community.ApplicationContextConfig;
+import com.community.Exceptions.ApiException;
 import com.community.data.EmailRepositoryTest;
 import com.community.model.EmailModel;
 import org.junit.Assert;
@@ -42,8 +43,37 @@ public class EmailRestControllerTest {
     }
 
     @Test
-    public void addEmail_Test() {
-        controller.addEmail("test@test.com");
+    public void addEmail_AddOne_Test() {
+        EmailModel model = controller.addEmail("test@test.com");
+        Assert.assertTrue(model != null);
+        Assert.assertTrue(model.getEmailAddress().equals("test@test.com"));
+        Assert.assertTrue(model.getSecureHash() != null);
+    }
+
+    @Test
+    public void addEmail_DuplicateEmail_Test() {
+        EmailModel model = controller.addEmail("test@test.com");
+        Assert.assertTrue(model != null);
+        Assert.assertTrue(model.getEmailAddress().equals("test@test.com"));
+
+        try {
+            model = controller.addEmail("test@test.com");
+        } catch (ApiException ex) {
+            Assert.assertEquals(ex.getMessage(), EmailRestController.EMAIL_EXISTS_MESSAGE );
+            return;
+        }
+        Assert.fail("Expected exception.");
+    }
+
+    @Test
+    public void addEmail_Invalid_Test() {
+        try {
+            EmailModel model = controller.addEmail("test");
+        } catch (ApiException ex) {
+            Assert.assertEquals(ex.getMessage(), EmailRestController.EMAIL_INVALID_MESSAGE );
+            return;
+        }
+        Assert.fail("Expected exception.");
     }
 
 }
