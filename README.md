@@ -116,7 +116,18 @@ The backlog is ordered by value generated to our stakeholders, namely Community 
 - Developer (Front End/Back End) / DevOps: Vinod Halaharvi
 - Developer (Front End) / UX Designer: Shawn Roe
 
-## Sprint Burndown
+## Sprint 1 (10/8-11/11)
+
+### Forecast
+
+We forecasted we could the following tasks done during Sprint 1 (**21 story points**):
+- https://trello.com/c/YH9TVWmy/10-site-landing-page-8-pts
+- https://trello.com/c/DYbCK0DY/11-member-email-signup-5-pts
+- https://trello.com/c/nWvH72BO/37-welcome-email-on-member-signup-5-pts
+- https://trello.com/c/a5qfa004/38-member-unsubscribe-email-address-3-pts
+
+### Burndown
+
 ![Burndown Chart Sprint 1](https://image-charts.com/chart?cht=lc&chd=t:21.00,18.67,16.33,14.00,11.67,9.33,7.00,4.67,2.33,0.00|21,21,21,21,21&chco=2196F3,FF5722&chxt=x,y&chxl=0:|1|2|3|4|5|6|7|8|9|10|&chs=600x200&chtt=Burndown%20Chart%20Sprint%201&chg=20,0,1,3)
 
 
