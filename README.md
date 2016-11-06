@@ -120,7 +120,7 @@ The backlog is ordered by value generated to our stakeholders, namely Community 
 
 ### Forecast
 
-We forecasted we could the following tasks done during Sprint 1 (**21 story points**):
+We forecasted we could get the following tasks done during Sprint 1 (**21 story points**):
 - https://trello.com/c/YH9TVWmy/10-site-landing-page-8-pts
 - https://trello.com/c/DYbCK0DY/11-member-email-signup-5-pts
 - https://trello.com/c/nWvH72BO/37-welcome-email-on-member-signup-5-pts
