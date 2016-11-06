@@ -40,4 +40,10 @@ public class EmailRestControllerTest {
         Assert.assertNotNull(emails);
         Assert.assertTrue(emails.size() == 0);
     }
+
+    @Test
+    public void addEmail_Test() {
+        controller.addEmail("test@test.com");
+    }
+
 }
