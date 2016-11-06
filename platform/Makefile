@@ -50,7 +50,9 @@ start-jenkins:
 		-p 8081:8080 \
 		-p 50000:50000 \
 		-u root \
+		-v /root/CommunityTable/platform:/root/CommunityTable/platform \
 		-v /var/jenkins_home:/var/jenkins_home jenkins
+
 
 start-email:
 	if [ ! -a /var/email_home ] ; then  mkdir -p /var/email_home; fi
