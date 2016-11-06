@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.community</groupId>
-  <artifactId>CommunityTables</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>CommunityTables</name>
-  <url>http://maven.apache.org</url>
-  
-  <dependencies>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.community</groupId>
+    <artifactId>CommunityTables</artifactId>
+    <packaging>war</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>CommunityTables</name>
+    <url>http://maven.apache.org</url>
+
+    <dependencies>
 
         <!-- Servlet Library -->
         <!-- http://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
@@ -18,7 +18,7 @@
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
- 
+
         <!-- Spring dependencies -->
         <!-- http://mvnrepository.com/artifact/org.springframework/spring-core -->
         <dependency>
@@ -26,14 +26,14 @@
             <artifactId>spring-core</artifactId>
             <version>4.3.1.RELEASE</version>
         </dependency>
- 
+
         <!-- http://mvnrepository.com/artifact/org.springframework/spring-web -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>4.3.1.RELEASE</version>
         </dependency>
- 
+
         <!-- http://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -41,89 +41,118 @@
             <version>4.3.1.RELEASE</version>
         </dependency>
 
-      <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
-      <dependency>
-          <groupId>org.mongodb</groupId>
-          <artifactId>mongo-java-driver</artifactId>
-          <version>3.3.0</version>
-      </dependency>
+        <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.3.0</version>
+        </dependency>
 
-      <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
-      <dependency>
-          <groupId>org.webjars</groupId>
-          <artifactId>bootstrap</artifactId>
-          <version>3.3.6</version>
-      </dependency>
+        <!-- Guava: various useful tools -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>20.0</version>
+        </dependency>
 
-      <!-- https://mvnrepository.com/artifact/org.webjars.bower/jquery -->
-      <dependency>
-          <groupId>org.webjars.bower</groupId>
-          <artifactId>jquery</artifactId>
-          <version>3.1.1</version>
-      </dependency>
+        <!-- Helpful for JSON formatting -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.5.0</version>
+        </dependency>
 
+        <!-- ##### TEST DEPENDENCIES ##### -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
 
-      <!-- ##### TEST DEPENDENCIES ##### -->
+        <!-- Embedded Mongo (Fongo) -->
+        <!-- https://github.com/fakemongo/fongo -->
+        <dependency>
+            <groupId>com.github.fakemongo</groupId>
+            <artifactId>fongo</artifactId>
+            <version>2.0.9</version>
+            <scope>test</scope>
+        </dependency>
 
-      <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>3.8.1</version>
-          <scope>test</scope>
-      </dependency>
+        <!-- SLF4J dependency for Fongo (may not be needed ultimately) -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.1</version>
+            <scope>test</scope>
+        </dependency>
 
-      <!-- Embedded Mongo (Fongo) -->
-      <!-- https://github.com/fakemongo/fongo -->
-      <dependency>
-          <groupId>com.github.fakemongo</groupId>
-          <artifactId>fongo</artifactId>
-          <version>2.0.9</version>
-          <scope>test</scope>
-      </dependency>
+        <!-- Cucumber-Java -->
+        <!-- within https://github.com/cucumber/cucumber-jvm -->
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>1.2.5</version>
+            <scope>test</scope>
+        </dependency>
 
-      <!-- SLF4J dependency for Fongo (may not be needed ultimately) -->
-      <dependency>
-          <groupId>ch.qos.logback</groupId>
-          <artifactId>logback-classic</artifactId>
-          <version>1.1.1</version>
-          <scope>test</scope>
-      </dependency>
-      <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>4.12</version>
-          <scope>test</scope>
-      </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>1.2.5</version>
+            <scope>test</scope>
+        </dependency>
 
-  </dependencies>
-  
-  <build>
-    <finalName>CommunityTables</finalName>
-    <plugins>
-    
-        <plugin>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<warSourceDirectory>src/main/webapp</warSourceDirectory>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-        </plugin>
+    </dependencies>
 
-        <!-- Tomcat as embedded works for 7 or 8!!!
-             usage `mvn tomcat7:run`
-             see http://viralpatel.net/blogs/embed-tomcat-maven-project-run-tomcat-maven/
-        -->
-        <plugin>
-            <groupId>org.apache.tomcat.maven</groupId>
-            <artifactId>tomcat7-maven-plugin</artifactId>
-            <version>2.2</version>
-            <!--
-            <configuration>
-                <port>9090</port>
-            </configuration>
+    <build>
+        <finalName>CommunityTables</finalName>
+        <plugins>
+
+            <!-- This can be used to tell IntelliJ to build using Java 8 BUT it seems to break the server deploy...
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
             -->
-        </plugin>
-    </plugins>
-  </build>
+
+
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <warSourceDirectory>src/main/webapp</warSourceDirectory>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+
+            <!-- Tomcat as embedded works for 7 or 8!!!
+                 usage `mvn tomcat7:run`
+                 see http://viralpatel.net/blogs/embed-tomcat-maven-project-run-tomcat-maven/
+            -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <!--
+                <configuration>
+                    <port>9090</port>
+                </configuration>
+                -->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
