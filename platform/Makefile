@@ -18,6 +18,8 @@ restart-mongo: kill-mongo start-mongo
 
 restart-nginx: kill-nginx start-nginx
 
+restart-email: kill-email start-email
+
 kill-tomcat:
 	docker stop `docker ps -a -q --filter="name=ct-tomcat"`
 	docker rm -f `docker ps -a -q --filter="name=ct-tomcat"`
@@ -34,6 +36,11 @@ kill-jenkins:
 	docker stop `docker ps -a -q --filter="name=ct-jenkins"`
 	docker rm -f `docker ps -a -q --filter="name=ct-jenkins"`
 
+kill-email:
+	docker stop `docker ps -a -q --filter="name=ct-email"`
+	docker rm -f `docker ps -a -q --filter="name=ct-email"`
+
+
 start-jenkins:
 	if [ ! -a /var/jenkins_home ] ; then  mkdir -p /var/jenkins_home; fi
 	docker run -itd \
@@ -44,6 +51,18 @@ start-jenkins:
 		-p 50000:50000 \
 		-u root \
 		-v /var/jenkins_home:/var/jenkins_home jenkins
+
+start-email:
+	if [ ! -a /var/email_home ] ; then  mkdir -p /var/email_home; fi
+	docker run -itd \
+		--name ct-email \
+		--network=ct-network  \
+		--link=ct-mongo:mongo \
+		-e RELAY_NETWORKS=10.0.0.0/16 \
+		-e MAILNAME=communitytable.com \
+		-h email \
+		-u root \
+		-v /var/email_home:/var/email_home
 
 start-mongo:
 	if [ ! -a /usr/local/mongodb/data ]; then mkdir -p /usr/local/mongodb/data; fi
@@ -78,6 +97,11 @@ start-tomcat:
 		-v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps \
 		-p 8080:8080 tomcat:8.0
 
+
+
+
+# test suite
+
 restart-tomcat-test: kill-tomcat-test start-tomcat-test
 
 kill-tomcat-test:
@@ -97,9 +121,10 @@ start-tomcat-test:
 		-v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps \
 		tomcat:8.0 bash
 
-
+# deployment
 deploy:
 	cd /root/CommunityTable/WebApp/ && \
 		mvn clean install && \
 		cp /root/CommunityTable/WebApp/target/CommunityTables.war /usr/local/tomcat/webapps/  && \
 		cd /root/CommunityTable/platform/ && make restart-tomcat
+

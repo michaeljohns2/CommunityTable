@@ -1,0 +1,2 @@
+mail._domainkey	IN	TXT	( "v=DKIM1; k=rsa; "
+	  "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDN+Jv6dpIhMW72jhNOb6olV/Yp3o/eVYrvhjVq8aeRMbTWtqTBx6s5ekrbOC+J3s6MXNyP0gawyJEK+kFVSx46o+1tJbD3k+dZwodGOaKCGgR6QulxMB1iTrphVWlhfiSQDMRAOYGJd26SieZA2uhSuh/9ZCBduPJYfVP+dPavkwIDAQAB" )  ; ----- DKIM key mail for communitytables.com

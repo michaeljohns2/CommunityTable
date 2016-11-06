@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  mail:
+    image: tvial/docker-mailserver:latest
+    hostname: mail
+    domainname: domain.com
+    container_name: mail
+    ports:
+      - "25:25"
+      - "143:143"
+      - "587:587"
+      - "993:993"
+    volumes:
+      - maildata:/var/mail
+      - ./config/:/tmp/docker-mailserver/
+
+volumes:
+  maildata:
+    driver: local
