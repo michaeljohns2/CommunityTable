@@ -8,11 +8,9 @@ import java.util.ResourceBundle;
 /**
  * Created by keljd on 11/5/2016.
  */
-public class BaseRepository {
+public class BaseRepository implements DataConstants {
 
-    private static final String DB_NAME = "CommunityTables";
-
-    private String mongoServerName = null;
+    protected String mongoServerName = null;//protected for tests
 
     public BaseRepository() {
         ResourceBundle resources = ResourceBundle.getBundle("Messages");
@@ -20,8 +18,7 @@ public class BaseRepository {
     }
 
     public MongoDatabase getMongoDatabase() {
-        MongoClient mongo = new MongoClient( mongoServerName , 27017 );
-        MongoDatabase db = mongo.getDatabase(DB_NAME);
-        return db;
+        MongoClient mongo = new MongoClient(mongoServerName , DB_PORT);
+        return mongo.getDatabase(DB_NAME);
     }
 }
