@@ -18,3 +18,5 @@ Add email address:
 POST /rest/emails.json
 Expects a string body consisting of an email address (without any extra formatting)
 Returns a JSON representation of the email, or an error message.
+Error conditions include: Email already exists, invalid email format.
+
