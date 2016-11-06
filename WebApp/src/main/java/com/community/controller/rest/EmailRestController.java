@@ -76,7 +76,7 @@ public class EmailRestController {
         return error;
     }
 
-    @ExceptionHandler(ApiException.class)
+    @ExceptionHandler(ApiServerException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
     public ApiErrorDetail serverErrorHandler(HttpServletRequest request, Exception exception) {
