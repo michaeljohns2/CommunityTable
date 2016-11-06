@@ -120,19 +120,136 @@ The backlog is ordered by value generated to our stakeholders, namely Community 
 
 ### Forecast
 
-We forecasted we could get the following tasks done during Sprint 1 (**21 story points**):
-- https://trello.com/c/YH9TVWmy/10-site-landing-page-8-pts
-- https://trello.com/c/DYbCK0DY/11-member-email-signup-5-pts
-- https://trello.com/c/nWvH72BO/37-welcome-email-on-member-signup-5-pts
-- https://trello.com/c/a5qfa004/38-member-unsubscribe-email-address-3-pts
+Based on the fact that we all still needed to configure the project and get it running on our localhost, we forecasted we could get **21 story points** done during this sprint.
 
 ### Burndown
 
 ![Burndown Chart Sprint 1](https://image-charts.com/chart?cht=lc&chd=t:21.00,18.67,16.33,14.00,11.67,9.33,7.00,4.67,2.33,0.00|21,21,21,21,21&chco=2196F3,FF5722&chxt=x,y&chxl=0:|1|2|3|4|5|6|7|8|9|10|&chs=600x200&chtt=Burndown%20Chart%20Sprint%201&chg=20,0,1,3)
 
+### Daily Scrums
+
+#### Thursday, November 3rd
+
+##### Michael
+_What did you accomplish yesterday?_
+> locally ran CommunityTable, added plugin for mvn tomcat run
+
+_What will you do today?_
+> implement cucumber tests
+
+#### Kel
+_What did you accomplish yesterday?_
+> I created a setup guide and tested deployments to the host server.
+
+_What will you do today?_
+> I hope to upload an example of Java->Mongo DB connection
+
+_What obstacles are impeding your progress?_
+none atm
+
+#### Shawn
+_What did you accomplish yesterday?_
+> Gathered some images.
+
+_What will you do today?_
+> Hope to get an example Bootstrap page up and running on the server.
+
+_What obstacles are impeding your progress?_
+> Need more info on the local development env. Do I need the whole thing? Or can I just work off of the front-end side?
+
+#### Paul
+_What did you accomplish yesterday?_
+> Worked on my local development environment.
+
+_What will you do today?_
+> Finish setting up local dev environment and learning Spring so I can plan on how to implement tasks.
+
+_What obstacles are impeding your progress?_
+> Need to spend time learning Spring so I can get started. Need to discuss deployment process with team.
+
+#### Melvin
+_What did you accomplish yesterday?_
+> - created the burndown chart
+
+_What will you do today?_
+> - meeting (we need to convert the sprint backlog into tasks)
+> - probably partner with someone on frontend
+> - try to get project running on localhost
+
+#### Dairai
+_What did you accomplish yesterday?_
+> I had to re-do my local environment setup and include missing components like mongo db
+
+_What will you do today?_
+> Identify which of the identified story points I can start on as soon as possible
+
+##### Vinod 
+_What did you accomplish yesterday?_
+> setup my local dev env
+
+_What will you do today?_
+> jenkins setup for CI/CD
+
+#### Tuesday, November 1st
+
+##### Michael
+_What did you accomplish yesterday?_
+> Presented Community Tables project overview to class
+
+_What will you do today?_
+> Updating JetBrains Education license and looking into Cucumber
+
+##### Shawn
+_What did you accomplish yesterday?_
+> Successfully took my 2-yr old trick-or-treating for his 1st Halloween
+
+_What will you do today?_
+> Find resource images to be used in landing page. Upload them to src/main/webapp/images
+
+_What obstacles are impeding your progress?_
+> Want to make sure that within this MVC that "src/main/webapp" is the best place for the front-end files, like Bootstrap.css and .js and images. Yes? Better place?
+
+##### Melvin
+_What did you accomplish yesterday?_
+> - set up this nifty thing
+> - looked into the assignment requirements for the coming 2 weeks
+
+_What will you do today?_
+> - hopefully be able to get forecasting and task creation done over slack together
+
+_What obstacles are impeding your progress?_
+> same question as Shawn
+
+##### Kel
+_What did you accomplish yesterday?_
+> I was able to get a basic Java MVC framework running on Vinods server instance
+
+_What will you do today?_
+
+> I will update the git source project with a build that works on the server instance
+_What obstacles are impeding your progress?_
+> Remedial Linux skillz :)
+
+##### Vinod
+_What did you accomplish yesterday?_
+> Worked on setting up incubation server
+
+_What will you do today?_
+> Will work on automating local sandbox setup for development
+
+##### Dairai
+_What did you accomplish yesterday?_
+> I setup my local environment so i can begin coding
+
+_What will you do today?_
+> I am planning on finishing up the setup and then identifying a sprint task and partner
+
+_What obstacles are impeding your progress?_
+> I need to find a partner to work with and determine and suitable schedule
+
 ## More Info
 
-We can also be found in Canvas [Project Group 6](https://canvas.harvard.edu/courses/18031/groups) and on our [Slack](https://agilefall2016.slack.com/messages/community_tables) channel. 
+We can also be found in Canvas [Project Group 6](https://canvas.harvard.edu/courses/18031/groups) and on our [Slack](https://agilefall2016.slack.com/messages/community_tables) channel. Our Kanban board can be found at [Trello](https://trello.com/b/i9TmhPfB/final-project-community-table).
 
 ##### This is a final project for [Agile Software Development CSCI-E71](http://agilesoftwarecourse.org/) as part of degree requirements for  [Harvard Extension School](http://www.extension.harvard.edu/).
 
