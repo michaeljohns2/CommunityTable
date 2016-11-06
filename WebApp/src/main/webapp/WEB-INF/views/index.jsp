@@ -12,13 +12,12 @@
 <body>
 	<div id="wrap">
 		<div class="container">
-			<section class="main-content">
-				<div class="row">
-					<h1>${greeting}</h1>
+			<section id="landing-page">
+				<div class="row" id="main-content">
+					<h1 class="center huge-text">${greeting}</h1>
 			    
-				    <p class="error">
+				    <p class="large-text">
 				    	${body}
-						<img src="resources/img/typewriter.jpg">
 				    </p>
 
 				</div><!--/.row-->
@@ -27,7 +26,11 @@
 	</div><!--/#wrap-->
 
 	<footer id="footer">
-		This is the sticky footer. Should stay at the bottom of the page.
+		<div class="container">
+			<p>
+				(c) CommunityTable 2016
+			</p>
+		</div>
 	</footer>
 
     <script type="text/javascript" src="webjars/jquery/3.1.1/jquery.min.js"></script>
