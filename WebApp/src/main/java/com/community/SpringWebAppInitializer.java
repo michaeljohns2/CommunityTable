@@ -19,7 +19,8 @@ public class SpringWebAppInitializer implements WebApplicationInitializer {
       ServletRegistration.Dynamic dispatcher = servletContext.addServlet("SpringDispatcher",
               new DispatcherServlet(appContext));
       dispatcher.setLoadOnStartup(1);
-      dispatcher.addMapping("*.html");
+      dispatcher.addMapping("*.html");  // This extension is used for requesting Views.
+      dispatcher.addMapping("*.json");  // This extension is used for REST requests producing JSON.
  
       dispatcher.setInitParameter("contextClass", appContext.getClass().getName());
  
