@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.community.model.EmailModel;
 
 import java.net.UnknownHostException;
+import java.util.ResourceBundle;
 
 /**
  * This is a sample controller for handling email functions.
@@ -24,6 +25,9 @@ public class EmailController {
 
     @RequestMapping(value="/email", method= RequestMethod.GET)
     public String displayEmailSignup(Model model) {
+
+        ResourceBundle resources = ResourceBundle.getBundle("Messages");
+        model.addAttribute("reglbl", resources.getString("enter.email.registration.label"));
 
         EmailModel emailModel = new EmailModel();
         model.addAttribute("emailModel", emailModel);

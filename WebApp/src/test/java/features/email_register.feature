@@ -8,5 +8,6 @@ Feature: Member email signup
     When I attempt to register <email>
     Then application should have <plus_one> emails
     Examples:
-      | email | plus_one |
-      | foo@bar.com |  1 |
+      | email         | plus_one |
+      | foo@bar.com   |  1       |
+      | john@smith.cc |  2       |
