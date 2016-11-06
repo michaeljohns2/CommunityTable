@@ -17,10 +17,12 @@ import java.util.List;
 public class EmailRestController {
 
     @Autowired
-    EmailRepository emailRepo;
+    private EmailRepository emailRepo;
 
     @RequestMapping(value="/rest/emails", method= RequestMethod.GET)
     public List<EmailModel> getEmails() {
         return emailRepo.getAllEmails();
     }
+
+
 }
