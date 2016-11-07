@@ -1,0 +1,22 @@
+These operations can be tested with a utility such as Postman for Chrome or SOAP UI.
+
+Error responses:
+Successful operations will result in HTTP code 200 and an appropriate JSON structure.
+Failed responses will result in HTTP 400 (bad API usage / parameters) or 500 (server error).
+Error details will be returned in a JSON structure:
+
+Example error structure:
+{ "message": "Email already exists" }
+
+!!API Operations!!
+
+List email addresses:
+GET /rest/emails.json
+Retrieves a list of all emails (for test validation, need to eventually secure this behind /Admin login
+
+Add email address:
+POST /rest/emails.json
+Expects a string body consisting of an email address (without any extra formatting)
+Returns a JSON representation of the email, or an error message.
+Error conditions include: Email already exists, invalid email format.
+

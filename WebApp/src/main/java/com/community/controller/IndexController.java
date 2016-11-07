@@ -14,7 +14,7 @@ public class IndexController {
 
         ResourceBundle resources = ResourceBundle.getBundle("Messages");
         model.addAttribute("greeting", resources.getString("index.greeting"));
-        model.addAttribute("details", resources.getString("index.details"));
+        model.addAttribute("body", resources.getString("index.body"));
         
         return "index";
         
