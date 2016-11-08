@@ -52,6 +52,23 @@ body {
     padding: 0 0 60px; /* pad bottom sticky-footer height */
 }
 
+#email{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/typewriter.jpg');
+    background-size: cover;
+    height: 100%;
+    min-height: 100%;
+}
+
+#emailSubmit{
+    width: 100%;
+    visibility: collapse;
+}
+
+.subscriptionStatus{
+    display: none;
+    font: 15px arial, sans-serif;
+}
+
 #footer {
     color: #EFE0B9;
     height: 60px; /* sticky-footer fixed height */

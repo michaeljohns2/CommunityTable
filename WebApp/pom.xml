@@ -9,6 +9,19 @@
   <url>http://maven.apache.org</url>
   
   <dependencies>
+       <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+           <dependency>
+               <groupId>org.webjars</groupId>
+               <artifactId>bootstrap</artifactId>
+               <version>3.3.6</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.webjars.bower/jquery -->
+           <dependency>
+                <groupId>org.webjars.bower</groupId>
+                <artifactId>jquery</artifactId>
+                <version>3.1.1</version>
+            </dependency>
 
         <!-- Servlet Library -->
         <!-- http://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
