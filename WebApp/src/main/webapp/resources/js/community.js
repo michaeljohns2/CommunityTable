@@ -1,11 +1,6 @@
 /**
- * Created by SRoeAir on 11/6/16.
+ * Created by SRoe on 11/6/16.
  */
-
-function enterEmail() {
-    document.getElementById('emailSubmit').style.visibility = "visible";
-    document.getElementById('subscribe').style.visibility = "collapse";
-}
 
 $("#subscribeToNewsletter").submit(function(e) {
 

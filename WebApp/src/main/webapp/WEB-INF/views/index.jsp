@@ -21,6 +21,23 @@
 				    <p class="large-text">
 				    	${body}
 				    </p>
+					<div id="emailSubmit" class="center">
+						<form id="subscribeToNewsletter" onsubmit="sendEmailRequest();">
+							<input type="email" id="emailAddress" placeholder="your@email.com">
+							<button class="btn btn-lg btn-warning" type="submit">I Want to Help the Community</button>
+						</form>
+					</div>
+					<div id="failSubscription" class="subscriptionStatus alert alert-warning">
+						<p>
+							Whoops! Something went wrong. Did you type your email address correctly?
+						</p>
+					</div>
+					<div id="successfulSubscription" class="subscriptionStatus alert alert-success" role="alert">
+						<p>
+							Woo-hoo! Thanks for taking a seat at the Community Table. We'll keep you up-to-date on
+							what we're doing and how you can get involved. Keep your eyes on your email.
+						</p>
+					</div>
 
 				</div><!--/.row-->
 			</section><!--/.main-content-->
@@ -29,25 +46,6 @@
 
 	<footer id="footer">
 		<div class="container">
-			<div id="emailSubmit">
-				<form id="subscribeToNewsletter" onsubmit="sendEmailRequest();">
-					<input type="text" id="emailAddress">
-					<input type="submit" value="Enter Email" />
-				</form>
-			</div>
-			<div id="subscribe">
-				<a href="javascript:void(0)" onclick="enterEmail();">Subscribe via Email</a>
-			</div>
-			<div id="failSubscription" class="subscriptionStatus">
-				<p>
-					Fail
-				</p>
-			</div>
-			<div id="successfulSubscription" class="subscriptionStatus">
-				<p>
-					Success
-				</p>
-			</div>
 			<div>
 				(c) CommunityTable 2016
 			</div>
