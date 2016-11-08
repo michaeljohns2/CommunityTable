@@ -1,6 +1,7 @@
 
  /*  Color scheme:
-
+  from: http://www.colorcombos.com/color-schemes/386/ColorCombo386.html;
+  
   brown: #643B0F;       dark
   dark-green: #2A2C05;  darker
   creme: #EFE0B9;       light
@@ -43,7 +44,7 @@ body {
 /* Wrapper for page content to push down footer */
 #wrap {
     /* TODO: make this background image only for the landing page. */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/sharing-meal-table.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/neighbors-table-openhousechurch.jpg');
     background-size: cover;
     min-height: 100%;
     height: 801px !important;
