@@ -65,7 +65,7 @@ body {
 }
 
 .subscriptionStatus{
-    visibility: collapse;
+    display: none;
     font: 15px arial, sans-serif;
 }
 

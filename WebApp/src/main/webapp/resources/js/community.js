@@ -14,19 +14,17 @@ $("#subscribeToNewsletter").submit(function(e) {
     $.ajax({
         method:'POST',
         cache:false,
-        url: '/CommunityTables/rest/emails.json',//$(this).attr('action'),
-        data: emailAddr,//{"emailAddress":"test.nyabando@gmail.com"},
+        url: '/CommunityTables/rest/emails.json',
+        data: emailAddr,
         contentType: 'multipart/form-data',
         success:function(result)//we got the response
         {
+            $('#successfulSubscription').fadeIn(300).delay(10000).fadeOut(300);
             document.getElementById('emailSubmit').style.visibility = "collapse";
             document.getElementById('subscribe').style.visibility = "visible";
-            document.getElementById('successfulSubscription').style.visibility = "visible";
         },
         error:function(exception){
-            document.getElementById('emailSubmit').style.visibility = "collapse";
-            document.getElementById('subscribe').style.visibility = "visible";
-            document.getElementById('failSubscription').style.visibility = "visible";
+            $('#failSubscription').fadeIn(300).delay(10000).fadeOut(300);
         }
 
     });
