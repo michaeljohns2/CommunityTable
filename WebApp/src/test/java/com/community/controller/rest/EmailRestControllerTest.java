@@ -3,14 +3,13 @@ package com.community.controller.rest;
 import com.community.ApplicationContextConfig;
 import com.community.Exceptions.ApiException;
 import com.community.data.EmailRepositoryTest;
-import com.community.model.EmailModel;
+import com.community.model.EmailAddressModel;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.TestContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.util.ReflectionTestUtils;
@@ -37,14 +36,14 @@ public class EmailRestControllerTest {
 
     @Test
     public void getEmails_EmptyRepo_Test() {
-        List<EmailModel> emails = controller.getEmails();
+        List<EmailAddressModel> emails = controller.getEmails();
         Assert.assertNotNull(emails);
         Assert.assertTrue(emails.size() == 0);
     }
 
     @Test
     public void addEmail_AddOne_Test() {
-        EmailModel model = controller.addEmail("test@test.com");
+        EmailAddressModel model = controller.addEmail("test@test.com");
         Assert.assertTrue(model != null);
         Assert.assertTrue(model.getEmailAddress().equals("test@test.com"));
         Assert.assertTrue(model.getSecureHash() != null);
@@ -52,7 +51,7 @@ public class EmailRestControllerTest {
 
     @Test
     public void addEmail_DuplicateEmail_Test() {
-        EmailModel model = controller.addEmail("test@test.com");
+        EmailAddressModel model = controller.addEmail("test@test.com");
         Assert.assertTrue(model != null);
         Assert.assertTrue(model.getEmailAddress().equals("test@test.com"));
 
@@ -68,7 +67,7 @@ public class EmailRestControllerTest {
     @Test
     public void addEmail_Invalid_Test() {
         try {
-            EmailModel model = controller.addEmail("test");
+            EmailAddressModel model = controller.addEmail("test");
         } catch (ApiException ex) {
             Assert.assertEquals(ex.getMessage(), EmailRestController.EMAIL_INVALID_MESSAGE );
             return;

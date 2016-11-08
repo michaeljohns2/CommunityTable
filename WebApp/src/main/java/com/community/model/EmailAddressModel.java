@@ -6,12 +6,12 @@ import java.util.UUID;
 /**
  * This class shows a sample of using annotation validators.
  */
-public class EmailModel {
+public class EmailAddressModel {
 
     private String emailAddress;
     private String secureHash;
 
-    public EmailModel() {
+    public EmailAddressModel() {
         setSecureHash(UUID.randomUUID().toString());
     }
 

@@ -1,7 +1,7 @@
 package stepdefs;
 
 import com.community.data.EmailRepositoryTest;
-import com.community.model.EmailModel;
+import com.community.model.EmailAddressModel;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.slf4j.LoggerFactory;
@@ -27,7 +27,7 @@ public class EmailRegisterStepdefs {
 
     @Then("^application should have (\\d+) emails$")
     public void applicationShouldHavePlusOneEmails(int plusOne) throws Throwable {
-        List<EmailModel> emails = repo.getAllEmails();
+        List<EmailAddressModel> emails = repo.getAllEmails();
         LOG.debug(String.format("All Emails ==> (plusOne of %d)",plusOne));
         emails.forEach( element -> LOG.debug(element.getEmailAddress()));
         assert emails.size() == plusOne;

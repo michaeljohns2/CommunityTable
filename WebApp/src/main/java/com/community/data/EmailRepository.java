@@ -1,8 +1,7 @@
 package com.community.data;
 
-import com.community.model.EmailModel;
+import com.community.model.EmailAddressModel;
 import com.google.common.collect.Iterables;
-import com.mongodb.*;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -21,20 +20,20 @@ import java.util.List;
 public class EmailRepository extends BaseRepository {
 
     /**
-     * Attempts to save an EmailModel as a MongoDB email entry.
+     * Attempts to save an EmailAddressModel as a MongoDB email entry.
      *
-     * @param emailModel
+     * @param emailAddressModel
      * @throws UnknownHostException
      */
-    public void saveEmail(EmailModel emailModel) throws UnknownHostException {
-        if (emailModel == null || emailModel.getEmailAddress() == null) {
+    public void saveEmail(EmailAddressModel emailAddressModel) throws UnknownHostException {
+        if (emailAddressModel == null || emailAddressModel.getEmailAddress() == null) {
             throw new IllegalArgumentException("EmailAddress cannot be null.");
         }
 
         MongoDatabase db = this.getMongoDatabase();
 
         Document emailDoc = new Document();
-        emailDoc.put(EMAIL_FIELD, emailModel.getEmailAddress());
+        emailDoc.put(EMAIL_FIELD, emailAddressModel.getEmailAddress());
 
         MongoCollection<Document> emailCollection = db.getCollection(EMAIL_COLLECTION);
         emailCollection.insertOne(emailDoc);
@@ -47,7 +46,7 @@ public class EmailRepository extends BaseRepository {
      * @return  A found emailModel matching the email address, or null.
      * @throws UnknownHostException
      */
-    public EmailModel getEmail(String emailAddress) throws UnknownHostException {
+    public EmailAddressModel getEmail(String emailAddress) throws UnknownHostException {
 
         MongoDatabase db = this.getMongoDatabase();
         MongoCollection<Document> emailCollection = db.getCollection(EMAIL_COLLECTION);
@@ -63,13 +62,13 @@ public class EmailRepository extends BaseRepository {
             throw new RuntimeException("Stored email object is invalid.");
         }
 
-        EmailModel foundEmail = new EmailModel();
+        EmailAddressModel foundEmail = new EmailAddressModel();
         foundEmail.setEmailAddress(email.get(EMAIL_FIELD).toString());
         return foundEmail;
     }
 
-    public List<EmailModel> getAllEmails() {
-        final List<EmailModel> emails = new ArrayList<EmailModel>();
+    public List<EmailAddressModel> getAllEmails() {
+        final List<EmailAddressModel> emails = new ArrayList<EmailAddressModel>();
         MongoDatabase db = this.getMongoDatabase();
         MongoCollection<Document> emailCollection = db.getCollection(EMAIL_COLLECTION);
 
@@ -81,13 +80,13 @@ public class EmailRepository extends BaseRepository {
         return emails;
     }
 
-    private EmailModel mapEmail(Document emailDoc) {
+    private EmailAddressModel mapEmail(Document emailDoc) {
         if (emailDoc.get(EMAIL_FIELD) == null) {
             throw new RuntimeException("Stored email object is invalid.");
         }
 
-        EmailModel emailModel = new EmailModel();
-        emailModel.setEmailAddress(emailDoc.get(EMAIL_FIELD).toString());
-        return emailModel;
+        EmailAddressModel emailAddressModel = new EmailAddressModel();
+        emailAddressModel.setEmailAddress(emailDoc.get(EMAIL_FIELD).toString());
+        return emailAddressModel;
     }
 }

@@ -1,6 +1,6 @@
 package com.community.data;
 
-import com.community.model.EmailModel;
+import com.community.model.EmailAddressModel;
 import com.github.fakemongo.junit.FongoRule;
 import com.mongodb.client.MongoDatabase;
 import org.junit.Rule;
@@ -31,11 +31,11 @@ public class EmailRepositoryTest extends EmailRepository {
         return fongoRule.getFongo().getDatabase(DB_NAME);
     }
 
-    public EmailModel saveEmailInternal(String addr) throws UnknownHostException {
-        EmailModel emailModel = new EmailModel();
-        emailModel.setEmailAddress(addr);
-        this.saveEmail(emailModel);
-        return emailModel;
+    public EmailAddressModel saveEmailInternal(String addr) throws UnknownHostException {
+        EmailAddressModel emailAddressModel = new EmailAddressModel();
+        emailAddressModel.setEmailAddress(addr);
+        this.saveEmail(emailAddressModel);
+        return emailAddressModel;
     }
 
     @Test
@@ -55,7 +55,7 @@ public class EmailRepositoryTest extends EmailRepository {
             this.saveEmailInternal(emailAddr);
 
             //2. run this test
-            EmailModel foundEmail = this.getEmail(emailAddr);
+            EmailAddressModel foundEmail = this.getEmail(emailAddr);
             assertNotNull("Expected foundEmail to not equal null.",foundEmail);
             assertEquals(String.format("Expected email found and matching provided address '%s'.",emailAddr),emailAddr,foundEmail.getEmailAddress());
         } catch (Exception e) {
@@ -71,7 +71,7 @@ public class EmailRepositoryTest extends EmailRepository {
             this.saveEmailInternal(emailAddr);
 
             //2. run this test
-            List<EmailModel> emails = this.getAllEmails();
+            List<EmailAddressModel> emails = this.getAllEmails();
             assertEquals("Expected 1 email available.",1,emails.size());
         } catch (Exception e) {
             LOG.error(e.getMessage(),e);

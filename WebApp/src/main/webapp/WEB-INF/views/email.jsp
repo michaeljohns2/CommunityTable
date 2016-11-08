@@ -13,7 +13,7 @@
 <body>
 
 
-<form:form modelAttribute="emailModel">
+<form:form modelAttribute="emailAddressModel">
     <form:errors path="*" cssClass="errorBlock" element="div" />
     <label for="emailAddress">${reglbl}</label>
     <form:input path="emailAddress"  cssErrorClass="error" />
