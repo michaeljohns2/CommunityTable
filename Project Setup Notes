@@ -18,7 +18,18 @@ However, you can build the WAR running command line "mvn clean install", which d
 
 Project Structure
 In a Spring MVC project, we don't usually reference JSP files directly. 
-We access them through route mappings, which are mapped to a controller. 
+We access them through route mappings, which are mapped to a controller.
+
+Setting Up and Running Mongo in Docker (throw away instances)
+If you have docker locally, you can run the following commands:
+host (pull mongo image) --> `docker pull mongo:3.2`
+host (launch container) --> `docker run --rm -it -p 27017:27017 mongo:3.2 bash`
+container (start mongo) --> `mongod`
+host (get container_name, e.g. petty_hotdog) --> `docker ps | grep mongo`
+host (get container ip address) --> `docker inspect <container_name> | grep IPAddress`
+host (edit hosts file) --> add `<container_ip> Mongo` to /etc/hosts
+container (kill processing, this will erase data) --> `Ctrl+C` to stop mongod then `exit`
+#run the docker run... command again to re-launch
 
 
 
