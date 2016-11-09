@@ -4,7 +4,7 @@ package com.community.model;
 import java.util.UUID;
 
 /**
- * This class shows a sample of using annotation validators.
+ *      This model represents the data associated with an email account.
  */
 public class EmailAddressModel {
 

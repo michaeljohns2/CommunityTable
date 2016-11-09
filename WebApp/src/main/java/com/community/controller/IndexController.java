@@ -17,7 +17,7 @@ public class IndexController {
         model.addAttribute("body", resources.getString("index.body"));
         
         return "index";
-        
+
     }
  
 }

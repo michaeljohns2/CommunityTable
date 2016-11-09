@@ -34,6 +34,7 @@ public class EmailRepository extends BaseRepository {
 
         Document emailDoc = new Document();
         emailDoc.put(EMAIL_FIELD, emailAddressModel.getEmailAddress());
+        emailDoc.put(EMAIL_HASH, emailAddressModel.getSecureHash());
 
         MongoCollection<Document> emailCollection = db.getCollection(EMAIL_COLLECTION);
         emailCollection.insertOne(emailDoc);

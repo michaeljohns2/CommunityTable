@@ -17,4 +17,5 @@ public interface DataConstants {
     //#################################################################################################################
     String EMAIL_COLLECTION = "emailCollection";
     String EMAIL_FIELD = "emailAddress";
+    String EMAIL_HASH = "emailHash";
 }

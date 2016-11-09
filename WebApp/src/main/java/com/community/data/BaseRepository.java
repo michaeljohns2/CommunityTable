@@ -13,7 +13,7 @@ public class BaseRepository implements DataConstants {
     protected String mongoServerName = null;//protected for tests
 
     public BaseRepository() {
-        ResourceBundle resources = ResourceBundle.getBundle("Messages");
+        ResourceBundle resources = ResourceBundle.getBundle("Server");
         mongoServerName = resources.getString("mongo.server");
     }
 
