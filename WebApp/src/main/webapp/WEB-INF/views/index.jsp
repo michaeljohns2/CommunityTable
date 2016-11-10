@@ -12,41 +12,68 @@
 </head>
  
 <body>
-	<div id="wrap">
+
+	<nav class="navbar navbar-default navbar-static-top">
 		<div class="container">
-			<section id="landing-page">
-				<div class="row" id="main-content">
-					<h1 class="center huge-text">${greeting}</h1>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">${brand}</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse pull-right">
+				<ul class="nav navbar-nav">
+					<li><a href="#first">What We Do</a></li>
+					<li><a href="#second">How You Can Help</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+	<div class="wrapper">
 
-				    <p class="large-text">
-				    	${body}
-				    </p>
-					<div id="emailSubmit" class="center">
-						<form id="subscribeToNewsletter" onsubmit="sendEmailRequest();">
-							<input type="email" id="emailAddress" placeholder="your@email.com">
-							<button class="btn btn-lg btn-warning" type="submit">I Want to Help the Community</button>
-						</form>
+		<div class="container">
+			<div id="landing-page">
+				<section id="first" class="row">
+					<div>
+						<h1 class="first_title">${first_title}</h1>
+						<p class="first_body">${first_body}</p>
 					</div>
-					<div id="failSubscription" class="subscriptionStatus alert alert-warning">
-						<p>
-							Whoops! Something went wrong. Did you type your email address correctly?
-						</p>
-					</div>
-					<div id="successfulSubscription" class="subscriptionStatus alert alert-success" role="alert">
-						<p>
-							Woo-hoo! Thanks for taking a seat at the Community Table. We'll keep you up-to-date on
-							what we're doing and how you can get involved. Keep your eyes on your email.
-						</p>
-					</div>
+				</section>
 
-				</div><!--/.row-->
-			</section><!--/.main-content-->
+				<section id="second" class="row">
+					<div>
+						<h1 class="second_title">${second_title}</h1>
+						<p class="second_body">${second_body}</p>
+						<div id="emailSubmit" class="center">
+							<form id="subscribeToNewsletter" onsubmit="sendEmailRequest();">
+								<input type="email" id="emailAddress" placeholder="your@email.com">
+								<button class="btn btn-lg btn-warning" type="submit">I Want to Help the Community</button>
+							</form>
+						</div>
+						<div id="failSubscription" class="subscriptionStatus alert alert-warning">
+							<p>
+								Whoops! Something went wrong. Did you type your email address correctly?
+							</p>
+						</div>
+						<div id="successfulSubscription" class="subscriptionStatus alert alert-success" role="alert">
+							<p>
+								Woo-hoo! Thanks for taking a seat at the Community Table. We'll keep you up-to-date on
+								what we're doing and how you can get involved. Keep your eyes on your email.
+							</p>
+						</div>
+					</div>
+				</section>
+
+			</div><!--/#landing-page-->
 		</div><!--/.container-->
-	</div><!--/#wrap-->
+	</div><!--/.wrapper-->
 
 	<footer id="footer">
 		<div class="container">
-			<div>
+			<div class="row center">
 				(c) CommunityTable 2016
 			</div>
 		</div>
