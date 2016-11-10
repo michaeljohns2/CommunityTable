@@ -1,7 +1,9 @@
 package com.community.data;
 
+import com.community.Exceptions.EmailNotFoundException;
 import com.community.model.EmailAddressModel;
 import com.google.common.collect.Iterables;
+import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -63,9 +65,7 @@ public class EmailRepository extends BaseRepository {
             throw new RuntimeException("Stored email object is invalid.");
         }
 
-        EmailAddressModel foundEmail = new EmailAddressModel();
-        foundEmail.setEmailAddress(email.get(EMAIL_FIELD).toString());
-        return foundEmail;
+        return mapEmail(email);
     }
 
     public List<EmailAddressModel> getAllEmails() {
@@ -88,6 +88,28 @@ public class EmailRepository extends BaseRepository {
 
         EmailAddressModel emailAddressModel = new EmailAddressModel();
         emailAddressModel.setEmailAddress(emailDoc.get(EMAIL_FIELD).toString());
+        emailAddressModel.setSecureHash(emailDoc.get(EMAIL_HASH).toString());
         return emailAddressModel;
+    }
+
+    public void deleteEmail(String secureHash) throws EmailNotFoundException {
+
+        MongoDatabase db = this.getMongoDatabase();
+        MongoCollection<Document> emailCollection = db.getCollection(EMAIL_COLLECTION);
+
+        BasicDBObject query = new BasicDBObject();
+        query.put(EMAIL_HASH, secureHash);
+
+        long resultCount = emailCollection.count(query);
+
+        if (resultCount == 1) {
+            emailCollection.findOneAndDelete(query);
+        } else if (resultCount == 0) {
+            throw new EmailNotFoundException("An email was not found for secureHash value: " + secureHash);
+        } else {
+            // Log that there were multiple records
+            System.out.println("Warning: Found and deleted multiple email records matching secureHash: " + secureHash);
+            emailCollection.deleteMany(query);
+        }
     }
 }

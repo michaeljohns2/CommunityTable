@@ -1,5 +1,6 @@
 package com.community.data;
 
+import com.community.Exceptions.EmailNotFoundException;
 import com.community.model.EmailAddressModel;
 import com.github.fakemongo.junit.FongoRule;
 import com.mongodb.client.MongoDatabase;
@@ -78,4 +79,34 @@ public class EmailRepositoryTest extends EmailRepository {
             fail(e.getMessage());
         }
     }
+
+    @Test
+    public void deleteEmailTest() {
+        try {
+            this.saveEmailInternal(emailAddr);
+
+            String secureHash = this.getEmail(emailAddr).getSecureHash();
+            System.out.println("SecureHash value is : " + secureHash);
+            this.deleteEmail(secureHash);
+        } catch (Exception e) {
+            LOG.error(e.getMessage(),e);
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void deleteNonExistentEmailTest() {
+        try {
+            this.saveEmailInternal(emailAddr);
+
+            this.deleteEmail("12345");
+            fail("This secureHash value shouldn't exist");
+        } catch (EmailNotFoundException ex) {
+            return;
+        } catch (Exception e) {
+            LOG.error(e.getMessage(),e);
+            fail(e.getMessage());
+        }
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.community.controller;
 
+import com.community.Exceptions.EmailNotFoundException;
 import com.community.data.EmailRepository;
 import com.community.model.EmailAddressModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.net.UnknownHostException;
 
@@ -55,5 +57,15 @@ public class EmailController {
         // TODO display some kind of success message
 
         return "redirect:index.html";
+    }
+
+    @RequestMapping(value="/email/unsubscribe", method=RequestMethod.GET)
+    public String deleteEmail(@RequestParam(name="key") String secureHash) {
+        try {
+            emailRepo.deleteEmail(secureHash);
+            return "emailDeleted";
+        } catch (EmailNotFoundException e) {
+            return "emailDeleteFailed";
+        }
     }
 }

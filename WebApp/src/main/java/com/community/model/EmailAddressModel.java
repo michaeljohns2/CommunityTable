@@ -11,10 +11,6 @@ public class EmailAddressModel {
     private String emailAddress;
     private String secureHash;
 
-    public EmailAddressModel() {
-        setSecureHash(UUID.randomUUID().toString());
-    }
-
     public String getEmailAddress() {
         return emailAddress;
     }
@@ -24,6 +20,7 @@ public class EmailAddressModel {
     }
 
     public String getSecureHash() {
+        if (secureHash==null) {setSecureHash(UUID.randomUUID().toString());}
         return secureHash;
     }
 
