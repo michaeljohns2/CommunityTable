@@ -188,7 +188,7 @@ _What will you do today?_
 
 ### Impediments
 
-* IRP = Impediment Removal Plan
+_IRP = Impediment Removal Plan_
 
 #### Shawn Roe - Nov 10th, 08:33 am
 > Not sure where the welcome email html template should live in the Spring framework. Do I build the HTML welcome email for it to be sent out once a user signs up?
