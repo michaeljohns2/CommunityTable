@@ -186,6 +186,40 @@ _What did you accomplish yesterday?_
 _What will you do today?_
 > jenkins setup for CI/CD
 
+### Impediments
+
+* IRP = Impediment Removal Plan
+
+#### Shawn Roe - Nov 10th, 08:33 am
+> Not sure where the welcome email html template should live in the Spring framework. Do I build the HTML welcome email for it to be sent out once a user signs up?
+
+IRP: Needs answer.
+
+#### Shawn Roe - Nov 8th, 08:46 am
+> Waiting for the email script.
+
+IRP: Email script was given.
+
+#### Vinod Halaharvi - Nov 8th, 06:37 am
+> link on the aws server ‘/CommunityTables/email.html’ is returning 404
+
+IRP: Needs to be resolved.
+
+#### Shawn Roe - Nov 3rd, 01:44 pm
+> Need more info on the local development env. Do I need the whole thing? Or can I just work off of the front-end side?
+
+IRP: Resolved.
+
+#### Shawn Roe - Nov 1st, 09:07 am
+> Want to make sure that within this MVC that "src/main/webapp" is the best place for the front-end files, like Bootstrap.css and .js and images. Yes? Better place?
+
+IRP: Answered in Slack.
+
+#### Dairai Nyabando - Nov 1st, 05:31 am
+> I need to find a partner to work with and determine and suitable schedule
+
+IRP: Addressed by using @channel mention, matched Dairai with a partner.
+
 ### Collaboration
 
 ![Melvin & Shawn Pair Programming](https://github.com/michaeljohns2/CommunityTable/blob/master/Screen%20Shot%202016-11-06%20at%2012.16.34%20PM%20(1).png?raw=true)
