@@ -87,8 +87,17 @@ public class EmailRepository extends BaseRepository {
         }
 
         EmailAddressModel emailAddressModel = new EmailAddressModel();
-        emailAddressModel.setEmailAddress(emailDoc.get(EMAIL_FIELD).toString());
-        emailAddressModel.setSecureHash(emailDoc.get(EMAIL_HASH).toString());
+
+        Object address = emailDoc.get(EMAIL_FIELD);
+        if (address!=null) {
+            emailAddressModel.setEmailAddress(address.toString());
+        }
+
+        Object hash = emailDoc.get(EMAIL_HASH);
+        if (hash!=null) {
+            emailAddressModel.setSecureHash(hash.toString());
+        }
+
         return emailAddressModel;
     }
 

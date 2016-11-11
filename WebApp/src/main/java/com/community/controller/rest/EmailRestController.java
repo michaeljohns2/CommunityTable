@@ -45,7 +45,10 @@ public class EmailRestController {
 
     @RequestMapping(value="/rest/emails", method= RequestMethod.GET)
     public List<EmailAddressModel> getEmails() {
-        return emailRepo.getAllEmails();
+        List<EmailAddressModel> emails = emailRepo.getAllEmails();
+        // Delete hash values from output for security
+        for (EmailAddressModel email : emails) {email.setSecureHash("");}
+        return emails;
     }
 
     private boolean isValidEmailAddress(String emailAddress){
