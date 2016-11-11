@@ -116,7 +116,7 @@ The backlog is ordered by value generated to our stakeholders, namely Community 
 
 ### Forecast
 
-Based on the fact that we all still needed to configure the project and get it running on our localhost, we forecasted we could get **21 story points** done during this sprint.
+Based on the fact that we all still needed to configure the project and get it running on our localhost before we were able to begin work on the stories that actually delivered product value, we forecasted we could get **21 story points** done during this sprint.
 
 ### Burndown
 
