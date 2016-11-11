@@ -162,7 +162,7 @@ _What will you do today?_
 
 _What obstacles are impeding your progress?_
 > Need to spend time learning Spring so I can get started. Need to discuss deployment process with team.
-#
+
 #### Melvin
 _What did you accomplish yesterday?_
 > - created the burndown chart
