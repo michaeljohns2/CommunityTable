@@ -1,7 +1,5 @@
 There are a lot of online tutorials for Spring MVC. 
-In this doc, I'm just going to describe the bare minimum needed to start work on the project.
-
-
+This doc describe minimums needed to start work on the project.
 
 Opening and running the project in IntelliJ
 
@@ -11,10 +9,16 @@ Opening and running the project in IntelliJ
 4) Also go to Project Structure->Project Settings-> Modules and change language level from 5 to 8.
 5) To have IntelliJ generate a WAR file on Make go to File->Project Structure->Artifacts and check "Build on Make".
 6) You should be able to build the project without error.
-7( Now you should be able to drop the WAR file into a Tomcat 8 webapps folder on a local server and run it (tested on Tomcat 8 / Windows 10 machine).
+7) Tomcat
+  option-1: Drop the WAR file into a Tomcat 8 webapps folder on a local server and run it (tested on Tomcat 8 / Windows 10 machine).
+  option-2: run the provided plugin `mvn tomcat7:run` (you can set this up as a run config in your IDE or run from the command line)
+            Note: this mvn command works with Tomcat 7 and 8 (we are using 8); it uses the embedded Tomcat jars configured in the pom
 
-NOTE: The WAR file that IntelliJ generates did not seem to run on AWS instance.
+NOTE: The WAR file that IntelliJ generates may not run on AWS instance (due to java 8 issues).
 However, you can build the WAR running command line "mvn clean install", which does work on AWS.
+
+TEST NOTE: When running tests, any existing 'tomcat' folder in the 'target' folder may need to be deleted to avoid
+           conflicts with the mock/fake mongo (fongo) and tomcat testing.
 
 Project Structure
 In a Spring MVC project, we don't usually reference JSP files directly. 
@@ -22,16 +26,7 @@ We access them through route mappings, which are mapped to a controller.
 
 Setting Up and Running Mongo in Docker (throw away instances)
 If you have docker locally, you can run the following commands:
-host (pull mongo image) --> `docker pull mongo:3.2`
-host (launch container) --> `docker run --rm -it -p 27017:27017 mongo:3.2 bash`
-container (start mongo) --> `mongod`
-host (get container_name, e.g. petty_hotdog) --> `docker ps | grep mongo`
-host (get container ip address) --> `docker inspect <container_name> | grep IPAddress`
+host (launch container) --> `docker run --rm -it -p 27017:27017 -h mongo --name test_mongo mongo:latest bash -c mongod`
+host (get container ip address) --> `docker inspect test_mongo | grep IPAddress`
 host (edit hosts file) --> add `<container_ip> Mongo` to /etc/hosts
-container (kill processing, this will erase data) --> `Ctrl+C` to stop mongod then `exit`
-#run the docker run... command again to re-launch
-
-
-
-
-
+container (kill processing, this will erase data) --> `Ctrl+C` to stop mongod and exit the container

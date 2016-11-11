@@ -83,7 +83,10 @@ public class EmailRepositoryTest extends EmailRepository {
     @Test
     public void deleteEmailTest() {
         try {
+            //1. pre-condition -- call #saveEmailInternal()
             this.saveEmailInternal(emailAddr);
+
+            //2. run this test
             String secureHash = this.getEmail(emailAddr).getSecureHash();
             this.deleteEmail(secureHash);
             assertNull(this.getEmail(emailAddr));
@@ -96,7 +99,10 @@ public class EmailRepositoryTest extends EmailRepository {
     @Test
     public void deleteNonExistentEmailTest() {
         try {
+            //1. pre-condition -- call #saveEmailInternal()
             this.saveEmailInternal(emailAddr);
+
+            //2. run this test
             this.deleteEmail("12345");
             fail("This secureHash value shouldn't exist");
         } catch (EmailNotFoundException ex) {
