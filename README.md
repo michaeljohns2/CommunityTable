@@ -122,7 +122,7 @@ Based on the fact that we all still needed to configure the project and get it r
 
 ![Burndown Chart Sprint 1](https://image-charts.com/chart?cht=lc&chd=t:21.00,18.67,16.33,14.00,11.67,9.33,7.00,4.67,2.33,0.00|21.00,21.00,21.00,20.42,20.42,14.00,11.67,10.50,8.17&chco=2196F3,FF5722&chxt=x,y&chxl=0:|1|2|3|4|5|6|7|8|9|10|&chs=600x200&chtt=Burndown%20Chart%20Sprint%201&chg=20,0,1,3)
 
-### Daily Scrums
+### Daily Scrums (1-day sample)
 
 #### Thursday, November 3rd
 
@@ -185,63 +185,6 @@ _What did you accomplish yesterday?_
 
 _What will you do today?_
 > jenkins setup for CI/CD
-
-#### Tuesday, November 1st
-
-##### Michael
-_What did you accomplish yesterday?_
-> Presented Community Tables project overview to class
-
-_What will you do today?_
-> Updating JetBrains Education license and looking into Cucumber
-
-##### Shawn
-_What did you accomplish yesterday?_
-> Successfully took my 2-yr old trick-or-treating for his 1st Halloween
-
-_What will you do today?_
-> Find resource images to be used in landing page. Upload them to src/main/webapp/images
-
-_What obstacles are impeding your progress?_
-> Want to make sure that within this MVC that "src/main/webapp" is the best place for the front-end files, like Bootstrap.css and .js and images. Yes? Better place?
-
-##### Melvin
-_What did you accomplish yesterday?_
-> - set up this nifty thing
-> - looked into the assignment requirements for the coming 2 weeks
-
-_What will you do today?_
-> - hopefully be able to get forecasting and task creation done over slack together
-
-_What obstacles are impeding your progress?_
-> same question as Shawn
-
-##### Kel
-_What did you accomplish yesterday?_
-> I was able to get a basic Java MVC framework running on Vinods server instance
-
-_What will you do today?_
-
-> I will update the git source project with a build that works on the server instance
-_What obstacles are impeding your progress?_
-> Remedial Linux skillz :)
-
-##### Vinod
-_What did you accomplish yesterday?_
-> Worked on setting up incubation server
-
-_What will you do today?_
-> Will work on automating local sandbox setup for development
-
-##### Dairai
-_What did you accomplish yesterday?_
-> I setup my local environment so i can begin coding
-
-_What will you do today?_
-> I am planning on finishing up the setup and then identifying a sprint task and partner
-
-_What obstacles are impeding your progress?_
-> I need to find a partner to work with and determine and suitable schedule
 
 ## More Info
 
