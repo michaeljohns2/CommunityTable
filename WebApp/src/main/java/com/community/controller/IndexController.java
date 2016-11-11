@@ -15,6 +15,9 @@ public class IndexController {
         ResourceBundle resources = ResourceBundle.getBundle("Messages");
         model.addAttribute("greeting", resources.getString("index.greeting"));
         model.addAttribute("body", resources.getString("index.body"));
+        model.addAttribute("submitlbl", resources.getString("email.submit.label"));
+        model.addAttribute("success", resources.getString("email.subscribe.success"));
+        model.addAttribute("fail", resources.getString("email.subscribe.fail"));
         
         return "index";
 

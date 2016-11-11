@@ -19,6 +19,10 @@ $("#subscribeToNewsletter").submit(function(e) {
             document.getElementById('subscribe').style.visibility = "visible";
         },
         error:function(exception){
+            //push the exception response text into the fail block on index
+            jsonValue = jQuery.parseJSON( exception.responseText );
+            document.getElementById('failSubscription').getElementsByTagName("P").item(0).innerHTML = jsonValue.message;
+
             $('#failSubscription').fadeIn(300).delay(10000).fadeOut(300);
         }
 

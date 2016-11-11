@@ -24,18 +24,17 @@
 					<div id="emailSubmit" class="center">
 						<form id="subscribeToNewsletter" onsubmit="sendEmailRequest();">
 							<input type="email" id="emailAddress" placeholder="your@email.com">
-							<button class="btn btn-lg btn-warning" type="submit">I Want to Help the Community</button>
+							<button class="btn btn-lg btn-warning" type="submit">${submitlbl}</button>
 						</form>
 					</div>
 					<div id="failSubscription" class="subscriptionStatus alert alert-warning">
 						<p>
-							Whoops! Something went wrong. Did you type your email address correctly?
+							${fail}
 						</p>
 					</div>
 					<div id="successfulSubscription" class="subscriptionStatus alert alert-success" role="alert">
 						<p>
-							Woo-hoo! Thanks for taking a seat at the Community Table. We'll keep you up-to-date on
-							what we're doing and how you can get involved. Keep your eyes on your email.
+							${success}
 						</p>
 					</div>
 

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.net.UnknownHostException;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
 /**
@@ -66,6 +67,9 @@ public class EmailRestController {
 
     @RequestMapping(value="/rest/emails", method= RequestMethod.POST)
     public EmailAddressModel addEmail(@RequestBody String emailAddress){
+
+        ResourceBundle resources = ResourceBundle.getBundle("Messages");
+
         try {
             if (emailRepo.getEmail(emailAddress) == null) {
                 if (isValidEmailAddress(emailAddress)){
@@ -80,14 +84,16 @@ public class EmailRestController {
 
                     return address;
                 } else {
-                    throw new ApiException(EMAIL_INVALID_MESSAGE);
+                    throw new ApiException(resources.getString("email.subscribe.fail"));//failed to add
                 }
             } else {
-                throw new ApiException(EMAIL_EXISTS_MESSAGE);
+                //EMAIL_EXISTS_MESSAGE
+                throw new ApiException(resources.getString("email.subscribe.duplicate"));//duplicate
             }
         } catch (UnknownHostException e) {
+            //EMAIL_INVALID_MESSAGE
             e.printStackTrace();
-            throw new ApiServerException("Error connecting to data store.");
+            throw new ApiServerException(resources.getString("email.server.fail"));//server failure
         }
     }
 
@@ -95,6 +101,7 @@ public class EmailRestController {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public ApiErrorDetail errorHandler(HttpServletRequest request, Exception exception) {
+
         ApiErrorDetail error = new ApiErrorDetail();
         error.setMessage(exception.getMessage());
 

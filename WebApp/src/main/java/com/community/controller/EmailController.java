@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.net.UnknownHostException;
+import java.util.ResourceBundle;
 
 /**
  * This is a sample controller for handling email functions.
@@ -40,21 +41,25 @@ public class EmailController {
             return "email";
         }
 
+        ResourceBundle resources = ResourceBundle.getBundle("Messages");
+
         // Save the email
         try {
             if (emailRepo.getEmail(emailAddressModel.getEmailAddress()) != null) {
 
-                // TODO email exists.
+                // TODO duplicate email message (IS THIS OVERCOME BY USE OF 'EmailRestController'?)
+
                 return "email";
             }
             emailRepo.saveEmail(emailAddressModel);
         } catch (UnknownHostException ex) {
-            // TODO display some sort of error message.
+
+            // TODO fail message  (IS THIS OVERCOME BY USE OF 'EmailRestController'?)
+
             return "email";
         }
 
-
-        // TODO display some kind of success message
+        // TODO success message (IS THIS OVERCOME BY USE OF 'EmailRestController'?)
 
         return "redirect:index.html";
     }
