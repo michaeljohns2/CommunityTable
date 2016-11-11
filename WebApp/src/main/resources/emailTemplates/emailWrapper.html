@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Community Tables</title>
+</head>
+
+<body>
+<div id="wrap">
+    <div class="container">
+        <section>
+            <div class="row" id="main-content">
+                {$email.content}
+            </div><!--/.row-->
+        </section><!--/.main-content-->
+    </div><!--/.container-->
+</div><!--/#wrap-->
+
+<footer id="footer">
+    <div class="container">
+
+        <div id="failSubscription" class="subscriptionStatus">
+            <p>
+                <a href="{$email.unsubscribe.link}">Unsubscribe</a>
+            </p>
+        </div>
+        <div>
+            (c) CommunityTable 2016
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>

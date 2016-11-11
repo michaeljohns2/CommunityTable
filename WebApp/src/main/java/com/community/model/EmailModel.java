@@ -1,18 +1,35 @@
 package com.community.model;
 
-
 /**
- * This class shows a sample of using annotation validators.
+ * This class represents an instance of an email that the system will send.
  */
 public class EmailModel {
 
-    private String emailAddress;
+    private String emailContent;
+    private EmailAddressModel sendTo;
+    private String subject;
 
-    public String getEmailAddress() {
-        return emailAddress;
+    public String getEmailContent() {
+        return emailContent;
     }
 
-    public void setEmailAddress(String email) {
-        this.emailAddress = email;
+    public void setEmailContent(String emailContent) {
+        this.emailContent = emailContent;
+    }
+
+    public EmailAddressModel getSendTo() {
+        return sendTo;
+    }
+
+    public void setSendTo(EmailAddressModel sendTo) {
+        this.sendTo = sendTo;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 }

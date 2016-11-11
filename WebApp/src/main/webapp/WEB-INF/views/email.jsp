@@ -13,9 +13,9 @@
 <body>
 
 
-<form:form modelAttribute="emailModel">
+<form:form modelAttribute="emailAddressModel">
     <form:errors path="*" cssClass="errorBlock" element="div" />
-    <label for="emailAddress">Enter Email Address:</label>
+    <label for="emailAddress">${reglbl}</label>
     <form:input path="emailAddress"  cssErrorClass="error" />
     <form:errors path="emailAddress" cssClass="error"  />
     <br>

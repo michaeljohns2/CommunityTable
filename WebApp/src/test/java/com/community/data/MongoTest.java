@@ -1,18 +1,15 @@
-package com.community.db;
+package com.community.data;
 
 import com.community.InstanceTestClassListener;
 import com.github.fakemongo.Fongo;
 import com.github.fakemongo.junit.FongoRule;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import org.junit.After;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.slf4j.LoggerFactory;
-
-import java.util.logging.Logger;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
@@ -41,7 +38,7 @@ public class MongoTest implements InstanceTestClassListener {
 
     /* once you have a DB instance, you can interact with it
        just like you would with a real one. */
-    protected DB db = null;
+    protected MongoDatabase db = null;
 
     public void beforeClassSetup() throws Exception {
         //anything?
@@ -57,7 +54,7 @@ public class MongoTest implements InstanceTestClassListener {
     public void beforeMethod(){
         //get hook from fongoRule for test
         fongo = fongoRule.getFongo();
-        db = fongo.getDB(dbName);
+        db = fongo.getDatabase(dbName);
 
         assertTrue("Expected fong instance not null",fongo != null);
         assertTrue("Expected db instance not null",db != null);
@@ -66,9 +63,9 @@ public class MongoTest implements InstanceTestClassListener {
     @Test
     public void mongoInsertTest() {
         try {
-            DBCollection collection = db.getCollection(collectionName);
+            MongoCollection<Document> collection = db.getCollection(collectionName);
             assertTrue(String.format("Expected collection '%s' to exist", collectionName), collectionName != null);
-            collection.insert(new BasicDBObject("name", "jon"));
+            collection.insertOne(new Document("name", "jon"));
 
             long expected = 1;
             long actual = collection.count();
