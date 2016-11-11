@@ -162,7 +162,7 @@ _What will you do today?_
 
 _What obstacles are impeding your progress?_
 > Need to spend time learning Spring so I can get started. Need to discuss deployment process with team.
-
+#
 #### Melvin
 _What did you accomplish yesterday?_
 > - created the burndown chart
@@ -185,6 +185,12 @@ _What did you accomplish yesterday?_
 
 _What will you do today?_
 > jenkins setup for CI/CD
+
+### Collaboration
+
+![Melvin & Shawn Pair Programming](https://github.com/michaeljohns2/CommunityTable/blob/master/Screen%20Shot%202016-11-06%20at%2012.16.34%20PM%20(1).png?raw=true)
+
+![Team Meeting/Mob Programming](https://github.com/michaeljohns2/CommunityTable/blob/master/Pasted%20image%20at%202016_11_07%2007_33%20PM.png?raw=true)
 
 ## More Info
 
