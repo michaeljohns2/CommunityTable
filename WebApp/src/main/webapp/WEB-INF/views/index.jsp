@@ -7,12 +7,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Community Tables</title>
-	<link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="resources/css/community.css">
 </head>
  
 <body>
-
 	<nav class="navbar navbar-default navbar-static-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -26,8 +25,8 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse pull-right">
 				<ul class="nav navbar-nav">
-					<li><a href="#first">What We Do</a></li>
-					<li><a href="#second">How You Can Help</a></li>
+					<li><a href="#first">${first_nav_title}</a></li>
+					<li><a href="#second">${second_nav_title}</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -39,28 +38,33 @@
 				<section id="first" class="row">
 					<div>
 						<h1 class="first_title">${first_title}</h1>
-						<p class="first_body">${first_body}</p>
+						<p class="first_body">
+							${first_body}
+						</p>
 					</div>
 				</section>
 
 				<section id="second" class="row">
 					<div>
 						<h1 class="second_title">${second_title}</h1>
-						<p class="second_body">${second_body}</p>
+						<p class="second_body">
+							${second_body}
+						</p>
 						<div id="emailSubmit" class="center">
 							<form id="subscribeToNewsletter" onsubmit="sendEmailRequest();">
 								<input type="email" id="emailAddress" placeholder="your@email.com">
-								<button class="btn btn-lg btn-warning" type="submit">${email_submit_title}</button>
+								<button class="btn btn-lg btn-warning" type="submit">${submit_label}</button>
 							</form>
+							<p class="small">* We hate spam too. Don't worry, we won't share your email.</p>
 						</div>
 						<div id="failSubscription" class="subscriptionStatus alert alert-warning">
 							<p>
-								${email_fail}
+								${fail_message}
 							</p>
 						</div>
 						<div id="successfulSubscription" class="subscriptionStatus alert alert-success" role="alert">
 							<p>
-								${email_success}
+								${success_message}
 							</p>
 						</div>
 					</div>
@@ -72,14 +76,14 @@
 
 	<footer id="footer">
 		<div class="container">
-			<div class="row center">
+			<div class="center">
 				(c) CommunityTable 2016
 			</div>
 		</div>
 	</footer>
 
     <script type="text/javascript" src="webjars/jquery/3.1.1/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 	<%--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>--%>
 	<script type="text/javascript" src="resources/js/ping.js"></script>
 	<script type="text/javascript" src="resources/js/community.js"></script>
