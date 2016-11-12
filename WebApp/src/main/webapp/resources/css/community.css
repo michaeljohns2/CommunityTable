@@ -1,57 +1,87 @@
+/*  Color scheme:
 
- /*  Color scheme:
-  from: http://www.colorcombos.com/color-schemes/386/ColorCombo386.html;
-  
-  brown: #643B0F;       dark
-  dark-green: #2A2C05;  darker
-  creme: #EFE0B9;       light
-  yellow-orange: #E4B04A; bright
-  orange-red: #B7521E;
+ brown: #643B0F;       dark
+ dark-green: #2A2C05;  darker
+ creme: #EFE0B9;       light
+ yellow-orange: #E4B04A; bright
+ orange-red: #B7521E;
 
-  */
+ */
 
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC|Andika);
 
-html,
+/****
+ BASIC ELEMENT STYLING
+*****/
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     color: #EFE0B9;
     font: 18px/30px Andika, Helvetica, Arial, sans-serif;
     font-weight: 200;
+    /* TODO: move this to only the landing page */
+    background-image: linear-gradient(rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 0.7)), url('../img/neighbors-table.jpg');
     height: 100%;
-    /* The html and body elements cannot have any padding or margin for sticky footer to work. */
-}
-
- h1 {
-     font-family: 'Amatic SC', Georgia, cursive;
-     font-size: 3.2em;
-     color: #F3F3F3;
- }
-
- .huge-text {
-     font-size: 5em;
-     font-weight: bold;
- }
-
- .large-text {
-     font-size: 1.6em;
-     line-height: 1.6em;
- }
-
- #main-content {
-     padding-bottom: 60px;
-}
-
-/* Wrapper for page content to push down footer */
-#wrap {
-    /* TODO: make this background image only for the landing page. */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/neighbors-table-openhousechurch.jpg');
     background-size: cover;
-    min-height: 100%;
-    height: 801px !important;
-    height: 100%;
-    margin: 0 auto -60px; /* negative sticky-footer height */
-    padding: 0 0 60px; /* pad bottom sticky-footer height */
 }
+
+h1, h2, h3 {
+    font-family: 'Amatic SC', Georgia, cursive;
+    color: #F3F3F3;
+}
+h1 { font-size: 3.2em; }
+h2 { font-size: 2.4em; }
+h3 { font-size: 1.6em; }
+
+
+.navbar {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.navbar-default .navbar-brand {
+    font-family: 'Amatic SC', Georgia, cursive;
+    font-size: 32px;
+    color: #E4B04A;
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    color: #f3f3f3;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #E4B04A;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #f3f3f3;
+}
+
+input {
+    color: #333333;
+}
+
+/****
+GLOBAL CLASSES
+*****/
+.center {
+    text-align: center;
+}
+
+.huge-text {
+    font-size: 5em;
+    font-weight: bold;
+}
+
+.large-text {
+    font-size: 1.6em;
+    line-height: 1.6em;
+}
+
+/****
+ PAGE TEMPLATE STYLING
+*****/
+
 
 #email{
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/typewriter.jpg');
@@ -70,32 +100,12 @@ body {
 }
 
 #footer {
+    background-color: #2B2C2A;
+    bottom: 0;
     color: #EFE0B9;
-    height: 60px; /* sticky-footer fixed height */
-    background-color: #B7521E;
-}
-
-#footer > .container {
-  margin-top: -60px; /* negative value of sticky-footer height */
-  height: 60px;
-  clear:both;
-  padding-left: 15px;
-  padding-right: 15px;
-  text-align: center;
-}
-
-.center {
-    text-align: center;
-}
-
-.error {
-    color: #ff0000;
-}
-
-.errorblock {
-    color: #000;
-    background-color: #ffeeee;
-    border: 3px solid #ff0000;
-    padding: 8px;
-    margin: 16px;
+    height: 80px; /* sticky-footer fixed height */
+    margin-top: 60px;
+    padding: 15px;
+    position: relative;
+    width: 100%;
 }

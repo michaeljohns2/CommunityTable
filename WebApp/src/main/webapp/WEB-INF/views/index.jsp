@@ -7,45 +7,76 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Community Tables</title>
-	<link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="resources/css/community.css">
 </head>
  
 <body>
-	<div id="wrap">
+	<nav class="navbar navbar-default navbar-static-top">
 		<div class="container">
-			<section id="landing-page">
-				<div class="row" id="main-content">
-					<h1 class="center huge-text">${greeting}</h1>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">${brand}</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse pull-right">
+				<ul class="nav navbar-nav">
+					<li><a href="#first">${first_nav_title}</a></li>
+					<li><a href="#second">${second_nav_title}</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+	<div class="wrapper">
 
-				    <p class="large-text">
-				    	${body}
-				    </p>
-					<div id="emailSubmit" class="center">
-						<form id="subscribeToNewsletter" onsubmit="sendEmailRequest();">
-							<input type="email" id="emailAddress" placeholder="your@email.com">
-							<button class="btn btn-lg btn-warning" type="submit">${submitlbl}</button>
-						</form>
-					</div>
-					<div id="failSubscription" class="subscriptionStatus alert alert-warning">
-						<p>
-							${fail}
+		<div class="container">
+			<div id="landing-page">
+				<section id="first" class="row">
+					<div>
+						<h1 class="first_title">${first_title}</h1>
+						<p class="first_body">
+							${first_body}
 						</p>
 					</div>
-					<div id="successfulSubscription" class="subscriptionStatus alert alert-success" role="alert">
-						<p>
-							${success}
-						</p>
-					</div>
+				</section>
 
-				</div><!--/.row-->
-			</section><!--/.main-content-->
+				<section id="second" class="row">
+					<div>
+						<h1 class="second_title">${second_title}</h1>
+						<p class="second_body">
+							${second_body}
+						</p>
+						<div id="emailSubmit" class="center">
+							<form id="subscribeToNewsletter" onsubmit="sendEmailRequest();">
+								<input type="email" id="emailAddress" placeholder="your@email.com">
+								<button class="btn btn-lg btn-warning" type="submit">${submit_label}</button>
+							</form>
+							<p class="small">* We hate spam too. Don't worry, we won't share your email.</p>
+						</div>
+						<div id="failSubscription" class="subscriptionStatus alert alert-warning">
+							<p>
+								${fail_message}
+							</p>
+						</div>
+						<div id="successfulSubscription" class="subscriptionStatus alert alert-success" role="alert">
+							<p>
+								${success_message}
+							</p>
+						</div>
+					</div>
+				</section>
+
+			</div><!--/#landing-page-->
 		</div><!--/.container-->
-	</div><!--/#wrap-->
+	</div><!--/.wrapper-->
 
 	<footer id="footer">
 		<div class="container">
-			<div>
+			<div class="center">
 				(c) CommunityTable 2016
 			</div>
 		</div>
