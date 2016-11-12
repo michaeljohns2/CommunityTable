@@ -26,7 +26,7 @@ $("#subscribeToNewsletter").submit(function(e) {
             },
             error:function(exception){
                 //push the exception response text into the fail block on index
-                jsonValue = jQuery.parseJSON( exception.responseText );
+                var jsonValue = jQuery.parseJSON( exception.responseText );
                 document.getElementById('failSubscription').getElementsByTagName("P").item(0).innerHTML = jsonValue.message;
 
                 $('#failSubscription').fadeIn(300).delay(10000).fadeOut(300);
@@ -34,9 +34,10 @@ $("#subscribeToNewsletter").submit(function(e) {
         });
 
     }).fail(function (failure, url, time, on) {
-        console.log("ping fail", arguments);
+        //console.log("ping fail", arguments);
         //Had to hard-code this exception
-        document.getElementById('failSubscription').getElementsByTagName("P").item(0).innerHTML = "So sorry, we are experiencing issues connecting to data store to save your email. Please try again later!";
+        var msg = "Whoops! We messed that up. Our bad. Would you mind trying that again? We'd really love to keep you informed about our upcoming services. You can press the 'back' button and enter your email address again. If that doesn't work, please come back later to try again a little later. Thanks. Sorry about that!";
+        document.getElementById('failSubscription').getElementsByTagName("P").item(0).innerHTML = msg;
 
         $('#failSubscription').fadeIn(300).delay(10000).fadeOut(300);
     });
