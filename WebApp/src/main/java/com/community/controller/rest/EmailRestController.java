@@ -48,7 +48,7 @@ public class EmailRestController {
     public List<EmailAddressModel> getEmails() {
         List<EmailAddressModel> emails = emailRepo.getAllEmails();
         // Delete hash values from output for security
-        for (EmailAddressModel email : emails) {email.setSecureHash("");}
+//        for (EmailAddressModel email : emails) {email.setSecureHash("");}
         return emails;
     }
 
