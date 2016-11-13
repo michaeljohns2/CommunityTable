@@ -109,6 +109,12 @@
           <scope>test</scope>
       </dependency>
 
+      <!--SSH Connection dependency for sending emails-->
+      <dependency>
+          <groupId>com.jcraft</groupId>
+          <artifactId>jsch</artifactId>
+          <version>0.1.46</version>
+      </dependency>
       <!-- Cucumber-Java -->
       <!-- within https://github.com/cucumber/cucumber-jvm -->
       <dependency>

@@ -64,11 +64,11 @@ public class EmailBuilder {
         if (resource == null) {
             throw new TemplateNotFoundException(String.format("Did not find template [%s.html]", templateName));
         }
-        File file = new File(resource.getFile());
 
         try {
+            File file = new File(resource.toURI());
             content = new Scanner(file).useDelimiter("\\Z").next();
-        } catch (FileNotFoundException ex) {
+        } catch (Exception ex) {
             throw new TemplateNotFoundException(String.format("Did not find template [%s.html]", templateName));
         }
         return content;
