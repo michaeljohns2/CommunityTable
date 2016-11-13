@@ -112,6 +112,12 @@ The backlog is ordered by value generated to our stakeholders, namely Community 
 - Developer (Front End/Back End) / DevOps: Vinod Halaharvi
 - Developer (Front End) / UX Designer: Shawn Roe
 
+## Architecture
+Community Tables is a Java 8 Spring MVC web application which leverages HTML5, CSS3 and third party libraries. The primary data store is a MongoDB database. See the architecture diagram for more details:
+
+[Architecture Diagram]
+(https://github.com/michaeljohns2/CommunityTable/blob/master/community%20tables%20architecture.png "Architecture Diagram")
+
 ## Sprint 1 (10/8-11/11)
 
 Our sprint progress is documented at the following link:
