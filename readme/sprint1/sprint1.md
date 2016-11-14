@@ -39,7 +39,11 @@ Our stakeholders and Scrum Team agree that while release1 is feature complete un
 
 We used the [cucumber](https://cucumber.io/) framework to run our Behavior-Driven Development (BDD) tests. Specifically we tested email registration using BDD. See [email_register.feature](https://github.com/michaeljohns2/CommunityTable/blob/master/WebApp/src/test/java/features/email_register.feature), [EmailRegisterStepdefs](https://github.com/michaeljohns2/CommunityTable/blob/master/WebApp/src/test/java/stepdefs/EmailRegisterStepdefs.java), and the screenshot below (showing all tests passed). 
    
-   ![cucumber](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/cucumber.png)
+ ![cucumber](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/cucumber.png)
+   
+Our unit tests (used JUnit) are shown below.
+
+ ![unit](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/sprint1_unit-tests.png)
 
 ## Burndown
 
@@ -175,6 +179,7 @@ Our primary stakeholder is pleased with the progress and completeness of our eff
 
 - stakeholder offered additional custom content for both the landing page and welcome email (both of which are built for easy [Content Customization](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/site_template.png)).
 - when stakeholder deploys our release public (after security tasks and admin portal are completed, estimated for release2), stakeholder wants naming convention `elizabethton.communitytabletn.com` for hosting her configured site.
+- stakeholder requests that we assist her in setting up her public site and help her sort through hosting options. 
 - stakeholder wants to name the blog 'Table Talk' (estimated for release2).
 - stakeholder wants blogs to be rendered on her Community Table TN site to show summary with image and abstract and a link to expand to read all.
 - stakeholder wants to make the blog friendly for publishing to Facebook, e.g. url for each blog, Facebook able to show summary with image and abstract.

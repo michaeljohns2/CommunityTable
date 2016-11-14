@@ -92,7 +92,7 @@ public class EmailRestController {
 
                     return address;
                 } else {
-                    throw new ApiException(resources.getString("email.subscribe.fail"));//failed to add
+                    throw new ApiException(resources.getString("email.subscribe.fail_message"));//failed to add
                 }
             } else {
                 //EMAIL_EXISTS_MESSAGE

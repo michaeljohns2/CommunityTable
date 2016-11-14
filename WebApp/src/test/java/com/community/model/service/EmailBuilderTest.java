@@ -43,15 +43,16 @@ public class EmailBuilderTest {
     public void buildEmail_BadEmail_Test() {
         EmailBuilder builder = new EmailBuilder();
         EmailAddressModel address = getTestEmail();
-        address.setSecureHash(null);
+//        address.setSecureHash(null);//this is getting replaced on get
+        address.setEmailAddress(null);
 
         try {
-            EmailModel email = builder.buildEmail("foo", address);
+            EmailModel email = builder.buildEmail("welcomeEmail", address);
         } catch (InvalidEmailException ex) {
             return;  // We expect a failure in this test.
         }
 
-        Assert.fail("Expected a TemplateNotFoundException.");
+        Assert.fail("Expected an InvalidEmailException.");
     }
 
     @Test
