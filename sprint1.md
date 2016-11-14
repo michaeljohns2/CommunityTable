@@ -107,7 +107,10 @@ IRP: Answered in Slack.
 IRP: Addressed by using @channel mention, matched Dairai with a partner.
 
 ### Collaboration
+Our Team met as a group at least 2x per week to synchronize and elevate obstacles along our critical path; additionally, individuals teamed up to pair programmed in order to solve various engineering tasks.  
 
-![Melvin & Shawn Pair Programming](https://github.com/michaeljohns2/CommunityTable/blob/master/Screen%20Shot%202016-11-06%20at%2012.16.34%20PM%20(1).png?raw=true)
+![Code Review](https://github.com/michaeljohns2/CommunityTable/blob/master/code_review.png)
 
-![Team Meeting/Mob Programming](https://github.com/michaeljohns2/CommunityTable/blob/master/Pasted%20image%20at%202016_11_07%2007_33%20PM.png?raw=true)
+![Team Meeting](https://github.com/michaeljohns2/CommunityTable/blob/master/team_huddle)
+
+![Team Meeting / Mob Programming](https://github.com/michaeljohns2/CommunityTable/blob/master/Pasted%20image%20at%202016_11_07%2007_33%20PM.png)

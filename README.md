@@ -33,15 +33,19 @@ Our sprint progress is documented at the following link:
 [Sprint 1 (10/8-11/11)](https://github.com/michaeljohns2/CommunityTable/blob/master/sprint1.md)
 
 ### Release Notes
-1. Compelling and highly customizable site landing page 
+1. Compelling site landing page 
 
  ![Example Landing Page with Email Registration](https://github.com/michaeljohns2/CommunityTable/blob/master/community_table_tn_landing_13NOV2016.png)
+ 
+2. Backed by highly customizable templates ready for your content
+  
+ ![Example Site Template](https://github.com/michaeljohns2/CommunityTable/blob/master/site_template.png)
 
-2. Customized Welcome Email automatically sent upon registration 
+3. Customized Welcome Email automatically sent upon registration 
 
  ![Example Welcome Email](https://github.com/michaeljohns2/CommunityTable/blob/master/welcome_email.png)
 
-3. Unsubscribe link embedded in all site emails
+4. Unsubscribe link embedded in all site emails
 
  ![Example Email Unsubscribe Page](https://github.com/michaeljohns2/CommunityTable/blob/master/unsubscribe_success.png)
 
