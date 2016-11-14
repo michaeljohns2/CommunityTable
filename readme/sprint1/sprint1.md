@@ -2,7 +2,7 @@
 
 ## Forecast
 
-Based on the fact that we all still needed to configure the project and get it running on our localhost before we were able to begin work on the stories that actually delivered product value, we forecasted we could get **21 story points** done during this sprint.
+We forecasted we could get **21 story points** done during this sprint. Our forecast is primarily based on team member skill levels and technical demands of the actual prioritized PBIs. As this is the first sprint for the Community Tables Scrum Team, we were not sure what our actual velocity would be. Regardless, the forecast accounted for the fact that we each would need to locally configure the project, work through the learning curve of new frameworks, and be able to iterate on our localhost before we were able to begin work on the stories that actually delivered product value. 
 The forecast correlated to the first four stories from our [Initial Ordered Product Backlog](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#initial-product-backlog-order):
 
 | __Number__ | __Title__ | __Story Points__ | __Summary__
@@ -14,7 +14,7 @@ The forecast correlated to the first four stories from our [Initial Ordered Prod
 
 ## Actual
 
-We were able to close on all user stories forecasted within the sprint (reference our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done)). A summary of [release1](https://github.com/michaeljohns2/CommunityTable/blob/master/README.md#release-notes) is is given in the main readme.
+With some strain, we were able to close on all user stories forecasted within the sprint (reference our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done)). A summary of [release1](https://github.com/michaeljohns2/CommunityTable/blob/master/README.md#release-notes) is is given in the main readme.
 Our stakeholders and Scrum Team agree that while release1 is feature complete under sprint1 scope, we will not attempt to deploy into public production until further protections of Mongo and email services are completed -- these are captured as tasks within existing PBIs and are prioritized for sprint2.
 
 ### Acceptance Criteria and Sprint Tasks 
