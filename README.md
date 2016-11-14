@@ -22,7 +22,7 @@ Community Cloud Tables is a Java 8 Spring MVC web application which leverages HT
 ## Product Backlog
 Community Tables current product backlog is available to our Scrum Team members and management at [Trello](https://trello.com/b/i9TmhPfB/final-project-community-table)
 
-Reference our [Team Formation Sprint](https://github.com/michaeljohns2/CommunityTable/blob/master/sprint0.md) for a snapshot of our initial backlog, our Definition of Ready, Definition of Done, User Story Sizing approach, and starting Product Backlog snapshot. 
+Reference our [Team Formation Sprint](https://github.com/michaeljohns2/CommunityTable/blob/master/sprint0.md) for our Definition of Ready, Definition of Done, User Story Sizing approach, and starting Product Backlog snapshot. 
 
 ### Rationale for Backlog Order
 The backlog is ordered by value generated to our stakeholders, namely Community Table TN (the first customer for our open source products). We (as well as our key stakeholder) are starting from scratch (levering other open source software frameworks where feasible). PBIs are groomed to represent excellent users stories within our team's [Definition of Ready](https://github.com/michaeljohns2/CommunityTable/blob/master/sprint0.md) and have been estimated by the development team.
@@ -35,15 +35,15 @@ Our sprint progress is documented at the following link:
 ### Release Notes
 1. Compelling and highly customizable site landing page 
 
-![Example Landing Page with Email Registration](https://github.com/michaeljohns2/CommunityTable/blob/master/community_table_tn_landing_13NOV2016.png)
+ ![Example Landing Page with Email Registration](https://github.com/michaeljohns2/CommunityTable/blob/master/community_table_tn_landing_13NOV2016.png)
 
-3. Customized Welcome Email automatically sent upon registration 
+2. Customized Welcome Email automatically sent upon registration 
 
-![Example Welcome Email](https://github.com/michaeljohns2/CommunityTable/blob/master/example_email.png)
+ ![Example Welcome Email](https://github.com/michaeljohns2/CommunityTable/blob/master/welcome_email.png)
 
-2. Unsubscribe link embedded in all site emails
+3. Unsubscribe link embedded in all site emails
 
-![Example Email Unsubscribe Page](https://github.com/michaeljohns2/CommunityTable/blob/master/unsubscribe_success.png)
+ ![Example Email Unsubscribe Page](https://github.com/michaeljohns2/CommunityTable/blob/master/unsubscribe_success.png)
 
 ## Scrum Team
 - Scrum Master / Developer (Front End): Melvin Tercan
