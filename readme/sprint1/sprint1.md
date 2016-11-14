@@ -1,6 +1,6 @@
-## Sprint 1 (10/8-11/11)
+# Sprint 1 (10/8-11/11)
 
-### Forecast
+## Forecast
 
 Based on the fact that we all still needed to configure the project and get it running on our localhost before we were able to begin work on the stories that actually delivered product value, we forecasted we could get **21 story points** done during this sprint.
 The forecast correlated to the first four stories from our [Initial Ordered Product Backlog](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#initial-product-backlog-order):
@@ -12,12 +12,12 @@ The forecast correlated to the first four stories from our [Initial Ordered Prod
 | 3. | Welcome email on Member signup | 5 pts | As site owner, I want members to receive a welcome email when they sign-up, so that they know that we received their email address and so we can provide them with additional Community Table information. |
 | 4. | Member unsubscribe email address | 3 pts | As a member, I want emails from CommunityTable to include an unsubscribe link, so I can remove myself from future mailings. |
 
-### Actual
+## Actual
 
 We were able to close on all user stories forecasted within the sprint (reference our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done)). A summary of [release1](https://github.com/michaeljohns2/CommunityTable/blob/master/README.md#release-notes) is is given in the main readme.
-Our stakeholders and Scrum Team agree that while release1 is feature complete under sprint1 scope, we not attempt to deploy into public production until further protections of Mongo and email services are completed -- these are captured as tasks within existing PBIs and are prioritized for sprint2.
+Our stakeholders and Scrum Team agree that while release1 is feature complete under sprint1 scope, we will not attempt to deploy into public production until further protections of Mongo and email services are completed -- these are captured as tasks within existing PBIs and are prioritized for sprint2.
 
-#### Acceptance Criteria and Sprint Tasks 
+### Acceptance Criteria and Sprint Tasks 
 
 1. User Story : _Site landing page_
 
@@ -35,21 +35,21 @@ Our stakeholders and Scrum Team agree that while release1 is feature complete un
 
  ![Story 4 Acceptance Criteria & Tasks](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/sprint1_story4.png)
 
-#### Behavior-Driven Development & Unit Tests
+### Behavior-Driven Development & Unit Tests
 
 We used the [cucumber](https://cucumber.io/) framework to run our Behavior-Driven Development (BDD) tests. Specifically we tested email registration using BDD. See [email_register.feature](https://github.com/michaeljohns2/CommunityTable/blob/master/WebApp/src/test/java/features/email_register.feature), [EmailRegisterStepdefs](https://github.com/michaeljohns2/CommunityTable/blob/master/WebApp/src/test/java/stepdefs/EmailRegisterStepdefs.java), and the screenshot below (showing all tests passed). 
    
    ![cucumber](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/cucumber.png)
 
-### Burndown
+## Burndown
 
 ![Burndown Chart Sprint 1](https://image-charts.com/chart?cht=lc&chd=t:21.00,18.67,16.33,14.00,11.67,9.33,7.00,4.67,2.33,0.00|21.00,21.00,21.00,20.42,20.42,14.00,11.67,10.50,8.17,4.67&chco=2196F3,FF5722&chxt=x,y&chxl=0:|1|2|3|4|5|6|7|8|9|10|&chs=600x200&chtt=Burndown%20Chart%20Sprint%201&chg=20,0,1,3)
 
-### Daily Scrums (1-day sample)
+## Daily Scrums (1-day sample)
 
-#### Thursday, November 3rd
+### Thursday, November 3rd
 
-##### Michael
+#### Michael
 _What did you accomplish yesterday?_
 > locally ran CommunityTable, added plugin for mvn tomcat run
 
@@ -143,7 +143,7 @@ IRP: Answered in Slack.
 
 IRP: Addressed by using @channel mention, matched Dairai with a partner.
 
-### Collaboration
+## Collaboration
 Our Team met as a group at least 2x per week to synchronize and elevate obstacles along our critical path; additionally, individuals teamed up to pair program in order to solve various engineering tasks.  
 
 | __Date__ | __Meeting Type__ |
@@ -164,3 +164,29 @@ Our Team met as a group at least 2x per week to synchronize and elevate obstacle
 3. Example of a standing team meeting
  
  ![Standing Team Meeting](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/Pasted%20image%20at%202016_11_07%2007_33%20PM.png)
+
+## Sprint Review and Retrospective
+
+We conducted our sprint review with stakeholders and Scrum Team retrospective 13 NOV. 
+
+### Stakeholder Feeback
+
+Our primary stakeholder is pleased with the progress and completeness of our efforts. She offered the following feedback, mostly looking towards the next sprint:
+
+- stakeholder offered additional custom content for both the landing page and welcome email (both of which are built for easy [Content Customization](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/site_template.png)).
+- when stakeholder deploys our release public (after security tasks and admin portal are completed, estimated for release2), stakeholder wants naming convention `elizabethton.communitytabletn.com` for hosting her configured site.
+- stakeholder wants to name the blog 'Table Talk' (estimated for release2).
+- stakeholder wants blogs to be rendered on her Community Table TN site to show summary with image and abstract and a link to expand to read all.
+- stakeholder wants to make the blog friendly for publishing to Facebook, e.g. url for each blog, Facebook able to show summary with image and abstract.
+
+This feedback will be absorbed into the product backlog (and groomed) ahead of sprint 2 planning.
+ 
+### Scrum Team Retrospective
+
+While the retrospective is a generally closed door event, we chose to share these highlights:
+
+- It took longer to get up and running across the team due to the cold-start (i.e. first sprint with no legacy to build upon) and range of technologies (reference [Product Iteration Details](https://github.com/michaeljohns2/CommunityTable/blob/master/README.md#product-iteration-oct-dec-2016)) 
+- Spring MVC framework has a rather steep learning curve. More pinpointed documentation for features we are using would really help.
+- Any changes should be communicated clearly to the team so everyone understands what is happening.
+- We will shift to all development undertaken first within feature branches, then submitted by pull request for review and acceptance or modification. This procedural change will go far to address the feedback to communicate changes and will further enforce our two-eyes minimum code review prior as part of our  [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done). 
+- We need to maintain tighter communication accross the team, especially in the final days of the sprint. We will solicit commitments for responsiveness on Slack at our next team meeting.
