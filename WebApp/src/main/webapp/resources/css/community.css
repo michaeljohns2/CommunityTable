@@ -26,6 +26,7 @@ body {
     background-image: linear-gradient(rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 0.7)), url('../img/neighbors-table.jpg');
     height: 100%;
     background-size: cover;
+    padding: 10px;
 }
 
 h1, h2, h3 {
@@ -109,3 +110,5 @@ GLOBAL CLASSES
     position: relative;
     width: 100%;
 }
+
+
