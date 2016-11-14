@@ -131,7 +131,7 @@ Our Team met as a group at least 2x per week to synchronize and elevate obstacle
 | 10 NOV | Standing Team Meeting |
 | 13 NOV | Sprint Review & Retrospective |
 
-1. Example of a peer code review (part of our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/sprint0.md#definition-of-done))
+1. Example of a peer code review (part of our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done))
 
  ![Code Review](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/code_review.png)
 
