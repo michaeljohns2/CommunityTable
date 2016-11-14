@@ -14,10 +14,26 @@ The forecast correlated to the first four stories from our [Initial Ordered Back
 
 ### Actual
 
-We were able to close on all user stories forecasted within the sprint (reference our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done)). A summary of release1 is given in the [Main Readme](https://github.com/michaeljohns2/CommunityTable/blob/master/README.md).
+We were able to close on all user stories forecasted within the sprint (reference our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done)). A summary of [release1](https://github.com/michaeljohns2/CommunityTable/blob/master/README.md#release-notes) is is given in the main readme.
 Our stakeholders and Scrum Team agree that while release1 is feature complete under sprint1 scope, we not attempt to deploy into public production until further protections of Mongo and email services are completed -- these are captured as tasks within existing PBIs and are prioritized for sprint2.
+Here are Acceptance Criteria and Sprint Tasks for this sprint: 
 
-1. User Story 1
+1. User Story : _Site landing page_
+
+ ![Story 1 Acceptance Criteria & Tasks](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/sprint1_story1.png)
+
+2. User Story : _Member email signup_
+
+ ![Story 2 Acceptance Criteria & Tasks](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/sprint1_story2.png)
+
+3. User Story : _Welcome email on Member signup_
+
+ ![Story 3 Acceptance Criteria & Tasks](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/sprint1_story3.png)
+
+4. User Story : _Member unsubscribe email address_
+
+ ![Story 4 Acceptance Criteria & Tasks](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/sprint1_story4.png)
+
 
 ### Burndown
 
