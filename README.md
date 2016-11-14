@@ -3,7 +3,7 @@
 ## Stakeholders
 We have identified 3 stakeholders which drive our initiatives. We are building Community Tables products to be easily customized by any local community organizer -- captured by the term _localized_. Our initial efforts are grounded by Michelle, the Founder of Community Table TN. Michelle is our first customer and viewed as our primary stakeholder during this initial product increment. The other two stakeholders are composites of known neighbors in need and community members, respectively. Persona template adapted from [orangebus](http://orangebus.co.uk/insights/the-power-of-proto-personas).
 
-Here are more in-depth profiles of our [Stakeholder Personas](https://github.com/michaeljohns2/CommunityTable/blob/master/stakeholders.md).
+Here are more in-depth profiles of our [Stakeholder Personas](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/stakeholders.md).
 
 ## Product Iteration (OCT-DEC 2016)
 * __Name:__ Community Cloud Tables
@@ -16,38 +16,38 @@ Here are more in-depth profiles of our [Stakeholder Personas](https://github.com
 
 Community Cloud Tables is a Java 8 Spring MVC web application which leverages HTML5, CSS3 and third party libraries. The primary data store is a MongoDB database. See the architecture diagram for more details:
 
-![Architecture Diagram](https://github.com/michaeljohns2/CommunityTable/blob/master/community%20tables%20architecture.png)
+![Architecture Diagram](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/community%20tables%20architecture.png)
 
 
 ## Product Backlog
 Community Tables current product backlog is available to our Scrum Team members and management at [Trello](https://trello.com/b/i9TmhPfB/final-project-community-table)
 
-Reference our [Team Formation Sprint](https://github.com/michaeljohns2/CommunityTable/blob/master/sprint0.md) for our Definition of Ready, Definition of Done, User Story Sizing approach, and starting Product Backlog snapshot. 
+Reference our [Team Formation Sprint](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md) for our Definition of Ready, Definition of Done, User Story Sizing approach, and starting Product Backlog snapshot. 
 
 ### Rationale for Backlog Order
-The backlog is ordered by value generated to our stakeholders, namely Community Table TN (the first customer for our open source products). We (as well as our key stakeholder) are starting from scratch (levering other open source software frameworks where feasible). PBIs are groomed to represent excellent users stories within our team's [Definition of Ready](https://github.com/michaeljohns2/CommunityTable/blob/master/sprint0.md) and have been estimated by the development team.
+The backlog is ordered by value generated to our stakeholders, namely Community Table TN (the first customer for our open source products). We (as well as our key stakeholder) are starting from scratch (levering other open source software frameworks where feasible). PBIs are groomed to represent excellent users stories within our team's [Definition of Ready](https://github.com/michaeljohns2/CommunityTable/blob/master/sprint0.md#definition-of-ready) and have been estimated by the development team.
 
 ## Sprint 1 (10/8-11/11)
 
 Our sprint progress is documented at the following link:
-[Sprint 1 (10/8-11/11)](https://github.com/michaeljohns2/CommunityTable/blob/master/sprint1.md)
+[Sprint 1 (10/8-11/11)](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/sprint1.md)
 
 ### Release Notes
 1. Compelling site landing page 
 
- ![Example Landing Page with Email Registration](https://github.com/michaeljohns2/CommunityTable/blob/master/community_table_tn_landing_13NOV2016.png)
+ ![Example Landing Page with Email Registration](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/community_table_tn_landing_13NOV2016.png)
  
 2. Backed by highly customizable templates ready for your content
   
- ![Example Site Template](https://github.com/michaeljohns2/CommunityTable/blob/master/site_template.png)
+ ![Example Site Template](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/site_template.png)
 
 3. Customized Welcome Email automatically sent upon registration 
 
- ![Example Welcome Email](https://github.com/michaeljohns2/CommunityTable/blob/master/welcome_email.png)
+ ![Example Welcome Email](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/welcome_email.png)
 
 4. Unsubscribe link embedded in all site emails
 
- ![Example Email Unsubscribe Page](https://github.com/michaeljohns2/CommunityTable/blob/master/unsubscribe_success.png)
+ ![Example Email Unsubscribe Page](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/unsubscribe_success.png)
 
 ## Scrum Team
 - Scrum Master / Developer (Front End): Melvin Tercan

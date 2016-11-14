@@ -3,11 +3,21 @@
 ### Forecast
 
 Based on the fact that we all still needed to configure the project and get it running on our localhost before we were able to begin work on the stories that actually delivered product value, we forecasted we could get **21 story points** done during this sprint.
+The forecast correlated to the first four stories from our [Initial Ordered Backlog](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#initial-product-backlog-order):
+
+| __Number__ | __Title__ | __Story Points__ | __Summary__
+| --- | --- | --- | --- |
+| 1. | Site landing page | 8 pts | As site owner, I want a compelling landing page so that Community Table can be found by people online and they can learn about our mission and services. |
+| 2. | Member email signup | 5 pts | As a member I want to register for the Community Table email list so that I can receive news and updates. |
+| 3. | Welcome email on Member signup | 5 pts | As site owner, I want members to receive a welcome email when they sign-up, so that they know that we received their email address and so we can provide them with additional Community Table information. |
+| 4. | Member unsubscribe email address | 3 pts | As a member, I want emails from CommunityTable to include an unsubscribe link, so I can remove myself from future mailings. |
 
 ### Actual
 
-We were able to close on all user stories forecasted within the sprint (reference our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/sprint0.md)). A summary of release1 is given in the [Main Readme](https://github.com/michaeljohns2/CommunityTable/blob/master/README.md).
-Our stakeholders and Scrum Team agree that while release1 is feature complete under sprint1 scope, we not attempt to deploy into public production until further protections of Mongo and email services are completed -- these are captured as PBIs and are prioritized for sprint2.
+We were able to close on all user stories forecasted within the sprint (reference our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done)). A summary of release1 is given in the [Main Readme](https://github.com/michaeljohns2/CommunityTable/blob/master/README.md).
+Our stakeholders and Scrum Team agree that while release1 is feature complete under sprint1 scope, we not attempt to deploy into public production until further protections of Mongo and email services are completed -- these are captured as tasks within existing PBIs and are prioritized for sprint2.
+
+1. User Story 1
 
 ### Burndown
 
@@ -121,14 +131,14 @@ Our Team met as a group at least 2x per week to synchronize and elevate obstacle
 | 10 NOV | Standing Team Meeting |
 | 13 NOV | Sprint Review & Retrospective |
 
-1. Example of a peer code review (part of our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/sprint0.md))
+1. Example of a peer code review (part of our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/sprint0.md#definition-of-done))
 
- ![Code Review](https://github.com/michaeljohns2/CommunityTable/blob/master/code_review.png)
+ ![Code Review](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/code_review.png)
 
 2. Example of an ad-hoc team meeting
 
- ![Ad-Hoc Team Meeting](https://github.com/michaeljohns2/CommunityTable/blob/master/team_huddle.png)
+ ![Ad-Hoc Team Meeting](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/team_huddle.png)
 
 3. Example of a standing team meeting
  
- ![Standing Team Meeting](https://github.com/michaeljohns2/CommunityTable/blob/master/Pasted%20image%20at%202016_11_07%2007_33%20PM.png)
+ ![Standing Team Meeting](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/Pasted%20image%20at%202016_11_07%2007_33%20PM.png)
