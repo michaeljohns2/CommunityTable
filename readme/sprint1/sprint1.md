@@ -3,7 +3,7 @@
 ### Forecast
 
 Based on the fact that we all still needed to configure the project and get it running on our localhost before we were able to begin work on the stories that actually delivered product value, we forecasted we could get **21 story points** done during this sprint.
-The forecast correlated to the first four stories from our [Initial Ordered Backlog](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#initial-product-backlog-order):
+The forecast correlated to the first four stories from our [Initial Ordered Product Backlog](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#initial-product-backlog-order):
 
 | __Number__ | __Title__ | __Story Points__ | __Summary__
 | --- | --- | --- | --- |
@@ -16,7 +16,8 @@ The forecast correlated to the first four stories from our [Initial Ordered Back
 
 We were able to close on all user stories forecasted within the sprint (reference our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done)). A summary of [release1](https://github.com/michaeljohns2/CommunityTable/blob/master/README.md#release-notes) is is given in the main readme.
 Our stakeholders and Scrum Team agree that while release1 is feature complete under sprint1 scope, we not attempt to deploy into public production until further protections of Mongo and email services are completed -- these are captured as tasks within existing PBIs and are prioritized for sprint2.
-Here are Acceptance Criteria and Sprint Tasks for this sprint: 
+
+#### Acceptance Criteria and Sprint Tasks 
 
 1. User Story : _Site landing page_
 
@@ -34,6 +35,11 @@ Here are Acceptance Criteria and Sprint Tasks for this sprint:
 
  ![Story 4 Acceptance Criteria & Tasks](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/sprint1_story4.png)
 
+#### Behavior-Driven Development & Unit Tests
+
+We used the [cucumber](https://cucumber.io/) framework to run our Behavior-Driven Development (BDD) tests. Specifically we tested email registration using BDD. See [email_register.feature](https://github.com/michaeljohns2/CommunityTable/blob/master/WebApp/src/test/java/features/email_register.feature), [EmailRegisterStepdefs](https://github.com/michaeljohns2/CommunityTable/blob/master/WebApp/src/test/java/stepdefs/EmailRegisterStepdefs.java), and the screenshot below (showing all tests passed). 
+   
+   ![cucumber](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/cucumber.png)
 
 ### Burndown
 
