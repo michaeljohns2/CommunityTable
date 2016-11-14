@@ -26,8 +26,15 @@ $("#subscribeToNewsletter").submit(function(e) {
             },
             error:function(exception){
                 //push the exception response text into the fail block on index
-                var jsonValue = jQuery.parseJSON( exception.responseText );
-                document.getElementById('failSubscription').getElementsByTagName("P").item(0).innerHTML = jsonValue.message;
+                var msg = exception.responseText;
+                try {
+                    msg = jQuery.parseJSON(exception.responseText).message;//try to get json message
+                } catch(e){
+                    console.log("...issue parsing json from:");
+                    console.log(exception.responseText);
+                    console.log(e);
+                }
+                document.getElementById('failSubscription').getElementsByTagName("P").item(0).innerHTML = msg;
 
                 $('#failSubscription').fadeIn(300).delay(10000).fadeOut(300);
             }

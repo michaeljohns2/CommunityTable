@@ -49,7 +49,8 @@ public class EmailRestController {
     public List<EmailAddressModel> getEmails() {
         List<EmailAddressModel> emails = emailRepo.getAllEmails();
         // Delete hash values from output for security
-        for (EmailAddressModel email : emails) {email.setSecureHash("");}
+        // NOTE: MAY WNAT TO UNCOMMENT FOR INTERNAL TESTING (REVISIT AFTER ADMIN PAGE)
+//        for (EmailAddressModel email : emails) {email.setSecureHash("");}
         return emails;
     }
 
@@ -60,17 +61,10 @@ public class EmailRestController {
         return true;
     }
 
-    private void sendWelcomeEmail(EmailAddressModel address) {
+    private void sendWelcomeEmail(EmailAddressModel address) throws Exception {
         EmailModel email = emailBuilder.buildEmail(EmailBuilder.EMAIL_TEMPLATE_WELCOME, address);
         email.setSubject(messageManager.getMessage("email.welcome.subject"));
-        try {
-            emailSender.sendEmail(email, "from@communitytables.com");
-        } catch (EmailSendException ex) {
-            // If there is an exception while attempting to send email allow process to continue...
-            // (for now)
-            System.out.println(ex.getStackTrace());
-        }
-
+        emailSender.sendEmail(email, "from@communitytables.com");
     }
 
     @RequestMapping(value="/rest/emails", method= RequestMethod.POST)
@@ -87,8 +81,14 @@ public class EmailRestController {
                     // Save email to DB.
                     emailRepo.saveEmail(address);
 
-                    // Send email.
-                    sendWelcomeEmail(address);
+                    try {
+                        // Send email.
+                        sendWelcomeEmail(address);
+                    } catch (Exception e) {
+                        //SEND_EMAIL FAIL
+                        e.printStackTrace();
+                        throw new ApiServerException(resources.getString("email.send.fail"));//server failure
+                    }
 
                     return address;
                 } else {
