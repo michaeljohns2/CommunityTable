@@ -1,5 +1,6 @@
 package com.community.model.service;
 
+import com.community.Exceptions.EmailSendException;
 import com.community.model.EmailModel;
 import com.jcraft.jsch.*;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,7 @@ public class EmailSender {
      * @param email
      * @param fromAddress
      */
-    public void sendEmail(EmailModel email, String fromAddress) throws Exception {
+    public void sendEmail(EmailModel email, String fromAddress) throws EmailSendException {
 
         Channel channel = null;
         Session session = null;
@@ -52,7 +53,7 @@ public class EmailSender {
             channel.connect();
 
         } catch (Exception e) {
-            throw new Exception("Error sending email");
+            throw new EmailSendException("Error sending email");
         } finally {
 
             if(channel != null)

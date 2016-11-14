@@ -2,6 +2,7 @@ package com.community.controller.rest;
 
 import com.community.Exceptions.ApiException;
 import com.community.Exceptions.ApiServerException;
+import com.community.Exceptions.EmailSendException;
 import com.community.data.EmailRepository;
 import com.community.model.ApiErrorDetail;
 import com.community.model.EmailAddressModel;
@@ -62,7 +63,14 @@ public class EmailRestController {
     private void sendWelcomeEmail(EmailAddressModel address) {
         EmailModel email = emailBuilder.buildEmail(EmailBuilder.EMAIL_TEMPLATE_WELCOME, address);
         email.setSubject(messageManager.getMessage("email.welcome.subject"));
-        emailSender.sendEmail(email, "from@communitytables.com");
+        try {
+            emailSender.sendEmail(email, "from@communitytables.com");
+        } catch (EmailSendException ex) {
+            // If there is an exception while attempting to send email allow process to continue...
+            // (for now)
+            System.out.println(ex.getStackTrace());
+        }
+
     }
 
     @RequestMapping(value="/rest/emails", method= RequestMethod.POST)
