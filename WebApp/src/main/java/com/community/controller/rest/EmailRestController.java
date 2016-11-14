@@ -9,6 +9,7 @@ import com.community.model.EmailAddressModel;
 import com.community.model.EmailModel;
 import com.community.model.service.EmailBuilder;
 import com.community.model.service.EmailSender;
+import com.community.model.service.IEmailSender;
 import com.community.utils.MessageManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,7 +38,7 @@ public class EmailRestController {
     EmailBuilder emailBuilder;
 
     @Autowired
-    EmailSender emailSender;
+    IEmailSender emailSender;
 
     @Autowired
     private EmailRepository emailRepo;

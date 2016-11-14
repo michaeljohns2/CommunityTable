@@ -4,6 +4,7 @@ import com.community.ApplicationContextConfig;
 import com.community.Exceptions.ApiException;
 import com.community.data.EmailRepositoryTest;
 import com.community.model.EmailAddressModel;
+import com.community.model.service.MockEmailSender;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -34,6 +35,7 @@ public class EmailRestControllerTest {
     {
         // This is an example of how to swap the controllers dependency classes for testing.
         ReflectionTestUtils.setField(controller, "emailRepo", new EmailRepositoryTest());
+        ReflectionTestUtils.setField(controller, "emailSender", new MockEmailSender());
     }
 
     @Test
@@ -44,7 +46,6 @@ public class EmailRestControllerTest {
     }
 
     @Test
-    @Ignore
     public void addEmail_AddOne_Test() {
 
         //THIS IS NOT WORKING, NEEDS TROUBLESHOOTING
@@ -56,7 +57,6 @@ public class EmailRestControllerTest {
     }
 
     @Test
-    @Ignore
     public void addEmail_DuplicateEmail_Test() {
 
         //THIS IS NOT WORKING, NEEDS TROUBLESHOOTING
