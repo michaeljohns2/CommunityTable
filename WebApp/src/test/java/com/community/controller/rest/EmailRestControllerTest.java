@@ -2,6 +2,8 @@ package com.community.controller.rest;
 
 import com.community.ApplicationContextConfig;
 import com.community.Exceptions.ApiException;
+import com.community.Exceptions.ApiServerException;
+import com.community.Exceptions.EmailSendException;
 import com.community.data.EmailRepositoryTest;
 import com.community.model.EmailAddressModel;
 import com.community.model.service.MockEmailSender;
@@ -18,6 +20,8 @@ import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.List;
 import java.util.ResourceBundle;
+
+import static com.community.model.service.MockEmailSender.MOCK_SEND_FAIL_TRIGGER_EMAIL;
 
 /**
  * Created by keljd on 11/6/2016.
@@ -48,8 +52,6 @@ public class EmailRestControllerTest {
     @Test
     public void addEmail_AddOne_Test() {
 
-        //THIS IS NOT WORKING, NEEDS TROUBLESHOOTING
-
         EmailAddressModel model = controller.addEmail("test@test.com");
         Assert.assertTrue(model != null);
         Assert.assertTrue(model.getEmailAddress().equals("test@test.com"));
@@ -57,9 +59,7 @@ public class EmailRestControllerTest {
     }
 
     @Test
-    public void addEmail_DuplicateEmail_Test() {
-
-        //THIS IS NOT WORKING, NEEDS TROUBLESHOOTING
+    public void addEmail_DuplicateEmailAddress_Test() {
 
         EmailAddressModel model = controller.addEmail("test@test.com");
         Assert.assertTrue(model != null);
@@ -88,6 +88,19 @@ public class EmailRestControllerTest {
             return;
         }
         Assert.fail("Expected exception.");
+    }
+
+    @Test
+    public void addEmail_SendEmailError_Test() {
+        ResourceBundle resources = ResourceBundle.getBundle("Messages");
+
+        try {
+            EmailAddressModel model = controller.addEmail(MOCK_SEND_FAIL_TRIGGER_EMAIL);
+        } catch (ApiServerException ex) {
+            Assert.assertEquals(ex.getMessage(), resources.getString("email.send.fail") );
+            return;
+        }
+        Assert.fail("Expected API exception on email send.");
     }
 
 }
