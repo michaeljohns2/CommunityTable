@@ -71,7 +71,7 @@ public class EmailRestController {
     @RequestMapping(value="/rest/emails", method= RequestMethod.POST)
     public EmailAddressModel addEmail(@RequestBody String emailAddress){
 
-        ResourceBundle resources = ResourceBundle.getBundle("Messages");
+        ResourceBundle resources = MessageManager.getInstance().getMessages();
 
         try {
             if (emailRepo.getEmail(emailAddress) == null) {

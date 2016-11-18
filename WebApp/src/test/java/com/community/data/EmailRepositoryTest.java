@@ -2,6 +2,7 @@ package com.community.data;
 
 import com.community.Exceptions.EmailNotFoundException;
 import com.community.model.EmailAddressModel;
+import com.community.utils.ConfigManager;
 import com.github.fakemongo.junit.FongoRule;
 import com.mongodb.client.MongoDatabase;
 import org.junit.Rule;
@@ -29,7 +30,7 @@ public class EmailRepositoryTest extends EmailRepository {
     @Override
     public MongoDatabase getMongoDatabase() {
         //Override to use fongo database
-        return fongoRule.getFongo().getDatabase(DB_NAME);
+        return fongoRule.getFongo().getDatabase(ConfigManager.getInstance().getSetting(ConfigManager.DB_NAME_KEY));
     }
 
     public EmailAddressModel saveEmailInternal(String addr) throws UnknownHostException {

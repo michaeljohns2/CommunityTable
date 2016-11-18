@@ -4,6 +4,7 @@ import com.community.Exceptions.InvalidEmailException;
 import com.community.Exceptions.TemplateNotFoundException;
 import com.community.model.EmailAddressModel;
 import com.community.model.EmailModel;
+import com.community.utils.ConfigManager;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -24,8 +25,7 @@ public class EmailBuilder {
     private String host = "";
 
     public EmailBuilder() {
-        ResourceBundle resources = ResourceBundle.getBundle("Server");
-        host = resources.getString("host.path");
+        host = ConfigManager.getInstance().getSetting(ConfigManager.HOST_PATH_KEY);
     }
 
     /**

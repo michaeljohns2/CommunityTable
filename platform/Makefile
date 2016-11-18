@@ -54,9 +54,15 @@ start-jenkins:
 		-v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps \
 		-v /var/jenkins_home:/var/jenkins_home vhalaharvi/jenkins-make-mvn
 
-
 start-email:
 	if [ ! -a /var/email_home ] ; then  mkdir -p /var/email_home; fi
+	 sudo docker run -itd -p 25:25 \
+		--name ct-email \
+		--network=ct-network  \
+		--link=ct-mongo:mongo \
+		-itd ubuntu bash
+
+test-deleteme:
 	docker run -itd \
 		--name ct-email \
 		--network=ct-network  \

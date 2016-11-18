@@ -2,6 +2,7 @@ package com.community.model.service;
 
 import com.community.Exceptions.EmailSendException;
 import com.community.model.EmailModel;
+import com.community.utils.ConfigManager;
 import com.jcraft.jsch.*;
 import org.springframework.stereotype.Service;
 
@@ -17,9 +18,8 @@ public class EmailSender implements IEmailSender {
     private String emailUser = "";
 
     public EmailSender() {
-        ResourceBundle resources = ResourceBundle.getBundle("Server");
-        emailHost = resources.getString("smtp.host");
-        emailUser = resources.getString("smtp.user");
+        emailHost = ConfigManager.getInstance().getSetting(ConfigManager.SMTP_HOST_KEY);
+        emailUser = ConfigManager.getInstance().getSetting(ConfigManager.SMTP_USER_KEY);
     }
 
     /**
@@ -71,7 +71,7 @@ public class EmailSender implements IEmailSender {
             return true;
         }
 
-        String passwd = ResourceBundle.getBundle("Server").getString("smtp.user.password");
+        String passwd = ConfigManager.getInstance().getSetting(ConfigManager.SMTP_USER_PASSWORD_KEY);
 
         public String getPassphrase(){ return null; }
         public boolean promptPassphrase(String message){ return true; }

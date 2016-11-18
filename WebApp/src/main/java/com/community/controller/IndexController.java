@@ -1,5 +1,6 @@
 package com.community.controller;
 
+import com.community.utils.MessageManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,7 @@ public class IndexController {
     @RequestMapping("/index")
     public String hello(Model model) {
 
-        ResourceBundle resources = ResourceBundle.getBundle("Messages");
+        ResourceBundle resources = MessageManager.getInstance().getMessages();
 
         // header
         model.addAttribute("brand", resources.getString("index.brand"));

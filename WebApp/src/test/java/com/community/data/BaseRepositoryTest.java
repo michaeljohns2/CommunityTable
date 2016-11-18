@@ -1,5 +1,6 @@
 package com.community.data;
 
+import com.community.utils.ConfigManager;
 import com.github.fakemongo.junit.FongoRule;
 import com.mongodb.client.MongoDatabase;
 import org.junit.Rule;
@@ -25,7 +26,7 @@ public class BaseRepositoryTest extends BaseRepository {
     @Override
     public MongoDatabase getMongoDatabase() {
         //Override to use fongo database
-        return fongoRule.getFongo().getDatabase(DB_NAME);
+        return fongoRule.getFongo().getDatabase(ConfigManager.getInstance().getSetting(ConfigManager.DB_NAME_KEY));
     }
 
     @Test
