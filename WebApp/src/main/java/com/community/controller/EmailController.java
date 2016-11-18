@@ -3,6 +3,7 @@ package com.community.controller;
 import com.community.Exceptions.EmailNotFoundException;
 import com.community.data.EmailRepository;
 import com.community.model.EmailAddressModel;
+import com.community.utils.MessageManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,7 +38,7 @@ public class EmailController {
     @RequestMapping(value="/email/unsubscribe", method=RequestMethod.GET)
     public String deleteEmail(@RequestParam(name="key") String secureHash, Model model) {
 
-        ResourceBundle resources = ResourceBundle.getBundle("Messages");
+        ResourceBundle resources = MessageManager.getInstance().getMessages();
 
         // header
         model.addAttribute("brand", resources.getString("index.brand"));

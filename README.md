@@ -60,6 +60,8 @@ Our sprint progress is documented at the following link:
 
 ## More Info
 
+Additional developer info can be found in our [Project Setup Notes](https://github.com/michaeljohns2/CommunityTable/blob/master/ProjectSetupNotes.md) -- this is a work in progress and most certainly incomplete.
+
 We can also be found in Canvas [Project Group 6](https://canvas.harvard.edu/courses/18031/groups) and on our [Slack](https://agilefall2016.slack.com/messages/community_tables) channel. Our Kanban board can be found at [Trello](https://trello.com/b/i9TmhPfB/final-project-community-table).
 
 ##### This is a final project for [Agile Software Development CSCI-E71](http://agilesoftwarecourse.org/) as part of degree requirements for  [Harvard Extension School](http://www.extension.harvard.edu/).
