@@ -29,16 +29,17 @@ Opening and running the project in IntelliJ
 One option is to manually drop the WAR file into a Tomcat 8 webapps folder on a local server and run it (tested on Tomcat 8 / Windows 10 machine). To have IntelliJ generate a WAR file on Make go to File->Project Structure->Artifacts and check "Build on Make".
 
 ### Option -2
-Another option is to run the provided pom plugin `mvn tomcat7:run` (you can set this up as a run config in your IDE or run from the command line).Note: this mvn command works with Tomcat 7 and 8 (we are using 8); it uses the embedded Tomcat jars configured in the pom. These instructions were adapted from this [blog post](http://viralpatel.net/blogs/embed-tomcat-maven-project-run-tomcat-maven/).
+Another option is to run the provided pom plugin `mvn tomcat7:run` (you can set this up as a run config in your IDE or run from the command line).Note: this mvn command works with Tomcat 7 and 8 (we are using 8); it uses the embedded Tomcat jars configured in the pom. These instructions were adapted from this [blog post](http://viralpatel.net/blogs/embed-tomcat-maven-project-run-tomcat-maven/). More on the plugin settings can be found [here](http://tomcat.apache.org/maven-plugin-trunk/tomcat7-maven-plugin/run-mojo.html).
 
 ## Mongo
 
-Setting Up and Running Mongo in Docker (throw away instances)
+### Setting Up and Running Mongo in Docker (throw away instances) 
 If you have docker locally, you can run the following commands:
-host (launch container) --> `docker run --rm -it -p 27017:27017 -h mongo --name test_mongo mongo:latest bash -c mongod`
-host (get container ip address) --> `docker inspect test_mongo | grep IPAddress`
-host (edit hosts file) --> add `<container_ip> Mongo` to /etc/hosts
-container (kill processing, this will erase data) --> `Ctrl+C` to stop mongod and exit the container
+
+1. host (launch container) --> `docker run --rm -it -p 27017:27017 -h mongo --name test_mongo mongo:latest bash -c mongod`
+1. host (get container ip address) --> `docker inspect test_mongo | grep IPAddress`
+1. host (edit hosts file) --> add `<container_ip> Mongo` to /etc/hosts
+1. container (kill processing, this will erase data) --> `Ctrl+C` to stop mongod and exit the container
 
 ## Server.properties
 
