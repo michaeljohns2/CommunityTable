@@ -21,18 +21,15 @@ Opening and running the project in IntelliJ
 2. Import the project as a Maven project (select the room pom.xml file)
 3. If IntelliJ lists warnings about Java 1.5 being obsolete, go to File->Settings->Java Compiler and set bytecode version to 1.8 for Project and Target.
 4. Also go to Project Structure->Project Settings-> Modules and change language level from 5 to 8.
-5. To have IntelliJ generate a WAR file on Make go to File->Project Structure->Artifacts and check "Build on Make".
-6. You should be able to build the project without error.
-7. Tomcat
-  option-1: Drop the WAR file into a Tomcat 8 webapps folder on a local server and run it (tested on Tomcat 8 / Windows 10 machine).
-  option-2: run the provided plugin `mvn tomcat7:run` (you can set this up as a run config in your IDE or run from the command line)
-            Note: this mvn command works with Tomcat 7 and 8 (we are using 8); it uses the embedded Tomcat jars configured in the pom
+5. You should be able to build the project without error.
 
-NOTE: The WAR file that IntelliJ generates may not run on AWS instance (due to java 8 issues).
-However, you can build the WAR running command line "mvn clean install", which does work on AWS.
+## Tomcat
 
-TEST NOTE: When running tests, any existing 'tomcat' folder in the 'target' folder may need to be deleted to avoid
-           conflicts with the mock/fake mongo (fongo) and tomcat testing.
+### Option-1
+One option is to manually drop the WAR file into a Tomcat 8 webapps folder on a local server and run it (tested on Tomcat 8 / Windows 10 machine). To have IntelliJ generate a WAR file on Make go to File->Project Structure->Artifacts and check "Build on Make".
+
+### Option -2
+Another option is to run the provided pom plugin `mvn tomcat7:run` (you can set this up as a run config in your IDE or run from the command line).Note: this mvn command works with Tomcat 7 and 8 (we are using 8); it uses the embedded Tomcat jars configured in the pom. These instructions were adapted from this [blog post](http://viralpatel.net/blogs/embed-tomcat-maven-project-run-tomcat-maven/).
 
 ## Mongo
 
@@ -64,5 +61,13 @@ given key in `Server_Custom` and if found will use its value; if not, it will us
 E.g. usage: `ConfigManager.getInstance().getSetting(ConfigManager.MONGO_SERVER_KEY);` or `ConfigManager.getInstance().getSettingAsInt(ConfigManager.DB_PORT_KEY);`
 
 ## Messages.properties
-
 Similar to Server above, messages are pulled from `Messages.properties`, with support from `MessageManager`. Unlike `ConfigManager`, there are no overrides.
+
+## Testing 
+When running tests, an existing `target/tomcat` folder may need to be deleted to avoid conflicts with the mock/fake mongo (fongo) and tomcat testing. BDD / A-TDD Tests are handled by Cucumber (plugin for IntelliJ used). Unit Tests are with JUnit.
+
+## Deployment 
+* We are implementing CI/CD so that a check-in to master triggers Jenkins to redeploy on our AWS incubation site.
+ * Contact team members for instructions on accessing our AWS incubation resources.
+ * Currently, the WAR file that IntelliJ generates may not run on AWS instance (due to java 8 issues). However, you can build the WAR running command line "mvn clean install", which does work on AWS.
+
