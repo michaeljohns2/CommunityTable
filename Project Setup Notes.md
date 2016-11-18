@@ -29,7 +29,13 @@ Opening and running the project in IntelliJ
 One option is to manually drop the WAR file into a Tomcat 8 webapps folder on a local server and run it (tested on Tomcat 8 / Windows 10 machine). To have IntelliJ generate a WAR file on Make go to File->Project Structure->Artifacts and check "Build on Make".
 
 ### Option -2
-Another option is to run the provided pom plugin `mvn tomcat7:run` (you can set this up as a run config in your IDE or run from the command line).Note: this mvn command works with Tomcat 7 and 8 (we are using 8); it uses the embedded Tomcat jars configured in the pom. These instructions were adapted from this [blog post](http://viralpatel.net/blogs/embed-tomcat-maven-project-run-tomcat-maven/). More on the plugin settings can be found [here](http://tomcat.apache.org/maven-plugin-trunk/tomcat7-maven-plugin/run-mojo.html).
+Another option is to run the provided pom plugin `mvn tomcat7:run` (you can set this up as a run config in your IDE or run from the command line).Note: this mvn command works with Tomcat 7 and 8 (we are using 8); it uses the embedded Tomcat jars configured in the pom. These instructions were adapted from this [blog post](http://viralpatel.net/blogs/embed-tomcat-maven-project-run-tomcat-maven/).
+
+Here is an example of adding a mvn tomcat run configuration to IntelliJ:
+  
+![IntelliJ Settings](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/mvn_tomcat_plugin.png)
+
+More in-depth plugin settings can be found [here](http://tomcat.apache.org/maven-plugin-trunk/tomcat7-maven-plugin/run-mojo.html).
 
 ## Mongo
 
