@@ -10,20 +10,20 @@
   
   <dependencies>
        <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
-           <dependency>
-               <groupId>org.webjars</groupId>
-               <artifactId>bootstrap</artifactId>
-               <version>3.3.7-1</version>
-            </dependency>
+       <dependency>
+           <groupId>org.webjars</groupId>
+           <artifactId>bootstrap</artifactId>
+           <version>3.3.7-1</version>
+        </dependency>
 
-            <!-- https://mvnrepository.com/artifact/org.webjars.bower/jquery -->
-           <dependency>
-                <groupId>org.webjars.bower</groupId>
-                <artifactId>jquery</artifactId>
-                <version>3.1.1</version>
-            </dependency>
+        <!-- https://mvnrepository.com/artifact/org.webjars.bower/jquery -->
+       <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.1.1</version>
+        </dependency>
 
-        <!-- Servlet Library -->
+        <!-- Servlet / JSTL Libraries -->
         <!-- http://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -31,7 +31,19 @@
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
- 
+
+        <dependency>
+          <groupId>javax.servlet.jsp</groupId>
+          <artifactId>javax.servlet.jsp-api</artifactId>
+          <version>2.3.1</version>
+        </dependency>
+
+        <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>jstl</artifactId>
+          <version>1.2</version>
+        </dependency>
+
         <!-- Spring dependencies -->
         <!-- http://mvnrepository.com/artifact/org.springframework/spring-core -->
         <dependency>

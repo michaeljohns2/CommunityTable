@@ -36,7 +36,16 @@ public class IndexController {
         
         return "index";
     }
- 
+
+    @RequestMapping("/login")
+    public String login(Model model) {
+
+        model.addAttribute("username_label", "Username");
+        model.addAttribute("password_label", "Password");
+
+        // Load login.jsp
+        return "login";
+    }
 }
 	
 

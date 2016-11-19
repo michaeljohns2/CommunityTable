@@ -32,7 +32,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/admin/**")
                 .access(String.format("hasRole('%s')",ConfigManager.getInstance().getSetting(ConfigManager.AUTH_ADMIN_ROLE_KEY)))
-                .and().formLogin();
+                .and().formLogin()
+                .loginPage("/login.html")
+                .usernameParameter("username").passwordParameter("password");
                 // The Access Denied page is only displayed if the login is valid but the login role is not valid.
                 // We only have an admin role at this point so it may not be needed.
                 //.and().exceptionHandling().accessDeniedPage("/index/accessDenied.html");
