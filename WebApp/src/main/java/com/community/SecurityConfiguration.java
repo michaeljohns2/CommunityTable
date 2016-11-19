@@ -1,5 +1,6 @@
 package com.community;
 
+import com.community.utils.ConfigManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -19,14 +20,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
-        // TODO: read credentials from a config file.
-        auth.inMemoryAuthentication().withUser("admin").password("password").roles("ADMIN");
+
+        auth.inMemoryAuthentication()
+                .withUser(ConfigManager.getInstance().getSetting(ConfigManager.AUTH_ADMIN_USER_KEY))
+                .password(ConfigManager.getInstance().getSetting(ConfigManager.AUTH_ADMIN_PASSWORD_KEY))
+                .roles(ConfigManager.getInstance().getSetting(ConfigManager.AUTH_ADMIN_ROLE_KEY));
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/admin/**").access("hasRole('ADMIN')")
+                .antMatchers("/admin/**")
+                .access(String.format("hasRole('%s')",ConfigManager.getInstance().getSetting(ConfigManager.AUTH_ADMIN_ROLE_KEY)))
                 .and().formLogin();
                 // The Access Denied page is only displayed if the login is valid but the login role is not valid.
                 // We only have an admin role at this point so it may not be needed.
