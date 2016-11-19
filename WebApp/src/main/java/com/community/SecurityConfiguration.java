@@ -25,7 +25,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        // TODO: create an access denied page
         http.authorizeRequests()
                 .antMatchers("/admin/**").access("hasRole('ADMIN')")
                 .and().formLogin();
