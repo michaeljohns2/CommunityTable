@@ -11,20 +11,21 @@ import java.util.ResourceBundle;
  */
 public class ConfigManager {
 
-    /* There may be more... */
+    /* mongo */
     public static final String MONGO_SERVER_KEY = "mongo.server";
-
     public static final String DB_NAME_KEY = "db.name";
-
     public static final String DB_PORT_KEY = "db.port";
-
     public static final String HOST_PATH_KEY = "host.path";
 
+    /* smtp */
     public static final String SMTP_HOST_KEY = "smtp.host";
-
     public static final String SMTP_USER_KEY = "smtp.user";
-
     public static final String SMTP_USER_PASSWORD_KEY = "smtp.user.password";
+
+    /* auth */
+    public static final String AUTH_ADMIN_USER_KEY = "auth.admin.user";
+    public static final String AUTH_ADMIN_PASSWORD_KEY = "auth.admin.password";
+    public static final String AUTH_ADMIN_ROLE_KEY = "auth.admin.role";
 
     private static ConfigManager _instance = null;
 

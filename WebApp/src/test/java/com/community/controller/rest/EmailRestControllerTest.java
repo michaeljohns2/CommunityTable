@@ -7,6 +7,7 @@ import com.community.Exceptions.EmailSendException;
 import com.community.data.EmailRepositoryTest;
 import com.community.model.EmailAddressModel;
 import com.community.model.service.MockEmailSender;
+import com.community.utils.MessageManager;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -65,12 +66,10 @@ public class EmailRestControllerTest {
         Assert.assertTrue(model != null);
         Assert.assertTrue(model.getEmailAddress().equals("test@test.com"));
 
-        ResourceBundle resources = ResourceBundle.getBundle("Messages");
-
         try {
             model = controller.addEmail("test@test.com");
         } catch (ApiException ex) {
-            Assert.assertEquals(ex.getMessage(), resources.getString("email.subscribe.duplicate") );
+            Assert.assertEquals(ex.getMessage(), MessageManager.getInstance().getMessage("email.subscribe.duplicate") );
             return;
         }
         Assert.fail("Expected exception.");
@@ -79,12 +78,10 @@ public class EmailRestControllerTest {
     @Test
     public void addEmail_Invalid_Test() {
 
-        ResourceBundle resources = ResourceBundle.getBundle("Messages");
-
         try {
             EmailAddressModel model = controller.addEmail("test");
         } catch (ApiException ex) {
-            Assert.assertEquals(ex.getMessage(), resources.getString("email.subscribe.fail_message") );
+            Assert.assertEquals(ex.getMessage(), MessageManager.getInstance().getMessage("email.subscribe.fail_message") );
             return;
         }
         Assert.fail("Expected exception.");
@@ -92,12 +89,11 @@ public class EmailRestControllerTest {
 
     @Test
     public void addEmail_SendEmailError_Test() {
-        ResourceBundle resources = ResourceBundle.getBundle("Messages");
 
         try {
             EmailAddressModel model = controller.addEmail(MOCK_SEND_FAIL_TRIGGER_EMAIL);
         } catch (ApiServerException ex) {
-            Assert.assertEquals(ex.getMessage(), resources.getString("email.send.fail") );
+            Assert.assertEquals(ex.getMessage(), MessageManager.getInstance().getMessage("email.send.fail") );
             return;
         }
         Assert.fail("Expected API exception on email send.");
