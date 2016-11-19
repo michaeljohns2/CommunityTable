@@ -195,5 +195,8 @@
             </configuration>
         </plugin>
     </plugins>
+
+       <!-- direct the final WAR packaging name -->
+      <finalName>CommunityTables</finalName>
   </build>
 </project>
