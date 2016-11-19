@@ -93,6 +93,7 @@ start-nginx:
 		-p 80:80 \
 		-v /etc/nginx/conf.d:/etc/nginx/conf.d nginx
 
+# tomcat 8.0 uses jre7 by default, 8.5 uses jre8
 start-tomcat:
 	if [ ! -a /usr/local/tomcat/lib ]; then  mkdir -p /usr/local/tomcat/lib; fi
 	docker run \
@@ -104,7 +105,7 @@ start-tomcat:
 		-v /usr/local/tomcat/lib:/usr/local/tomcat/lib \
 		-v /usr/local/tomcat/conf:/usr/local/tomcat/conf \
 		-v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps \
-		-p 8080:8080 tomcat:8.0
+		-p 8080:8080 tomcat:8.5
 
 
 # test suite
