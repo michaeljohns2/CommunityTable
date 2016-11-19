@@ -196,7 +196,8 @@
         </plugin>
     </plugins>
 
-       <!-- direct the final WAR packaging name -->
+       <!-- direct the final WAR packaging name (may mess up Jenkins)
       <finalName>CommunityTables</finalName>
+      -->
   </build>
 </project>
