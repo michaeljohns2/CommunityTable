@@ -29,6 +29,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable(); // Interfering with REST calls, disable for now.
+
         http.authorizeRequests()
                 .antMatchers("/admin/**")
                 .access(String.format("hasRole('%s')",ConfigManager.getInstance().getSetting(ConfigManager.AUTH_ADMIN_ROLE_KEY)))
