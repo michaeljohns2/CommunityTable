@@ -1,4 +1,5 @@
-Server_Custom.properties
+WebApp/src/main/resources/Server_Custom.properties
+platform/dev/tomcat8
 
 target/
 !.mvn/wrapper/maven-wrapper.jar
