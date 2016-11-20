@@ -39,9 +39,14 @@ public class IndexController {
 
     @RequestMapping("/login")
     public String login(Model model) {
-
-        model.addAttribute("username_label", "Username");
-        model.addAttribute("password_label", "Password");
+        ResourceBundle resources = MessageManager.getInstance().getMessages();
+        model.addAttribute("username_label", resources.getString("username_label"));
+        model.addAttribute("password_label", resources.getString("password_label"));
+        model.addAttribute("username_input_text", resources.getString("username_input_text"));
+        model.addAttribute("password_input_text", resources.getString("password_input_text"));
+        model.addAttribute("login_error", resources.getString("login_error"));
+        model.addAttribute("logout_success", resources.getString("logout_success"));
+        model.addAttribute("login_button", resources.getString("login_button"));
 
         // Load login.jsp
         return "login";
