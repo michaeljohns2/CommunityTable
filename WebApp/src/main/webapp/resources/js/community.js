@@ -8,7 +8,8 @@ $("#subscribeToNewsletter").submit(function(e) {
        Without this test, the ajax call fails in a way that is not detected. There may be a better way but this
        works for now.
     */
-    $.Ping("/CommunityTables/rest/emails.json" /*, optional timeout */).done(function (success, url, time, on) {
+    $.Ping("/CommunityTables/rest/emails.json" , 10000 /* Extended timeout for step-through debugging */)
+        .done(function (success, url, time, on) {
         // console.log("ping done", arguments);
         var emailAddr = document.getElementById('emailAddress').value;
 

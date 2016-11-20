@@ -51,7 +51,7 @@
 							${second_body}
 						</p>
 						<div id="emailSubmit" class="center">
-							<form id="subscribeToNewsletter" onsubmit="sendEmailRequest();">
+							<form id="subscribeToNewsletter" onsubmit=""> <!-- Action is attached via jQuery. -->
 								<input type="email" id="emailAddress" placeholder="your@email.com">
 								<button class="btn btn-lg btn-warning" type="submit">${submit_label}</button>
 							</form>

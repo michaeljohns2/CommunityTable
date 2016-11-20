@@ -17,30 +17,30 @@
     <form action="${loginUrl}" method="post" class="">
         <c:if test="${param.error != null}">
             <div class="alert-error">
-                <p>Invalid username and password.</p>
+                <p>${login_error}</p>
             </div>
         </c:if>
 
         <c:if test="${param.logout != null}">
             <div class="alert-success">
-                <p>You have been logged out successfully.</p>
+                <p>${logout_success}</p>
             </div>
         </c:if>
 
         <div class="">
             <label class="" for="username">${username_label}</label>
-            <input type="text" class="" id="username" name="username" placeholder="Enter Username" required>
+            <input type="text" class="" id="username" name="username" placeholder="${username_input_text}" required>
         </div>
         <div class="">
             <label class="" for="password">${password_label}</label>
-            <input type="password" class="" id="password" name="password" placeholder="Enter Password" required>
+            <input type="password" class="" id="password" name="password" placeholder="${password_input_text}" required>
         </div>
 
         <%-- This hidden field helps to prevent CSRF attacks --%>
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
         <div>
-            <input type="submit" value="Log in">
+            <input type="submit" value="${login_button}">
         </div>
     </form>
 
