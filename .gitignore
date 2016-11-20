@@ -1,4 +1,4 @@
-WebApp/src/main/resources/Server_Custom.properties
+Server_Custom.properties
 platform/dev/tomcat8
 
 target/
