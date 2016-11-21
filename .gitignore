@@ -1,5 +1,6 @@
 Server_Custom.properties
 platform/dev/tomcat8
+/platform/dev/ssh-aws.sh
 
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -24,3 +25,4 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
