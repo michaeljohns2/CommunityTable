@@ -26,8 +26,8 @@
         <div id="navbar" class="navbar-collapse collapse pull-right">
             <ul class="nav navbar-nav">
                 <li><a href="/">${first_nav_title}</a></li>
-                <li><a class="active" href="about.html">${second_nav_title}</a></li>
-                <li><a href="vision.html">${third_nav_title}</a></li>
+                <li><a href="about.html">${second_nav_title}</a></li>
+                <li><a class="active" href="vision.html">${third_nav_title}</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -35,7 +35,7 @@
 <div class="wrapper">
 
     <div class="container">
-        <div id="about-page">
+        <div id="vision-page">
             <section id="first" class="row">
                 <div>
                     <h1 class="first_title">${first_title}</h1>
@@ -54,7 +54,7 @@
                 </div>
             </section>
 
-        </div><!--/#about-page-->
+        </div><!--/#vision-page-->
     </div><!--/.container-->
 </div><!--/.wrapper-->
 

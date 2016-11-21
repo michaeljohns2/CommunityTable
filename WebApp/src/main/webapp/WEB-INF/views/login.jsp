@@ -16,6 +16,14 @@
     <link rel="stylesheet" type="text/css" href="resources/css/community.css">
 </head>
 <body>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/CommunityTables">${brand}</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="wrapper">
 
         <div class="container">
