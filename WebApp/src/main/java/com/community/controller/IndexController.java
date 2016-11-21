@@ -16,12 +16,12 @@ public class IndexController {
         ResourceBundle resources = MessageManager.getInstance().getMessages();
 
         // header
-        model.addAttribute("brand", resources.getString("index.brand"));
-        model.addAttribute("motto", resources.getString("index.motto"));
+        model.addAttribute("brand", resources.getString("brand"));
 
         //nav
-        model.addAttribute("first_nav_title", resources.getString("index.first_nav_title"));
-        model.addAttribute("second_nav_title", resources.getString("index.second_nav_title"));
+        model.addAttribute("first_nav_title", resources.getString("first_nav_title"));
+        model.addAttribute("second_nav_title", resources.getString("second_nav_title"));
+        model.addAttribute("third_nav_title", resources.getString("third_nav_title"));
 
         // index
         model.addAttribute("first_title", resources.getString("index.first_title"));
@@ -51,6 +51,53 @@ public class IndexController {
         // Load login.jsp
         return "login";
     }
+
+    @RequestMapping("/about")
+    public String about(Model model) {
+
+        ResourceBundle resources = MessageManager.getInstance().getMessages();
+
+        // header
+        model.addAttribute("brand", resources.getString("brand"));
+
+        // nav
+        model.addAttribute("first_nav_title", resources.getString("first_nav_title"));
+        model.addAttribute("second_nav_title", resources.getString("second_nav_title"));
+        model.addAttribute("third_nav_title", resources.getString("third_nav_title"));
+
+        // index
+        model.addAttribute("first_title", resources.getString("about.first_title"));
+        model.addAttribute("first_body", resources.getString("about.first_body"));
+        model.addAttribute("second_title", resources.getString("about.second_title"));
+        model.addAttribute("second_body", resources.getString("about.second_body"));
+
+        // Load about.jsp
+        return "about";
+    }
+
+    @RequestMapping("/vision")
+    public String vision(Model model) {
+
+        ResourceBundle resources = MessageManager.getInstance().getMessages();
+
+        // header
+        model.addAttribute("brand", resources.getString("brand"));
+
+        // nav
+        model.addAttribute("first_nav_title", resources.getString("first_nav_title"));
+        model.addAttribute("second_nav_title", resources.getString("second_nav_title"));
+        model.addAttribute("third_nav_title", resources.getString("third_nav_title"));
+
+        // index
+        model.addAttribute("first_title", resources.getString("vision.first_title"));
+        model.addAttribute("first_body", resources.getString("vision.first_body"));
+        model.addAttribute("second_title", resources.getString("vision.second_title"));
+        model.addAttribute("second_body", resources.getString("vision.second_body"));
+
+        // Load vision.jsp
+        return "vision";
+    }
+
 }
 	
 

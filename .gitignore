@@ -3,6 +3,8 @@ Server_Custom.properties
 target/
 !.mvn/wrapper/maven-wrapper.jar
 
+.DS_Store
+
 ### STS ###
 .classpath
 .factorypath
