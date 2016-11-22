@@ -1,76 +1,72 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About Community Tables TN</title>
-    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="resources/css/community.css">
-</head>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<body>
-<nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/CommunityTables">${brand}</a>
+<c:import url="shared/_header.jsp"/>
+<c:import url="shared/_nav.jsp"/>
+
+<div class="container" id="vision-page">
+    <section class="row">
+        <div>
+            <h1 class="title_1">${title_1}</h1>
+            <p class="body_1">
+                ${body_1}
+            </p>
         </div>
-        <div id="navbar" class="navbar-collapse collapse pull-right">
-            <ul class="nav navbar-nav">
-                <li><a href="/">${first_nav_title}</a></li>
-                <li><a href="about.html">${second_nav_title}</a></li>
-                <li><a class="active" href="vision.html">${third_nav_title}</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
-<div class="wrapper">
+    </section>
 
-    <div class="container">
-        <div id="vision-page">
-            <section id="first" class="row">
-                <div>
-                    <h1 class="first_title">${first_title}</h1>
-                    <p class="first_body">
-                        ${first_body}
-                    </p>
-                </div>
-            </section>
-
-            <section id="second" class="row">
-                <div>
-                    <h1 class="second_title">${second_title}</h1>
-                    <p class="second_body">
-                        ${second_body}
-                    </p>
-                </div>
-            </section>
-
-        </div><!--/#vision-page-->
-    </div><!--/.container-->
-</div><!--/.wrapper-->
-
-<footer id="footer">
-    <div class="container">
-        <div class="center">
-            (c) CommunityTable 2016
+    <section class="row">
+        <div>
+            <h1 class="title_2">${title_2}</h1>
+            <p class="body_2">
+                ${body_2}
+            </p>
         </div>
-    </div>
-</footer>
+    </section>
+    <section class="row">
+        <div>
+            <h1 class="title_3">${title_3}</h1>
+            <p class="body_3">
+                ${body_3}
+            </p>
+        </div>
+    </section>
 
-<script type="text/javascript" src="webjars/jquery/3.1.1/dist/jquery.min.js"></script>
-<script type="text/javascript" src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="resources/js/ping.js"></script>
-<script type="text/javascript" src="resources/js/community.js"></script>
-</body>
+    <section class="row">
+        <div>
+            <h1 class="title_4">${title_4}</h1>
+            <p class="body_4">
+                ${body_4}
+            </p>
+        </div>
+    </section>
+    <section class="row">
+        <div>
+            <h1 class="title_5">${title_5}</h1>
+            <p class="body_5">
+                ${body_5}
+            </p>
+        </div>
+    </section>
+
+    <section class="row">
+        <div>
+            <h1 class="title_6">${title_6}</h1>
+            <p class="body_6">
+                ${body_6}
+            </p>
+        </div>
+    </section>
+
+    <section class="row">
+        <div>
+            <h1 class="title_7">${title_7}</h1>
+            <p class="body_7">
+                ${body_7}
+            </p>
+        </div>
+    </section>
+</div><!--/.container-->
 
 
-</html>
+<c:import url="shared/_footer.jsp"/>
