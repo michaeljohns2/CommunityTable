@@ -93,8 +93,7 @@ public class EmailRestControllerTest {
         try {
             EmailAddressModel model = controller.addEmail(MOCK_SEND_FAIL_TRIGGER_EMAIL);
         } catch (ApiServerException ex) {
-            // Commented out specific result test while I am tunneling email error messages.
-            //Assert.assertEquals(ex.getMessage(), MessageManager.getInstance().getMessage("email.send.fail") );
+            Assert.assertEquals(ex.getMessage(), MessageManager.getInstance().getMessage("email.send.fail") );
             return;
         }
         Assert.fail("Expected API exception on email send.");
