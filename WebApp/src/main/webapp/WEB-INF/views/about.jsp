@@ -5,7 +5,7 @@
 <c:import url="shared/_header.jsp"/>
 <c:import url="shared/_nav.jsp"/>
 
-<div class="container" id="vision-page">
+<div class="container" id="about-page">
     <section class="row">
         <div>
             <h1 class="title_1">${title_1}</h1>
@@ -31,7 +31,6 @@
             </p>
         </div>
     </section>
-
     <section class="row">
         <div>
             <h1 class="title_4">${title_4}</h1>
@@ -40,33 +39,6 @@
             </p>
         </div>
     </section>
-    <section class="row">
-        <div>
-            <h1 class="title_5">${title_5}</h1>
-            <p class="body_5">
-                ${body_5}
-            </p>
-        </div>
-    </section>
-
-    <section class="row">
-        <div>
-            <h1 class="title_6">${title_6}</h1>
-            <p class="body_6">
-                ${body_6}
-            </p>
-        </div>
-    </section>
-
-    <section class="row">
-        <div>
-            <h1 class="title_7">${title_7}</h1>
-            <p class="body_7">
-                ${body_7}
-            </p>
-        </div>
-    </section>
 </div><!--/.container-->
-
 
 <c:import url="shared/_footer.jsp"/>

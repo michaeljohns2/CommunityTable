@@ -27,6 +27,7 @@ body {
     height: 100%;
     background-size: cover;
     padding: 10px;
+    margin-bottom: 80px;
 }
 
 h1, h2, h3 {
@@ -107,7 +108,7 @@ GLOBAL CLASSES
     height: 80px; /* sticky-footer fixed height */
     margin-top: 60px;
     padding: 15px;
-    position: relative;
+    position: absolute;
     width: 100%;
 }
 
