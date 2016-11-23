@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
 /**
  * This class is responsible for sending emails.
  */
-@Service
+//@Service
 public class EmailSender implements IEmailSender {
 
     private String emailHost = "";

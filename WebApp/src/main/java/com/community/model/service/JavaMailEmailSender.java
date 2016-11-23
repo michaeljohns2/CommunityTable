@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 /**
  * This class is responsible for sending emails.
  */
-//@Service
+@Service
 public class JavaMailEmailSender implements IEmailSender {
 
     private String emailHost = "";
@@ -34,15 +34,15 @@ public class JavaMailEmailSender implements IEmailSender {
 
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
-        //properties.put("mail.smtp.starttls.enable", "false");
+        properties.put("mail.smtp.starttls.enable", ConfigManager.getInstance().getSetting(ConfigManager.SMTP_START_TTLS_KEY));
         properties.put("mail.smtp.host", ConfigManager.getInstance().getSetting(ConfigManager.SMTP_HOST_KEY));
-        //properties.put("mail.smtp.port", "25");
+        properties.put("mail.smtp.port", ConfigManager.getInstance().getSetting(ConfigManager.SMTP_PORT_KEY));
         Session session = Session.getDefaultInstance(properties,
         new javax.mail.Authenticator(){
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(
                         ConfigManager.getInstance().getSetting(ConfigManager.SMTP_USER_KEY),
-                        ConfigManager.SMTP_USER_PASSWORD_KEY);
+                        ConfigManager.getInstance().getSetting(ConfigManager.SMTP_USER_PASSWORD_KEY));
             }
         });
 
