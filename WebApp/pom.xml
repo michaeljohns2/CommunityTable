@@ -25,24 +25,25 @@
 
         <!-- Servlet / JSTL Libraries -->
         <!-- http://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
-        </dependency>
 
-        <dependency>
-          <groupId>javax.servlet.jsp</groupId>
-          <artifactId>javax.servlet.jsp-api</artifactId>
-          <version>2.3.1</version>
-        </dependency>
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>3.1.0</version>
+          <scope>provided</scope>
+      </dependency>
 
-        <dependency>
+      <dependency>
+           <groupId>javax.servlet.jsp</groupId>
+           <artifactId>javax.servlet.jsp-api</artifactId>
+           <version>2.3.1</version>
+      </dependency>
+
+      <dependency>
           <groupId>javax.servlet</groupId>
           <artifactId>jstl</artifactId>
           <version>1.2</version>
-        </dependency>
+      </dependency>
 
         <!-- Spring dependencies -->
         <!-- http://mvnrepository.com/artifact/org.springframework/spring-core -->
@@ -163,14 +164,13 @@
           <version>1.2.5</version>
           <scope>test</scope>
       </dependency>
-
   </dependencies>
   
   <build>
     <finalName>CommunityTables</finalName>
     <plugins>
 
-        <!-- This can be used to tell IntelliJ to build using Java 8 BUT it seems to break the server deploy...
+        <!-- This can be used to tell IntelliJ to build using Java 8 BUT it seems to break the server deploy... -->
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
@@ -180,7 +180,6 @@
                 <target>1.8</target>
             </configuration>
         </plugin>
-        -->
 
 
         <plugin>
@@ -192,20 +191,20 @@
 				</configuration>
         </plugin>
 
-        <!-- Tomcat as embedded works for 7 or 8!!!
+        <!--
+        MLJ: THIS HAS PROVEN PROBLEMMATIC WITH MORE RECENT UPDATES IN SPRINT-2
+        Tomcat as embedded works for 7 or 8!!!
              usage `mvn tomcat7:run`
              see http://viralpatel.net/blogs/embed-tomcat-maven-project-run-tomcat-maven/
         -->
+
         <plugin>
             <groupId>org.apache.tomcat.maven</groupId>
             <artifactId>tomcat7-maven-plugin</artifactId>
             <version>2.2</version>
-            <!--
-            <configuration>
-                <port>9090</port>
-            </configuration>
-            -->
         </plugin>
+
+
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
