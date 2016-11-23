@@ -25,7 +25,7 @@ public class JavaMailEmailSender implements IEmailSender {
     }
 
     /**
-     * This method is a STUB. Waiting for SMTP to populate.
+     * This flavor of the EmailSender uses JavaMail.
      *
      * @param email
      * @param fromAddress
@@ -33,17 +33,16 @@ public class JavaMailEmailSender implements IEmailSender {
     public void sendEmail(EmailModel email, String fromAddress) throws EmailSendException {
 
         Properties properties = new Properties();
-        properties.setProperty("mail.user", "keljdoyle");
-        properties.setProperty("mail.password", "!q2w3e4r");
         properties.put("mail.smtp.auth", "true");
         //properties.put("mail.smtp.starttls.enable", "false");
-        properties.put("mail.smtp.host", "54.147.54.146");
+        properties.put("mail.smtp.host", ConfigManager.getInstance().getSetting(ConfigManager.SMTP_HOST_KEY));
         //properties.put("mail.smtp.port", "25");
         Session session = Session.getDefaultInstance(properties,
         new javax.mail.Authenticator(){
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(
-                        "keljdoyle", "!q2w3e4r");// Specify the Username and the PassWord
+                        ConfigManager.getInstance().getSetting(ConfigManager.SMTP_USER_KEY),
+                        ConfigManager.SMTP_USER_PASSWORD_KEY);
             }
         });
 
