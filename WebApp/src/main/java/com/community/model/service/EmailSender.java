@@ -44,7 +44,7 @@ public class EmailSender implements IEmailSender {
             session.setUserInfo(ui);
             session.connect();
 
-            String command = "echo \"" + email.getEmailContent() +"\" | mail -s \""+ email.getSubject()+"\" " + email.getSendTo().getEmailAddress();
+            String command = "echo \"" + email.getEmailContent() +"\" | mail -a \"Content-type: text/html\" -s \""+ email.getSubject()+"\" " + email.getSendTo().getEmailAddress();
             channel = session.openChannel("exec");
             ((ChannelExec) channel).setCommand(command);
 
