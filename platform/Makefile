@@ -20,6 +20,31 @@ restart-nginx: kill-nginx start-nginx
 
 restart-email: kill-email start-email
 
+generage-email-certs:
+	touch smtpd.key
+	chmod 600 smtpd.key
+	openssl genrsa 1024 > smtpd.key
+	openssl req -new -key smtpd.key -x509 -days 3650 -out smtpd.crt # has prompts
+	openssl req -new -x509 -extensions v3_ca -keyout cakey.pem -out cacert.pem -days 3650 # has prompts
+	mv smtpd.key /etc/ssl/private/
+	mv smtpd.crt /etc/ssl/certs/
+	mv cakey.pem /etc/ssl/private/
+	mv cacert.pem /etc/ssl/certs/
+
+	postconf -e 'smtp_tls_security_level = may'
+	postconf -e 'smtpd_tls_security_level = may'
+	postconf -e 'smtpd_tls_auth_only = no'
+	postconf -e 'smtp_tls_note_starttls_offer = yes'
+	postconf -e 'smtpd_tls_key_file = /etc/ssl/private/smtpd.key'
+	postconf -e 'smtpd_tls_cert_file = /etc/ssl/certs/smtpd.crt'
+	postconf -e 'smtpd_tls_CAfile = /etc/ssl/certs/cacert.pem'
+	postconf -e 'smtpd_tls_loglevel = 1'
+	postconf -e 'smtpd_tls_received_header = yes'
+	postconf -e 'smtpd_tls_session_cache_timeout = 3600s'
+	postconf -e 'tls_random_source = dev:/dev/urandom'
+	postconf -e 'myhostname = server1.example.com' # remember to change this to yours
+
+
 kill-tomcat:
 	docker stop `docker ps -a -q --filter="name=ct-tomcat"`
 	docker rm -f `docker ps -a -q --filter="name=ct-tomcat"`
