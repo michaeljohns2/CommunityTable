@@ -88,8 +88,7 @@ public class EmailRestController {
                     } catch (Exception e) {
                         //SEND_EMAIL FAIL
                         e.printStackTrace();
-                        //throw new ApiServerException(resources.getString("email.send.fail"));//server failure
-                        throw new ApiServerException(e.getMessage());//server failure
+                        throw new ApiServerException(resources.getString("email.send.fail"));//server failure
                     }
 
                     return address;
