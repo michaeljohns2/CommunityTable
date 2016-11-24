@@ -25,10 +25,13 @@ Opening and running the project in IntelliJ
 
 ## Tomcat
 
-### Option-1
+### Option-1 (Manual)
 One option is to manually drop the WAR file into a Tomcat 8 webapps folder on a local server and run it (tested on Tomcat 8 / Windows 10 machine). To have IntelliJ generate a WAR file on Make go to File->Project Structure->Artifacts and check "Build on Make".
 
-### Option -2
+### Option-2 (Docker)
+_Reference 'Local Platform Development (Docker)' section below._
+
+### Option -3 (PROBLEMMATIC AFTER RELEASE-1)
 Another option is to run the provided pom plugin `mvn tomcat7:run` (you can set this up as a run config in your IDE or run from the command line).Note: this mvn command works with Tomcat 7 and 8 (we are using 8); it uses the embedded Tomcat jars configured in the pom. These instructions were adapted from this [blog post](http://viralpatel.net/blogs/embed-tomcat-maven-project-run-tomcat-maven/).
 
 Here is an example of adding a mvn tomcat run configuration to IntelliJ:
@@ -37,15 +40,19 @@ Here is an example of adding a mvn tomcat run configuration to IntelliJ:
 
 More in-depth plugin settings can be found [here](http://tomcat.apache.org/maven-plugin-trunk/tomcat7-maven-plugin/run-mojo.html).
 
-## Mongo
+## Local Platform Development (Docker)
 
-### Setting Up and Running Mongo in Docker (throw away instances) 
-If you have docker locally, you can run the following commands:
+__Note: Support throw-away instances for both Mongo and Tomcat -- this assumes a *NIX environment with bash and Docker.__
 
-1. host (launch container) --> `docker run --rm -it -p 27017:27017 -h mongo --name test_mongo mongo:latest bash -c mongod`
-1. host (get container ip address) --> `docker inspect test_mongo | grep IPAddress`
-1. host (edit hosts file) --> add `<container_ip> Mongo` to /etc/hosts
-1. container (kill processing, this will erase data) --> `Ctrl+C` to stop mongod and exit the container
+Starting with release-2, dev support to run throw-away mongo and tomcat available in [platform dev](https://github.com/michaeljohns2/CommunityTable/blob/master/platform/dev).
+To use `cd platform/dev` and run any of the following:
+
+* Start: `./start-all.sh` for both mongo and tomcat or `make start-mongo` for only mongo or `make start-tomcat` for only tomcat. 
+  * _This command will internally run `mvn clean package` on the project and copy the resulting war file into the container's `webapps` directory, thus eliminating any manual build and deploy steps._
+  * Optional: watch the tomcat logs with `tail-tomcat.sh` (you provide todays date as arg1 to watch the current log, e.g. `tail-tomcat.sh 2016-11-20`)
+* Stop: `stop-all.sh` to stop and remove mongo and tomcat.
+* Other `make` commands can be run if desired.
+
 
 ## Server.properties
 
@@ -55,7 +62,7 @@ Server properties used by the app are found in  `WebApp/src/resources/Server.pro
 * db.name = CommunityTables
 * db.port = 27017
 * host.path=http://localhost/
-* smtp.host=smtp.gmail.com
+* smtp.host=my.smtp.host
 * smtp.user=user
 * smtp.user.password=password
 
@@ -67,6 +74,17 @@ never be committed to the repository.__
 given key in `Server_Custom` and if found will use its value; if not, it will use the default value from `Server`. 
 E.g. usage: `ConfigManager.getInstance().getSetting(ConfigManager.MONGO_SERVER_KEY);` or `ConfigManager.getInstance().getSettingAsInt(ConfigManager.DB_PORT_KEY);`
 
+### Email Settings (Local Development)
+For local development and testing, it is recommended to generate a `WebApp/src/resources/Server_Custom.properties` and place the following properties:
+
+* `smtp.host=<inquire on slack for incubation server>`
+* `smtp.user=<your slack username>`
+* `smtp.user.password=<your password>`
+
+__Note: Each member of the CommunityTables team already has an account on our incubation site.__
+The initial password is `updateyourpassword`. The first time you log in, you will need to change your password. To accomplish this execute the following command:
+`ssh -l <your slack username> <incubation server ip>` (then provide you password on the prompt and then you can exit) -- once this is accomplished, sending will be handled by our incubation site for local development.
+
 ## Messages.properties
 Similar to Server above, messages are pulled from `Messages.properties`, with support from `MessageManager`. Unlike `ConfigManager`, there are no overrides.
 
@@ -76,5 +94,4 @@ When running tests, an existing `target/tomcat` folder may need to be deleted to
 ## Deployment 
 * We are implementing CI/CD so that a check-in to master triggers Jenkins to redeploy on our AWS incubation site.
  * Contact team members for instructions on accessing our AWS incubation resources.
- * Currently, the WAR file that IntelliJ generates may not run on AWS instance (due to java 8 issues). However, you can build the WAR running command line "mvn clean install", which does work on AWS.
 

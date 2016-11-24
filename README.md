@@ -18,6 +18,9 @@ Community Cloud Tables is a Java 8 Spring MVC web application which leverages HT
 
 ![Architecture Diagram](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/community%20tables%20architecture.png)
 
+We have implemented the following CI / CD process:
+
+![CI / CD Process](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/ci_cd.png)
 
 ## Product Backlog
 Community Tables current product backlog is available to our Scrum Team members and management at [Trello](https://trello.com/b/i9TmhPfB/final-project-community-table)
