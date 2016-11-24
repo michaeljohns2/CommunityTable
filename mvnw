@@ -79,7 +79,7 @@ case "`uname`" in
              export JAVA_HOME=/Library/Java/JavaVirtualMachines/CurrentJDK/Contents/Home
            fi
 
-           if [ -z "$JAVA_HOME" ] && [ -x "/usr/libexec/java_home" ]; then
+           if [ -z "$JAVA_HOME" ] && [ -_1 "/usr/libexec/java_home" ]; then
              #
              # Apple JDKs
              #
@@ -161,7 +161,7 @@ fi
 
 if [ -z "$JAVACMD" ] ; then
   if [ -n "$JAVA_HOME"  ] ; then
-    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
+    if [ -_1 "$JAVA_HOME/jre/sh/java" ] ; then
       # IBM's JDK on AIX uses strange locations for the executables
       JAVACMD="$JAVA_HOME/jre/sh/java"
     else
@@ -172,7 +172,7 @@ if [ -z "$JAVACMD" ] ; then
   fi
 fi
 
-if [ ! -x "$JAVACMD" ] ; then
+if [ ! -_1 "$JAVACMD" ] ; then
   echo "Error: JAVA_HOME is not defined correctly." >&2
   echo "  We cannot execute $JAVACMD" >&2
   exit 1
