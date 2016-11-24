@@ -38,22 +38,22 @@ public class EmailController {
     @RequestMapping(value="/email/unsubscribe", method=RequestMethod.GET)
     public String deleteEmail(@RequestParam(name="key") String secureHash, Model model) {
 
-        ResourceBundle resources = MessageManager.getInstance().getMessages();
+        MessageManager mgr = MessageManager.getInstance();
 
         // header
-        model.addAttribute("brand", resources.getString("index.brand"));
-        model.addAttribute("motto", resources.getString("index.motto"));
+        model.addAttribute("brand", mgr.getMessage("index.brand"));
+        model.addAttribute("motto", mgr.getMessage("index.motto"));
 
         //nav
-        model.addAttribute("first_nav_title", resources.getString("index.first_nav_title"));
-        model.addAttribute("second_nav_title", resources.getString("index.second_nav_title"));
+        model.addAttribute("first_nav_title", mgr.getMessage("index.first_nav_title"));
+        model.addAttribute("second_nav_title", mgr.getMessage("index.second_nav_title"));
 
         // emailDeleted
-        model.addAttribute("first_title", resources.getString("emailDeleted.first_title"));
-        model.addAttribute("first_body", resources.getString("emailDeleted.first_body"));
+        model.addAttribute("first_title", mgr.getMessage("emailDeleted.first_title"));
+        model.addAttribute("first_body", mgr.getMessage("emailDeleted.first_body"));
 
         // emailDeleteFail
-        model.addAttribute("fail", resources.getString("emailDeleteFailed.message"));
+        model.addAttribute("fail", mgr.getMessage("emailDeleteFailed.message"));
 
         try {
             emailRepo.deleteEmail(secureHash);
