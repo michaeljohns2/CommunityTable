@@ -100,4 +100,11 @@ public class EmailRestControllerTest {
         Assert.fail("Expected API exception on email send.");
     }
 
+    @Test
+    public void addEmail_getEmailsAsString_Success_Test() {
+        EmailAddressModel model = controller.addEmail("test@test.com");
+        model = controller.addEmail("test1@test1.com");
+        String result = controller.getEmailsAsString();
+        Assert.assertTrue(result.equals("test@test.com,test1@test1.com") || result.equals("test1@test1.com,test@test.com"));
+    }
 }

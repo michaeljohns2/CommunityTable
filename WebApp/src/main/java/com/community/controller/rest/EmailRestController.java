@@ -11,6 +11,8 @@ import com.community.model.service.EmailBuilder;
 import com.community.model.service.EmailSender;
 import com.community.model.service.IEmailSender;
 import com.community.utils.MessageManager;
+import com.fasterxml.jackson.annotation.JsonRawValue;
+import com.fasterxml.jackson.annotation.JsonValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -55,6 +57,23 @@ public class EmailRestController {
         return emails;
     }
 
+
+    @RequestMapping(value="/rest/emailsAsString",method=RequestMethod.GET,produces="application/json")
+    public String getEmailsAsString() {
+        List<EmailAddressModel> emails = emailRepo.getAllEmails();
+        String result = "";
+        for (EmailAddressModel email : emails) {
+            result += ",";
+            result += email.getEmailAddress();
+        }
+        if (emails.size()==0) {
+            result = "";
+        } else {
+            result = result.substring(1, result.length());
+        }
+
+        return result;
+    }
     private boolean isValidEmailAddress(String emailAddress){
         if (emailAddress == null || !emailPattern.matcher(emailAddress).matches()) {
             return false;

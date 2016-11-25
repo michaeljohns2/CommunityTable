@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>${title}</title>
-        <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="resources/css/community.css">
+        <link rel="stylesheet" type="text/css" href="/CommunityTables/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/CommunityTables/resources/css/community.css">
     </head>
     <body>
