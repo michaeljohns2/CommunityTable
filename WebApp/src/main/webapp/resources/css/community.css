@@ -84,7 +84,6 @@ GLOBAL CLASSES
  PAGE TEMPLATE STYLING
 *****/
 
-
 #email{
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/typewriter.jpg');
     background-size: cover;
@@ -99,6 +98,11 @@ GLOBAL CLASSES
 .subscriptionStatus{
     display: none;
     font: 15px arial, sans-serif;
+}
+
+#admin-dashboard {
+    color: #FFFFFF;
+    background-color: #333333;
 }
 
 #footer {
