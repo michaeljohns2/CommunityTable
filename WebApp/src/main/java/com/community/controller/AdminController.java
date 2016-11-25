@@ -22,6 +22,9 @@ public class AdminController {
 
     @RequestMapping("/admin/index")
     public String index(Model model) {
+
+        model.addAttribute("admin_main", "This is where content will be displayed based on left nav selection.");
+
         // Load admin/index.jsp view.
         return "/admin/index";
     }
