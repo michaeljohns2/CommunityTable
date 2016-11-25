@@ -40,7 +40,11 @@ Here is an example of adding a mvn tomcat run configuration to IntelliJ:
 
 More in-depth plugin settings can be found [here](http://tomcat.apache.org/maven-plugin-trunk/tomcat7-maven-plugin/run-mojo.html).
 
-## Local Platform Development (Docker)
+## Local Platform Development 
+
+__Note: For email support in either option, follow instructions in section _'Email Settings (Local Development)'_ below. If you have the SMTP settings in your `Server_Custom.properties` then they will be applied when you package for Tomcat.__
+
+### Option-1: For Docker 
 
 __Note: Support throw-away instances for both Mongo and Tomcat -- this assumes a *NIX environment with bash and Docker.__
 
@@ -53,6 +57,20 @@ To use `cd platform/dev` and run any of the following:
 * Stop: `stop-all.sh` to stop and remove mongo and tomcat.
 * Other `make` commands can be run if desired.
 
+### Option-2: For Manual 
+
+If you are not running via the Docker throw-away instance scripts,  you  will need to install the following on your local machine:
+
+* Tomcat 8.5.8 -- start Tomcat with `<path to tomcat>/bin/catalina.sh start`
+* Mongo 3.2 or 3.3 -- start Mongo with `<path to mongo>/bin/mongod`. 
+
+To run CommunityTable webapp, from project root:
+
+1. `cd WebApp`
+2. `mvn clean package` to generate the war file
+3. `cp -rf target/CommuntyTables.war <path to tomcat>/webapps`
+4. you may need to restart Tomcat (`<path to tomcat>/bin/catalina.sh stop` followed by `<path to tomcat>/bin/catalina.sh stop`)
+5. The app will be available at `http://localhost:8080/CommunityTables/index.html`
 
 ## Server.properties
 
@@ -63,8 +81,10 @@ Server properties used by the app are found in  `WebApp/src/resources/Server.pro
 * db.port = 27017
 * host.path=http://localhost/
 * smtp.host=my.smtp.host
+* smtp.port=25
 * smtp.user=user
 * smtp.user.password=password
+* smtp.start.ttls=false
 
 Developers can locally supply `Server_Custom.properties` with any override values (especially sensitive ones like user and password), just 
 generate the file in `WebApp/src/resources` and populate as needed.  __Note: `Server_Custom.properties` is ignored by .gitignore and should
@@ -77,13 +97,27 @@ E.g. usage: `ConfigManager.getInstance().getSetting(ConfigManager.MONGO_SERVER_K
 ### Email Settings (Local Development)
 For local development and testing, it is recommended to generate a `WebApp/src/resources/Server_Custom.properties` and place the following properties:
 
-* `smtp.host=<inquire on slack for incubation server>`
+#### Option-1: For Incubation Site SMTP
+
+* `smtp.host=community-tables.vinodhalaharvi.com`
+* `smtp.port=587`
 * `smtp.user=<your slack username>`
 * `smtp.user.password=<your password>`
+* `smtp.start.ttls=true`
 
 __Note: Each member of the CommunityTables team already has an account on our incubation site.__
 The initial password is `updateyourpassword`. The first time you log in, you will need to change your password. To accomplish this execute the following command:
 `ssh -l <your slack username> <incubation server ip>` (then provide you password on the prompt and then you can exit) -- once this is accomplished, sending will be handled by our incubation site for local development.
+
+#### Option-2: For Gmail SMTP
+
+* `smtp.host=smtp.gmail.com`
+* `smtp.port=587`
+* `smtp.user=<your gmail email>`
+* `smtp.user.password=<your password>`
+* `smtp.start.ttls=true`
+
+__Note: To use gmail SMTP you may need to go to https://www.google.com/settings/security/lesssecureapps?rfn=27&rfnc=1&et=0&asae=2&anexp=ire-control and temporarily allow less secure connections first.__
 
 ## Messages.properties
 Similar to Server above, messages are pulled from `Messages.properties`, with support from `MessageManager`. Unlike `ConfigManager`, there are no overrides.
