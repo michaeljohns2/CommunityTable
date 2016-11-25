@@ -8,5 +8,8 @@
         <title>${title}</title>
         <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="resources/css/community.css">
+
+        <!-- Need jquery loaded in header -->
+        <script type="text/javascript" src="webjars/jquery/3.1.1/dist/jquery.min.js"></script>
     </head>
     <body>

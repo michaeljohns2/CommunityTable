@@ -1,5 +1,6 @@
 package com.community.controller;
 
+import com.community.utils.ConfigManager;
 import com.community.utils.MessageManager;
 import com.community.utils.StrPair;
 import org.springframework.stereotype.Controller;
@@ -69,28 +70,39 @@ public class IndexController {
 
         MessageManager mgr = MessageManager.getInstance();
 
-        // header
+        /* header */
         model.addAttribute("title", mgr.getMessage("about.title"));
         model.addAttribute("brand", mgr.getMessage("brand"));
 
-        // nav
+        /* nav */
         model.addAttribute("nav_title_1", mgr.getMessage("nav_title_1"));
         model.addAttribute("nav_title_2", mgr.getMessage("nav_title_2"));
         model.addAttribute("nav_title_3", mgr.getMessage("nav_title_3"));
 
-        // about (with a little extra to do email replacement here)
-        StrPair emailPair = StrPair.of("site.email", mgr.getMessage("site.email"));
+        /* about (with a little extra to do email replacement  and google map api here) */
+
+        String googleMapApiKey = ConfigManager.getInstance().getSetting(ConfigManager.GOOGLE_MAP_API_KEY);
+        model.addAttribute("google_map_api_key", googleMapApiKey);//expect empty or valid, not null
+
+        boolean useGoogleMapAPI = googleMapApiKey != null && !googleMapApiKey.trim().isEmpty();
+        model.addAttribute("use_google_map", useGoogleMapAPI? "true" : "false");
+
+        model.addAttribute("map_image_name", mgr.getMessage("map_image_name"));
+
+        StrPair[] pairs = new StrPair[]{
+                StrPair.of("site.email", mgr.getMessage("site.email"))
+        };
 
         model.addAttribute("title_1", mgr.getMessage("about.title_1"));
-        model.addAttribute("body_1", mgr.getMessageWithReplacements("about.body_1", emailPair));
+        model.addAttribute("body_1", mgr.getMessageWithReplacements("about.body_1", pairs));
         model.addAttribute("title_2", mgr.getMessage("about.title_2"));
-        model.addAttribute("body_2", mgr.getMessageWithReplacements("about.body_2", emailPair));
+        model.addAttribute("body_2", mgr.getMessageWithReplacements("about.body_2", pairs));
         model.addAttribute("title_3", mgr.getMessage("about.title_3"));
-        model.addAttribute("body_3", mgr.getMessageWithReplacements("about.body_3",emailPair));
+        model.addAttribute("body_3", mgr.getMessageWithReplacements("about.body_3", pairs));
         model.addAttribute("title_4", mgr.getMessage("about.title_4"));
-        model.addAttribute("body_4", mgr.getMessageWithReplacements("about.body_4", emailPair));
+        model.addAttribute("body_4", mgr.getMessageWithReplacements("about.body_4", pairs));
 
-        // Load about.jsp
+        /* Load about.jsp */
         return "about";
     }
 

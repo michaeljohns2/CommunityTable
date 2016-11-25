@@ -31,6 +31,9 @@ public class ConfigManager {
     public static final String AUTH_ADMIN_PASSWORD_KEY = "auth.admin.password";
     public static final String AUTH_ADMIN_ROLE_KEY = "auth.admin.role";
 
+    /* google map */
+    public static final String GOOGLE_MAP_API_KEY = "google.map.api.key";
+
     private static ConfigManager _instance = null;
 
     public static ConfigManager getInstance(){

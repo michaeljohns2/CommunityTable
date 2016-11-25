@@ -37,6 +37,24 @@
             <p class="body_4">
                 ${body_4}
             </p>
+            <div id="map"></div>
+
+            <script type="text/javascript">
+                $(function() {
+                    // Handler for .ready() called.
+
+                    var mapDiv = document.getElementById('map');
+                    var googleMap = '<iframe width="600" height="450" frameborder="0" style="border:0" \
+                src="https://www.google.com/maps/embed/v1/view?zoom=11&center=36.3487,-82.2107&key=${google_map_api_key}" \
+                allowfullscreen></iframe>';
+                    var fallbackMap = '<img src="resources/img/${map_image_name}" class="img-responsive">';
+
+                    var useGoogleMap = "${use_google_map}";
+                    if (useGoogleMap === "true") mapDiv.innerHTML += googleMap;
+                    else mapDiv.innerHTML += fallbackMap;
+                });
+            </script>
+
         </div>
     </section>
 </div><!--/.container-->
