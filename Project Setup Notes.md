@@ -69,7 +69,7 @@ To run CommunityTable webapp, from project root:
 1. `cd WebApp`
 2. `mvn clean package` to generate the war file
 3. `cp -rf target/CommuntyTables.war <path to tomcat>/webapps`
-4. you may need to restart Tomcat (`<path to tomcat>/bin/catalina.sh stop` followed by `<path to tomcat>/bin/catalina.sh stop`)
+4. you may need to restart Tomcat (`<path to tomcat>/bin/catalina.sh stop` followed by `<path to tomcat>/bin/catalina.sh start`)
 5. The app will be available at `http://localhost:8080/CommunityTables/index.html`
 
 ## Server.properties
