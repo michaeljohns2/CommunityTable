@@ -81,13 +81,22 @@ public class IndexController {
 
         /* about (with a little extra to do email replacement  and google map api here) */
 
-        String googleMapApiKey = ConfigManager.getInstance().getSetting(ConfigManager.GOOGLE_MAP_API_KEY);
+        String googleMapApiKey = "";
+        try{
+            googleMapApiKey = ConfigManager.getInstance().getSetting(ConfigManager.GOOGLE_MAP_API_KEY);
+        } catch(Exception ignore){}
+
         model.addAttribute("google_map_api_key", googleMapApiKey);//expect empty or valid, not null
 
         boolean useGoogleMapAPI = googleMapApiKey != null && !googleMapApiKey.trim().isEmpty();
         model.addAttribute("use_google_map", useGoogleMapAPI? "true" : "false");
 
-        model.addAttribute("map_image_name", mgr.getMessage("map_image_name"));
+        String fallbackMap = "";
+        try {
+            fallbackMap = mgr.getMessage("map_image_name");
+        } catch(Exception ignore){}
+
+        model.addAttribute("map_image_name", fallbackMap);
 
         StrPair[] pairs = new StrPair[]{
                 StrPair.of("site.email", mgr.getMessage("site.email"))
