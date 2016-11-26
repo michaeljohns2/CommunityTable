@@ -48,16 +48,21 @@ public class EmailRestController {
     @Autowired
     private MessageManager messageManager;
 
+    @RequestMapping(value="/rest/ping", method=RequestMethod.GET, produces="application/json")
+    public String ping() {
+        return "pong";
+    }
+
     @RequestMapping(value="/rest/emails", method= RequestMethod.GET)
     public List<EmailAddressModel> getEmails() {
         List<EmailAddressModel> emails = emailRepo.getAllEmails();
-        // Delete hash values from output for security
-        // NOTE: MAY WNAT TO UNCOMMENT FOR INTERNAL TESTING (REVISIT AFTER ADMIN PAGE)
-//        for (EmailAddressModel email : emails) {email.setSecureHash("");}
         return emails;
     }
 
-
+    /**
+     * Retrieves email DB as a comma delimited string of email addresses.
+     * @return
+     */
     @RequestMapping(value="/rest/emailsAsString",method=RequestMethod.GET,produces="application/json")
     public String getEmailsAsString() {
         List<EmailAddressModel> emails = emailRepo.getAllEmails();

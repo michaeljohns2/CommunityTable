@@ -29,4 +29,4 @@
 
 
 
-<c:import url="../shared/_footer.jsp"/>
+<c:import url="../shared/_admin_footer.jsp"/>
