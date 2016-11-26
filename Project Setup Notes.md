@@ -40,7 +40,11 @@ Here is an example of adding a mvn tomcat run configuration to IntelliJ:
 
 More in-depth plugin settings can be found [here](http://tomcat.apache.org/maven-plugin-trunk/tomcat7-maven-plugin/run-mojo.html).
 
-## Local Platform Development (Docker)
+## Local Platform Development 
+
+__Note: For email support in either option, follow instructions in section _'Email Settings (Local Development)'_ below. If you have the SMTP settings in your `Server_Custom.properties` then they will be applied when you package for Tomcat.__
+
+### Option-1: For Docker 
 
 __Note: Support throw-away instances for both Mongo and Tomcat -- this assumes a *NIX environment with bash and Docker.__
 
@@ -49,10 +53,24 @@ To use `cd platform/dev` and run any of the following:
 
 * Start: `./start-all.sh` for both mongo and tomcat or `make start-mongo` for only mongo or `make start-tomcat` for only tomcat. 
   * _This command will internally run `mvn clean package` on the project and copy the resulting war file into the container's `webapps` directory, thus eliminating any manual build and deploy steps._
-  * Optional: watch the tomcat logs with `tail-tomcat.sh` (you provide todays date as arg1 to watch the current log, e.g. `tail-tomcat.sh 2016-11-20`)
+  * Optional: watch the tomcat logs with `tail-tomcat.sh`
 * Stop: `stop-all.sh` to stop and remove mongo and tomcat.
 * Other `make` commands can be run if desired.
 
+### Option-2: For Manual 
+
+If you are not running via the Docker throw-away instance scripts,  you  will need to install the following on your local machine:
+
+* Tomcat 8.5.8 -- start Tomcat with `<path to tomcat>/bin/catalina.sh start`
+* Mongo 3.2 or 3.3 -- start Mongo with `<path to mongo>/bin/mongod`. 
+
+To run CommunityTable webapp, from project root:
+
+1. `cd WebApp`
+2. `mvn clean package` to generate the war file
+3. `cp -rf target/CommuntyTables.war <path to tomcat>/webapps`
+4. you may need to restart Tomcat (`<path to tomcat>/bin/catalina.sh stop` followed by `<path to tomcat>/bin/catalina.sh start`)
+5. The app will be available at `http://localhost:8080/CommunityTables/index.html`
 
 ## Server.properties
 
@@ -63,8 +81,11 @@ Server properties used by the app are found in  `WebApp/src/resources/Server.pro
 * db.port = 27017
 * host.path=http://localhost/
 * smtp.host=my.smtp.host
+* smtp.port=25
 * smtp.user=user
 * smtp.user.password=password
+* smtp.start.ttls=false
+* google.map.api.key=
 
 Developers can locally supply `Server_Custom.properties` with any override values (especially sensitive ones like user and password), just 
 generate the file in `WebApp/src/resources` and populate as needed.  __Note: `Server_Custom.properties` is ignored by .gitignore and should
@@ -77,16 +98,43 @@ E.g. usage: `ConfigManager.getInstance().getSetting(ConfigManager.MONGO_SERVER_K
 ### Email Settings (Local Development)
 For local development and testing, it is recommended to generate a `WebApp/src/resources/Server_Custom.properties` and place the following properties:
 
-* `smtp.host=<inquire on slack for incubation server>`
+#### Option-1: For Incubation Site SMTP
+
+* `smtp.host=community-tables.vinodhalaharvi.com`
+* `smtp.port=587`
 * `smtp.user=<your slack username>`
 * `smtp.user.password=<your password>`
+* `smtp.start.ttls=true`
 
 __Note: Each member of the CommunityTables team already has an account on our incubation site.__
 The initial password is `updateyourpassword`. The first time you log in, you will need to change your password. To accomplish this execute the following command:
 `ssh -l <your slack username> <incubation server ip>` (then provide you password on the prompt and then you can exit) -- once this is accomplished, sending will be handled by our incubation site for local development.
 
+#### Option-2: For Gmail SMTP
+
+* `smtp.host=smtp.gmail.com`
+* `smtp.port=587`
+* `smtp.user=<your gmail email>`
+* `smtp.user.password=<your password>`
+* `smtp.start.ttls=true`
+
+__Note: To use gmail SMTP you may need to go to https://www.google.com/settings/security/lesssecureapps?rfn=27&rfnc=1&et=0&asae=2&anexp=ire-control and temporarily allow less secure connections first.__
+
 ## Messages.properties
 Similar to Server above, messages are pulled from `Messages.properties`, with support from `MessageManager`. Unlike `ConfigManager`, there are no overrides.
+
+## Google Map API Key
+Release2 offers support for Google Map API Key to show location of services. To use, add `google.map.api.key=<your key here>` to your `Server_Custom.properties` (so it doesn't get checked in). If an api key is not provided, presentation will gracefully fallback to the static image.
+You can get an API Key from [Google](https://developers.google.com/maps/documentation/javascript/get-api-key). 
+_'Google Maps Embed API'_ must be enabled on the key provided -- you can enable it from the [Developer Console](https://console.developers.google.com).
+Here is an example of how the code is used in the [About](https://github.com/michaeljohns2/CommunityTable/blob/master/WebApp/src/main/webapp/WEB-INF/views/about.jsp) page: `https://www.google.com/maps/embed/v1/view?zoom=11&center=36.3487,-82.2107&key=${google_map_api_key}"`.
+
+For production, make sure you restrict your credentials. 
+To restrict a key, add allowed domain(s) to _'HTTP referrers'_ for your project in the Google [Developer Console](https://console.developers.google.com).
+For your server, use pattern `*.<your domain>/*`. To allow localhost development, use pattern `localhost/*` (no leading `*.`).
+
+__Note: fallback resource in `WebApp/src/main/resources/Messages.properties` for when Google Map API Key is not provided has token `map_image_name`; its value 
+corresponds to an image present in `WebApp/src/main/webapp/resources/img`.__ 
 
 ## Testing 
 When running tests, an existing `target/tomcat` folder may need to be deleted to avoid conflicts with the mock/fake mongo (fongo) and tomcat testing. BDD / A-TDD Tests are handled by Cucumber (plugin for IntelliJ used). Unit Tests are with JUnit.
