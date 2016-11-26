@@ -52,7 +52,7 @@ Our Team met as a group at least 2x per week to synchronize and elevate obstacle
 
 1. Example of a peer code review (part of our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done))
 
- @todo
+![pair programming](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/pair_programming_20161125.png)
 
 2. Example of an ad-hoc team meeting
 
@@ -60,7 +60,8 @@ Our Team met as a group at least 2x per week to synchronize and elevate obstacle
 
 3. Example of a standing team meeting
  
- @todo
+![team meeting](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/team_meeting-sprint2.png)
+
 
 ## Sprint Review and Retrospective
 
