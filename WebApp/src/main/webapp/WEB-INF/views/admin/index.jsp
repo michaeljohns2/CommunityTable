@@ -17,10 +17,8 @@
             --%>
         </div>
 
-        <div class="col-sm-6" style="display:inline-block;width: 33%;border-style:solid;border-width:1px">
+        <div id="admin-main-content" class="col-sm-6" style="display:inline-block;width: 33%;border-style:solid;border-width:1px;word-wrap:break-word;">
             ${admin_main}
-            This is where emails will be displayed.
-
         </div>
 
         <div class="col-sm-3" style="float:right; width:31%;border-style:solid;border-width:1px">
@@ -29,4 +27,6 @@
     </section>
 </div><!--/.container-->
 
-<c:import url="../shared/_footer.jsp"/>
+
+
+<c:import url="../shared/_admin_footer.jsp"/>

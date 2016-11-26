@@ -34,6 +34,8 @@ public class ConfigManager {
     /* google map */
     public static final String GOOGLE_MAP_API_KEY = "google.map.api.key";
 
+    public static final String SPRING_CSRF_ENABLED = "spring.csrf.enabled";
+
     private static ConfigManager _instance = null;
 
     public static ConfigManager getInstance(){

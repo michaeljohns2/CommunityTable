@@ -29,7 +29,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable(); // Interfering with REST calls, disable for now.
+        String antiCsrfEnabled = ConfigManager.getInstance().getSetting(ConfigManager.SPRING_CSRF_ENABLED);
+
+        // Anti-csrf can be disabled if it interferes with testing AJAX.
+        if (antiCsrfEnabled.equals("0")) {
+            http.csrf().disable();
+        }
 
         http.authorizeRequests()
                 .antMatchers("/admin/**")
