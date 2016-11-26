@@ -40,8 +40,8 @@
             <div id="map"></div>
 
             <script type="text/javascript">
-                $(function() {
-                    // Handler for .ready() called.
+                document.addEventListener('DOMContentLoaded', function () {
+                    /* moving away from jquery ready method as it is not loaded until the footer. */
                     var mapDiv = document.getElementById('map');
                     var googleMap = '<iframe width="600" height="450" frameborder="0" style="border:0" \
                 src="https://www.google.com/maps/embed/v1/view?zoom=11&center=36.3487,-82.2107&key=${google_map_api_key}" \
