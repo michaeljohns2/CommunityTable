@@ -126,11 +126,12 @@ Similar to Server above, messages are pulled from `Messages.properties`, with su
 ## Google Map API Key
 Release2 offers support for Google Map API Key to show location of services. To use, add `google.map.api.key=<your key here>` to your `Server_Custom.properties` (so it doesn't get checked in). If an api key is not provided, presentation will gracefully fallback to the static image.
 You can get an API Key from [Google](https://developers.google.com/maps/documentation/javascript/get-api-key). 
-_'Google Maps Embed API'_ must be enabled on the key provided -- you can enable it from the [Developer Console](https://console.developers.google.com)._ 
+_'Google Maps Embed API'_ must be enabled on the key provided -- you can enable it from the [Developer Console](https://console.developers.google.com).
 Here is an example of how the code is used in the [About](https://github.com/michaeljohns2/CommunityTable/blob/master/WebApp/src/main/webapp/WEB-INF/views/about.jsp) page: `https://www.google.com/maps/embed/v1/view?zoom=11&center=36.3487,-82.2107&key=${google_map_api_key}"`.
 
-For production, make sure you restrict your credentials -- this most likely involves the use of separate keys for development (left unrestricted but not exposed in source code or deployed for public use) and production (restricted to your server). 
+For production, make sure you restrict your credentials. 
 To restrict a key, add allowed domain(s) to _'HTTP referrers'_ for your project in the Google [Developer Console](https://console.developers.google.com).
+For your server, use pattern `*.<your domain>/*`. To allow localhost development, use pattern `localhost/*` (no leading `*.`).
 
 __Note: fallback resource in `WebApp/src/main/resources/Messages.properties` for when Google Map API Key is not provided has token `map_image_name`; its value 
 corresponds to an image present in `WebApp/src/main/webapp/resources/img`.__ 
