@@ -79,6 +79,7 @@ public class EmailRestController {
 
         return result;
     }
+
     private boolean isValidEmailAddress(String emailAddress){
         if (emailAddress == null || !emailPattern.matcher(emailAddress).matches()) {
             return false;

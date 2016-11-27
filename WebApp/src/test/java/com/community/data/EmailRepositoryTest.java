@@ -51,6 +51,28 @@ public class EmailRepositoryTest extends EmailRepository {
     }
 
     @Test
+    public void saveNullEmailAddressModelTest() {
+        try {
+            EmailAddressModel emailAddressModel = null;
+            this.saveEmail(emailAddressModel);
+            fail("EmailAddressModel cannot be null");
+        } catch (Exception e) {
+            return;
+        }
+    }
+
+    @Test
+    public void saveNullEmailAddressTest() {
+        try {
+            EmailAddressModel emailAddressModel = new EmailAddressModel();
+            this.saveEmail(emailAddressModel);
+            fail("EmailAddress cannot be null");
+        } catch (Exception e) {
+            return;
+        }
+    }
+
+    @Test
     public void getEmailTest() {
         try {
             //1. pre-condition -- call #saveEmailInternal()
@@ -67,7 +89,18 @@ public class EmailRepositoryTest extends EmailRepository {
     }
 
     @Test
-    public void getAllEmailsTest() {
+    public void getNoEmailTest() {
+        try {
+            EmailAddressModel foundEmail = this.getEmail(emailAddr);
+            assertNull("Expected foundEmail to equal null.",foundEmail);
+        } catch (Exception e) {
+            LOG.error(e.getMessage(),e);
+            fail(e.getMessage());
+        }
+    }
+
+      @Test
+    public void getAllEmails1Test() {
         try{
             //1. pre-condition -- call #saveEmailInternal()
             this.saveEmailInternal(emailAddr);
@@ -75,6 +108,34 @@ public class EmailRepositoryTest extends EmailRepository {
             //2. run this test
             List<EmailAddressModel> emails = this.getAllEmails();
             assertEquals("Expected 1 email available.",1,emails.size());
+        } catch (Exception e) {
+            LOG.error(e.getMessage(),e);
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void getAllEmailsMultipleTest() {
+        try{
+            //1. pre-condition -- call #saveEmailInternal()
+            this.saveEmailInternal(emailAddr);
+            this.saveEmailInternal("emailtest2@test.com");
+            this.saveEmailInternal("emailtest3@test.com");
+
+            //2. run this test
+            List<EmailAddressModel> emails = this.getAllEmails();
+            assertEquals("Expected 3 emails available.",3,emails.size());
+        } catch (Exception e) {
+            LOG.error(e.getMessage(),e);
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void getAllEmailsNoneTest() {
+        try{
+            List<EmailAddressModel> emails = this.getAllEmails();
+            assert(emails.size()==0);
         } catch (Exception e) {
             LOG.error(e.getMessage(),e);
             fail(e.getMessage());

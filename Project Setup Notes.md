@@ -57,7 +57,7 @@ To use `cd platform/dev` and run any of the following:
 * Stop: `stop-all.sh` to stop and remove mongo and tomcat.
 * Other `make` commands can be run if desired.
 
-### Option-2: For Manual 
+### Option-2: For Manual
 
 If you are not running via the Docker throw-away instance scripts,  you  will need to install the following on your local machine:
 

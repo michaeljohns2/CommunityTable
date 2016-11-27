@@ -111,14 +111,11 @@ public class EmailRepository extends BaseRepository {
 
         long resultCount = emailCollection.count(query);
 
-        if (resultCount == 1) {
-            emailCollection.findOneAndDelete(query);
+        if (resultCount > 0) {
+            emailCollection.deleteMany(query);
         } else if (resultCount == 0) {
             throw new EmailNotFoundException("An email was not found for secureHash value: " + secureHash);
-        } else {
-            // Log that there were multiple records
-            System.out.println("Warning: Found and deleted multiple email records matching secureHash: " + secureHash);
-            emailCollection.deleteMany(query);
         }
     }
+
 }
