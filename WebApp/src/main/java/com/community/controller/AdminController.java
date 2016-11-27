@@ -1,5 +1,6 @@
 package com.community.controller;
 
+import com.community.utils.MessageManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -22,6 +23,16 @@ public class AdminController {
 
     @RequestMapping("/admin/index")
     public String index(Model model) {
+        MessageManager mgr = MessageManager.getInstance();
+
+        // header
+        model.addAttribute("title", mgr.getMessage("admin.title"));
+        model.addAttribute("brand", mgr.getMessage("brand"));
+
+        // nav
+        model.addAttribute("nav_title_1", mgr.getMessage("nav_title_1"));
+        model.addAttribute("nav_title_2", mgr.getMessage("nav_title_2"));
+        model.addAttribute("nav_title_3", mgr.getMessage("nav_title_3"));
 
         model.addAttribute("admin_main", "This is where content will be displayed based on left nav selection.");
 

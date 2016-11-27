@@ -103,6 +103,14 @@ GLOBAL CLASSES
 #admin-dashboard {
     color: #FFFFFF;
     background-color: #333333;
+    min-height: 80vh;
+}
+
+#admin_left, #admin_right {
+    background: #E4B04A;
+    border: #2B2C2A solid 1px;
+    border-radius: 5px;
+    min-height: 80vh;
 }
 
 #footer {
