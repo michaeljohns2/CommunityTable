@@ -17,7 +17,20 @@ The forecast correlated to the second four stories from our [Initial Ordered Pro
 
 ### Acceptance Criteria and Sprint Tasks 
 
-@todo
+1. User Story: 'About' content
+![About Content](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/about-content-tasks.png?raw=true)
+
+2. User Story: 'Vision' Page
+
+![Vision Page](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/vision-page-tasks.png?raw=true)
+
+3. User Story: Admin portal
+
+![Admin Portal](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/admin-portal-tasks.png?raw=true)
+
+4. User Story: Admin list Member emails
+
+![Admin List](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/admin-list-tasks.png?raw=true)
 
 ### Behavior-Driven Development & Unit Tests
 
