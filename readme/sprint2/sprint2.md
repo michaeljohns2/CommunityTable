@@ -32,11 +32,96 @@ Subsequently, our Definition of Done has a checklist item for "Acceptance criter
 
 ## Daily Scrums (1-day sample)
 
-@todo
+#### Vinod
+_What did you accomplish yesterday?_
+> email encryption using TLS, fixed the outage on jenkins server
+
+_What will you do today?_
+> work with @keljdoyle to get the email sent using java code
+
+_What obstacles are impeding your progress?_
+> will have to find @keljdoyle time to work together
+
+#### Michael
+_What did you accomplish yesterday?_
+> merge pull requests, coordinated hosting with primary stakeholder, managed backlog
+
+_What will you do today?_
+> add logrotate to dev (throw-away) tomcat, add template in template replacement
+
+#### Dairai
+_What did you accomplish yesterday?_
+> completed the templating
+
+_What will you do today?_
+> I am working on the admin page view
+
+#### Shawn
+_What did you accomplish yesterday?_
+> Created about and vision page. Organized site template with _header, _nav, and _footer in separate shared files. Added and updated content. Formatted login page
+
+_What will you do today?_
+> Edit the layout of the admin page.
+
+#### Kel
+_What did you accomplish yesterday?_
+> Prep for planning session
+
+_What will you do today?_
+> Research multi part emails
+
+_What obstacles are impeding your progress?_
+> Potentially accessing a test SMTP server
+
+#### Melvin
+_What did you accomplish yesterday?_
+> - updated burndown chart
+> - created new sprint2.md document
+> - updated the assignment progress sheet
+
+_What will you do today?_
+> - standup meeting
+> - will keep burndown chart and assignment progress sheet up to date
+> - resolve impediments
 
 ### Impediments
 
-@todo
+_IRP = Impediment Removal Plan_
+
+#### Shawn - Nov 24th, 12:30 pm
+> Need to set up the complete system so I can test logging in to the admin.
+
+IRP: No action needed.
+
+#### Vinod - Nov 22nd, 08:30 pm
+> will have to find @keljdoyle time to work together
+
+IRP: Make sure Vinod syncs with Kel to set up time.
+
+#### Kel - Nov 22nd, 08:53 am
+> Potentially accessing a test SMTP server
+
+IRP: No action needed.
+
+#### Shawn - Nov 20th, 02:14 pm
+> How can I create a new "about" page? Somehow the controller is not matching with the view. I'm guessing the model is off somehow. Can somebody create the basic MVC for an about page, and I'll fill it in with the front-end content? Thanks.
+
+IRP: Answered in Slack.
+
+#### Kel Doyle - Nov 17th, 02:10 pm
+> Lack of Docker skillz
+
+IRP: No action needed.
+
+#### Kel - Nov 15th, 02:22 pm
+> not really understanding how docker deployment works
+
+IRP: No action needed.
+
+#### Shawn - Nov 15th, 10:58 am
+> I think we need to flesh out the expectations of this sprint. Maybe people can look at the backlog and starting adding their names to places where they think they can contribute. Add comments, tasks, and thoughts on the cards. Then when we meet we will have an idea of other people's thoughts and more easily break it down into chunks.
+
+IRP: Discussed in Slack.
 
 ## Collaboration
 Our Team met as a group at least 2x per week to synchronize and elevate obstacles along our critical path; additionally, individuals teamed up to pair program in order to solve various engineering tasks.  
@@ -47,7 +132,6 @@ Our Team met as a group at least 2x per week to synchronize and elevate obstacle
 | 17 NOV | Standing Team Meeting |
 | 21 NOV | Standing Team Meeting |
 | 28 NOV | Sprint Review & Retrospective |
-
 
 1. Example of a peer code review (part of our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done))
 
