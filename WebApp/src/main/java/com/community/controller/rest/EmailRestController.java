@@ -53,17 +53,17 @@ public class EmailRestController {
         return "pong";
     }
 
-    @RequestMapping(value="/rest/emails", method= RequestMethod.GET)
+    @RequestMapping(value="/rest/emails", method=RequestMethod.GET)
     public List<EmailAddressModel> getEmails() {
         List<EmailAddressModel> emails = emailRepo.getAllEmails();
         return emails;
     }
 
     /**
-     * Retrieves email DB as a comma delimited string of email addresses.
+     * Retrieves email DB as a comma delimited string of email addresses in a simple JSON object.
      * @return
      */
-    @RequestMapping(value="/rest/emailsAsString",method=RequestMethod.GET,produces="application/json")
+    @RequestMapping(value="/rest/emailsAsString", method=RequestMethod.GET, produces="application/json")
     public String getEmailsAsString() {
         List<EmailAddressModel> emails = emailRepo.getAllEmails();
         String result = "";
@@ -77,8 +77,11 @@ public class EmailRestController {
             result = result.substring(1, result.length());
         }
 
+        result = String.format("{ \"result\" : \"%s\" }", result);
+
         return result;
     }
+
     private boolean isValidEmailAddress(String emailAddress){
         if (emailAddress == null || !emailPattern.matcher(emailAddress).matches()) {
             return false;

@@ -20,6 +20,7 @@ $(function(){  // Wait til all resources loaded...
             $.ajax({
                 method:'GET',
                 cache:false,
+                dataType: 'json',
                 url: '/CommunityTables/rest/emailsAsString.json'
                 , beforeSend: function( xhr ) {
                     if (header != '' && token != '') {
@@ -28,7 +29,7 @@ $(function(){  // Wait til all resources loaded...
                 }
                 ,success:function(result)//we got the response
                 {
-                    $( '#admin-main-content' ).text(result);
+                    $('#admin_middle').text(result.result);
                 }
                 ,error:function(exception){
                     //push the exception response text into the fail block on index
