@@ -28,7 +28,7 @@ The forecast correlated to the second four stories from our [Initial Ordered Pro
 Our burndown is based on the completion of each user story's [Sprint Task Checklist](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/sprint1.md#acceptance-criteria-and-sprint-tasks) (shown above) which were decomposed from the PBIs committed to the sprint. The last item is always "Meets Definition of Done" ([ref](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done)). 
 Subsequently, our Definition of Done has a checklist item for "Acceptance criteria completed" which corresponds to the specific acceptance criteria of each user story (also shown above).
 
-![Burndown Chart Sprint 2](https://image-charts.com/chart?cht=lc&chd=t:16.00,14.22,12.44,10.67,8.89,7.11,5.33,3.56,1.78,0.00|16.00,16.00,16.00,16.00,16.00,8.00,8.00,8.00,5.33,2.13&chco=2196F3,FF5722&chxt=x,y&chxl=0:|1|2|3|4|5|6|7|8|9|10|1:Story+Points&chs=600x200&chtt=Burndown%20Chart%20Sprint%202&chg=20,0,1,3)
+![Burndown Chart Sprint 2](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/68747-final.png?raw=true)
 
 ## Daily Scrums (1-day sample)
 
