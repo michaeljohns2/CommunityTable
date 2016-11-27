@@ -2,6 +2,7 @@ package com.community.controller;
 
 import com.community.utils.ConfigManager;
 import com.community.utils.MessageManager;
+import com.community.utils.ModelUtils;
 import com.community.utils.StrPair;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,14 +18,8 @@ public class IndexController {
 
         MessageManager mgr = MessageManager.getInstance();
 
-        // header
-        model.addAttribute("title", mgr.getMessage("index.title"));
-        model.addAttribute("brand", mgr.getMessage("brand"));
-
-        // nav
-        model.addAttribute("nav_title_1", mgr.getMessage("nav_title_1"));
-        model.addAttribute("nav_title_2", mgr.getMessage("nav_title_2"));
-        model.addAttribute("nav_title_3", mgr.getMessage("nav_title_3"));
+        // header & nav
+        ModelUtils.addCommonAttrs(model);
 
         // index
         model.addAttribute("first_title", mgr.getMessage("index.first_title"));
@@ -45,14 +40,9 @@ public class IndexController {
 
         MessageManager mgr = MessageManager.getInstance();
 
-        // header
-        model.addAttribute("title", mgr.getMessage("about.title"));
-        model.addAttribute("brand", mgr.getMessage("brand"));
+        // header & nav
+        ModelUtils.addCommonAttrs(model);
 
-        // nav
-        model.addAttribute("nav_title_1", mgr.getMessage("nav_title_1"));
-        model.addAttribute("nav_title_2", mgr.getMessage("nav_title_2"));
-        model.addAttribute("nav_title_3", mgr.getMessage("nav_title_3"));
         model.addAttribute("username_label", mgr.getMessage("username_label"));
         model.addAttribute("password_label", mgr.getMessage("password_label"));
         model.addAttribute("username_input_text", mgr.getMessage("username_input_text"));
@@ -70,14 +60,8 @@ public class IndexController {
 
         MessageManager mgr = MessageManager.getInstance();
 
-        /* header */
-        model.addAttribute("title", mgr.getMessage("about.title"));
-        model.addAttribute("brand", mgr.getMessage("brand"));
-
-        /* nav */
-        model.addAttribute("nav_title_1", mgr.getMessage("nav_title_1"));
-        model.addAttribute("nav_title_2", mgr.getMessage("nav_title_2"));
-        model.addAttribute("nav_title_3", mgr.getMessage("nav_title_3"));
+        // header & nav
+        ModelUtils.addCommonAttrs(model);
 
         /* about (with a little extra to do email replacement  and google map api here) */
 
@@ -120,13 +104,8 @@ public class IndexController {
 
         MessageManager mgr = MessageManager.getInstance();
 
-        // header
-        model.addAttribute("brand", mgr.getMessage("brand"));
-
-        // nav
-        model.addAttribute("nav_title_1", mgr.getMessage("nav_title_1"));
-        model.addAttribute("nav_title_2", mgr.getMessage("nav_title_2"));
-        model.addAttribute("nav_title_3", mgr.getMessage("nav_title_3"));
+        // header & nav
+        ModelUtils.addCommonAttrs(model);
 
         // vision
         model.addAttribute("title_1", mgr.getMessage("vision.title_1"));
