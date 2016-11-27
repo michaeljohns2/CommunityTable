@@ -6,7 +6,7 @@
             (c) CommunityTable 2016
         </div>
         <div class="pull-right">
-            <a class="small" href="admin/logout.html" title="Logout of Admin Dashboard">Logout</a>
+            <a class="small" href="logout.html" title="Logout of Admin Dashboard">Logout</a>
         </div>
     </div>
 </footer>
