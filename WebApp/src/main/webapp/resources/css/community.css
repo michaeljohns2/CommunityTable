@@ -80,6 +80,10 @@ GLOBAL CLASSES
     line-height: 1.6em;
 }
 
+.wrap {
+    word-wrap:break-word;
+}
+
 /****
  PAGE TEMPLATE STYLING
 *****/

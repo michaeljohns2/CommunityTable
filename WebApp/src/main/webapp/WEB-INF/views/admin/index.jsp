@@ -20,10 +20,8 @@
             --%>
         </div>
 
-        <div class="col-sm-6" id="admin_middle">
+        <div class="col-sm-6 wrap" id="admin_middle">
             ${admin_main}
-            This is where emails will be displayed.
-
         </div>
 
         <div class="col-sm-3" id="admin_right">
