@@ -5,11 +5,13 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>${title}</title>
-        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/resources/css/community.css">
 
-        <%-- Need jquery loaded in header --%>
-        <script type="text/javascript" src="webjars/jquery/3.1.1/dist/jquery.min.js"></script>
+        <%-- These tags are used to enable AJAX calls to bypass Spring anti-CSRF --%>
+        <meta name="_csrf" content="${_csrf.token}"/>
+        <meta name="_csrf_header" content="${_csrf.headerName}"/>
+
+        <title>${title}</title>
+        <link rel="stylesheet" type="text/css" href="/CommunityTables/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/CommunityTables/resources/css/community.css">
     </head>
     <body>
