@@ -39,20 +39,20 @@ Our sprint progress is documented at the following link:
 
 1. About Page (backed by highly customizable templates); also supports Google Map API for dynamic location with graceful fallback if missing.
  
-![Example About Page](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/about_content.png) 
+ ![Example About Page](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/about_content.png) 
 
 2. Vision Page (also uses templates) to more deeply express the focus and future of the organization.
 
-![Example Vision Page](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/vision_example.png)
+ ![Example Vision Page](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/vision_example.png)
 
 3. Admin Portal for sensitive site operations, e.g. Member Communication (see below) and Blog Management (estimated sprint3). 
 
-![Admin Portal](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/admin_login.png)
+ ![Admin Portal](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/admin_login.png)
 
 4. Allow authorized admins to get a list of emails, ready to copy/paste into email message for ad-hoc communication
  with registered members. This is the first feature to use the new Admin Portal (see above).
 
-![Email Lists (Admin)](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/admin_list_emails.png)
+ ![Email Lists (Admin)](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/admin_list_emails.png)
 
 ## Sprint 1 (10/8-11/11)
 
@@ -62,19 +62,19 @@ Our sprint progress is documented at the following link:
 ### Release 1 Notes
 1. Compelling site landing page 
 
-![Example Landing Page with Email Registration](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/community_table_tn_landing_13NOV2016.png)
+ ![Example Landing Page with Email Registration](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/community_table_tn_landing_13NOV2016.png)
  
 2. Backed by highly customizable templates ready for your content
   
-![Example Site Template](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/site_template.png)
+ ![Example Site Template](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/site_template.png)
 
 3. Customized Welcome Email automatically sent upon registration 
 
-![Example Welcome Email](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/welcome_email.png)
+ ![Example Welcome Email](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/welcome_email.png)
 
 4. Unsubscribe link embedded in all site emails
 
-![Example Email Unsubscribe Page](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/unsubscribe_success.png)
+ ![Example Email Unsubscribe Page](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/unsubscribe_success.png)
 
 ## Scrum Team
 - Scrum Master / Developer (Front End): Melvin Tercan
