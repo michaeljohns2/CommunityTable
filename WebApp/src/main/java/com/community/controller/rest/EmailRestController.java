@@ -155,4 +155,21 @@ public class EmailRestController {
         return error;
     }
 
+    // FOR NON-SPRING TESTS (i.e. CUCUMBER)
+
+    public void useEmailBuilder(EmailBuilder emailBuilder){
+        this.emailBuilder = emailBuilder;
+    }
+
+    public void useEmailSender(IEmailSender emailSender){
+        this.emailSender = emailSender;
+    }
+
+    public void useEmailRepo(EmailRepository emailRepo){
+        this.emailRepo = emailRepo;
+    }
+
+    public void useMessageManager(MessageManager messageManager){
+        this.messageManager = messageManager;
+    }
 }
