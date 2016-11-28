@@ -30,12 +30,21 @@ Reference our [Team Formation Sprint](https://github.com/michaeljohns2/Community
 ### Rationale for Backlog Order
 The backlog is ordered by value generated to our stakeholders, namely Community Table TN (the first customer for our open source products). We (as well as our key stakeholder) are starting from scratch (levering other open source software frameworks where feasible). PBIs are groomed to represent excellent users stories within our team's [Definition of Ready](https://github.com/michaeljohns2/CommunityTable/blob/master/sprint0.md#definition-of-ready) and have been estimated by the development team.
 
+## Sprint 2 (11/14-11/25)
+
+Our sprint progress is documented at the following link:
+[Sprint 2 (11/14-11/25)](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/sprint2.md)
+
+### Release 2 Notes
+
+@todo
+
 ## Sprint 1 (10/8-11/11)
 
 Our sprint progress is documented at the following link:
 [Sprint 1 (10/8-11/11)](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/sprint1.md)
 
-### Release Notes
+### Release 1 Notes
 1. Compelling site landing page 
 
  ![Example Landing Page with Email Registration](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/community_table_tn_landing_13NOV2016.png)
