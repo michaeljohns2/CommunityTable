@@ -84,7 +84,7 @@ our primary focus is on core business logic, allowing more trivial plumbing and 
 
 ## Burndown
 
-Our burndown is based on the completion of each user story's [Sprint Task Checklist](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/sprint1.md#acceptance-criteria-and-sprint-tasks) (shown above) which were decomposed from the PBIs committed to the sprint. The last item is always "Meets Definition of Done" ([ref](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done)). 
+Our burndown is based on the completion of each user story's [Sprint Task Checklist](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/sprint2.md#acceptance-criteria-and-sprint-tasks) (shown above) which were decomposed from the PBIs committed to the sprint. The last item is always "Meets Definition of Done" ([ref](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done)). 
 Subsequently, our Definition of Done has a checklist item for "Acceptance criteria completed" which corresponds to the specific acceptance criteria of each user story (also shown above).
 
 ![Burndown Chart Sprint 2](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/68747-final.png?raw=true)
@@ -213,12 +213,12 @@ We conducted our sprint review with stakeholders and Scrum Team retrospective 27
 - Additionally, she offered some content tweaks which were able to be adjusted on the spot due to our existing support for content templates
 - After the blog capability is implemented, she requests support for presenting products for sell to support the organization
 
-This feedback will be absorbed into the product backlog (and groomed) ahead of sprint 3 planning.
+_This feedback will be absorbed into the product backlog (and groomed) ahead of sprint 3 planning._
  
 ### Scrum Team Retrospective
 
-- Some environment issues linger among team members; while we have increased documentation (from sprint 1 retrospective), more hands on support is needed. 
-Immediately following the retrospective, team members paired up to squash their issues. 
+- Some environment issues linger among team members; while we have increased documentation (from sprint 1 retrospective), more hands on support is needed; 
+Immediately following the retrospective, team members paired up to squash their issues 
 - We discussed adding Content Delivery Network (CDN) libraries in sprint 3 to further speed up page loads
 - We are going to add more efficiencies to our sprint planning meeting to allow us to get moving on the next sprint
 - We are going to introduce a separate channel for each user story committed within sprint 3 to foster streamlined communication and resolution
