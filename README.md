@@ -43,7 +43,11 @@ Our sprint progress is documented at the following link:
 
 2. Vision Page (also uses templates) to more deeply express the focus and future of the organization.
 
- ![Example Vision Page](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/vision_example.png)
+ ![Example Vision Page-1](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/vision_content_1.png)
+ 
+ _(continued...)_
+ 
+ ![Example Vision Page-2](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/vision_content_2.png)
 
 3. Admin Portal for sensitive site operations, e.g. Member Communication (see below) and Blog Management (estimated sprint3). 
 
