@@ -2,9 +2,9 @@
 
 ## Forecast
 
-We forecasted we could get **16 story points** done during this sprint. We forecasted a lower value than Sprint 1 (21 points) due to Thanksgiving Holiday plans of team members.
+We forecasted we could get **16 story points** done during this sprint. We forecasted a lower value than sprint1 (21 points) due to Thanksgiving Holiday plans of team members.
 
-The forecast correlated to the next four stories from our [Ordered Product Backlog](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#initial-product-backlog-order), with the 'Vision' Page story being introduced based on stakeholder feedback after release-1:
+The forecast correlated to the next four stories from our [Ordered Product Backlog](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#initial-product-backlog-order), with the 'Vision' Page story being introduced based on stakeholder feedback after release1:
 
 | __Number__ | __Title__ | __Story Points__ | __Summary__
 | --- | --- | --- | --- |
