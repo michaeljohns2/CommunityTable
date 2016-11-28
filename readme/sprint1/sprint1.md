@@ -14,7 +14,7 @@ The forecast correlated to the first four stories from our [Initial Ordered Prod
 
 ## Actual
 
-With some strain, we were able to close on all user stories forecasted within the sprint (reference our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done)). A summary of [release1](https://github.com/michaeljohns2/CommunityTable/blob/master/README.md#release-notes) is is given in the main readme.
+With some strain, we were able to close on all user stories forecasted within the sprint (reference our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done)). A summary of [release1](https://github.com/michaeljohns2/CommunityTable/blob/master/README.md#release-1-notes) is is given in the main readme.
 Our stakeholders and Scrum Team agree that while release1 is feature complete under sprint1 scope, we will not attempt to deploy into public production until further protections of Mongo and email services are completed -- these are captured as tasks within existing PBIs and are prioritized for sprint2.
 
 ### Acceptance Criteria and Sprint Tasks 
