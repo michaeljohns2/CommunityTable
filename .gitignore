@@ -2,6 +2,7 @@ Server_Custom.properties
 platform/dev/tomcat8
 /platform/dev/ssh-aws.sh
 .DS_Store
+/WebApp/out
 
 target/
 !.mvn/wrapper/maven-wrapper.jar
