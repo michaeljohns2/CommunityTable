@@ -12,4 +12,14 @@ public interface DataConstants {
     String EMAIL_COLLECTION = "emailCollection";
     String EMAIL_FIELD = "emailAddress";
     String EMAIL_HASH = "emailHash";
+
+    //#################################################################################################################
+    // BLOG
+    //#################################################################################################################
+    String BLOG_COLLECTION = "blogCollection";
+    String BLOG_SUBJECT = "blogSubject";
+    String BLOG_BODY = "blogBody";
+    String BLOG_CREATED_DATE = "blogCreatedDate";
+
+
 }
