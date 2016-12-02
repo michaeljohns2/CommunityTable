@@ -1,15 +1,24 @@
 package com.community.data;
 
 import com.community.InstanceTestClassListener;
+import com.community.utils.Base64Utils;
 import com.github.fakemongo.Fongo;
 import com.github.fakemongo.junit.FongoRule;
+import com.mongodb.async.SingleResultCallback;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import org.bson.Document;
+import org.bson.*;
+import org.bson.conversions.Bson;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.slf4j.LoggerFactory;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
@@ -70,6 +79,47 @@ public class MongoTest implements InstanceTestClassListener {
             long expected = 1;
             long actual = collection.count();
             assertEquals(String.format("Expected collection '%s' to have %d objects, actuals was %d", collectionName, expected, actual), expected, actual);
+        } catch (Exception e){
+            LOG.error(e.getMessage(),e);
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void mongoImageTest(){
+        try {
+            //NOTICE HOW BSON DOCUMENT IS USED HERE!!!
+            //SEE http://mongodb.github.io/mongo-java-driver/3.2/driver-async/reference/crud/
+            MongoCollection<BsonDocument> collection = db.getCollection(collectionName,BsonDocument.class);
+            assertTrue(String.format("Expected collection '%s' to exist", collectionName), collectionName != null);
+
+            Path img = Paths.get("","src","test","resources","test.png").toAbsolutePath();
+            LOG.info(String.format("...img path '%s'",img.toString()));
+
+            //encode image
+            String b64 = Base64Utils.encode(img);
+            LOG.info(String.format("BASE64 ==> %s",b64));
+
+            //prep bson document
+            BsonDocument bDoc = new BsonDocument()
+                    .append("comment", new BsonString("This is our ci/cd process image."))
+                    .append("filename", new BsonString("ci_cd.png"))
+                    .append("b64", new BsonBinary(b64.getBytes()));
+
+            LOG.info(String.format("BSON DOCUMENT ==> %s",bDoc));
+
+            //insert into mongo
+            collection.insertOne(bDoc);
+            assertEquals(collection.count(),1);
+
+            //get back from mongo
+            FindIterable<BsonDocument> results = collection.find(bDoc);//using bDoc provided as filter
+            BsonDocument r  = null;
+            for (BsonDocument bd : results)
+                r = bd;//only 1
+
+            assertEquals(bDoc.get("filename"),r.get("filename"));
+
         } catch (Exception e){
             LOG.error(e.getMessage(),e);
             fail(e.getMessage());
