@@ -4,7 +4,7 @@ import com.community.model.BlogModel;
 import com.community.model.EmailAddressModel;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import org.bson.Document;
+import org.bson.*;
 import org.springframework.stereotype.Component;
 
 import java.net.UnknownHostException;
@@ -27,12 +27,14 @@ public class BlogRepository extends BaseRepository {
 
         MongoDatabase db = this.getMongoDatabase();
 
-        Document emailDoc = new Document();
-        emailDoc.put(BLOG_SUBJECT, blogModel.getSubject());
-        emailDoc.put(BLOG_BODY, blogModel.getBody());
-        emailDoc.put(BLOG_CREATED_DATE, blogModel.getCreatedDate().toString());
+        //Note: using BsonDocument given the nature of the contents.
+        MongoCollection<BsonDocument> blogCollection = db.getCollection(BLOG_COLLECTION, BsonDocument.class);
 
-        MongoCollection<Document> blogCollection = db.getCollection(BLOG_COLLECTION);
-        blogCollection.insertOne(emailDoc);
+        BsonDocument bDoc = new BsonDocument();
+        bDoc.put(BLOG_SUBJECT, new BsonString(blogModel.getSubject()));//String
+        bDoc.put(BLOG_BODY, new BsonBinary(blogModel.getBody().getBytes()));//byte[]
+        bDoc.put(BLOG_CREATED_DATE, new BsonDateTime(blogModel.getCreatedDate().getTime()));//long
+
+        blogCollection.insertOne(bDoc);
     }
 }
