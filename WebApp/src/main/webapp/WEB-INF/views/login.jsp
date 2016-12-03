@@ -12,7 +12,7 @@
             <c:url var="loginUrl" value="/login.html" />
             <form action="${loginUrl}" method="post" class="">
                 <c:if test="${param.error != null}">
-                    <div class="alert alert-error alert-dismissable">
+                    <div class="alert alert-danger alert-dismissable">
                         <p>${login_error}</p>
                     </div>
                 </c:if>

@@ -18,7 +18,7 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
 
 
-<div class="container" id="admin-blog-create" >
+<div id="admin-blog-create" >
     <section class="row">
 
         <div align="center">
@@ -32,7 +32,6 @@
                     <div id="summernote"></div>
                     <form:input name="body" path="body" id="hiddenblog" type="hidden" />
                 </div>
-                <div class="alert alert-warning" id="form-warning">Please fill out the required fields first.</div>
                 <button id="form-submit" type="submit" class="btn btn-lg btn-success">Save Blog Entry</button>
             </form:form>
         </div>
@@ -47,7 +46,7 @@
             height: 500,
             minHeight: 200,
             maxHeight: null,
-            focus: true,                  
+            focus: true,
             callbacks: {
                 onChange: function(contents, $editable) {
                     //console.log('onChange:', contents, $editable);
