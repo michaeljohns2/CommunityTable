@@ -23,16 +23,17 @@
 
         <div align="center">
             <h2>Blog Entry</h2>
-            <form:form action="/CommunityTables/admin/blog.html" method="post" commandName="blogForm">
+            <form:form id="blog-entry-form" action="/CommunityTables/admin/blog.html" method="post" commandName="blogForm">
 
                 <div class="form-group">
-                    <form:input path="subject" type="text" class="form-control input-lg" placeholder="Blog Title" />
+                    <form:input name="title" path="subject" type="text" class="form-control input-lg" placeholder="Blog Title" />
                 </div>
                 <div class="form-group">
                     <div id="summernote"></div>
-                    <form:input path="body" id="hiddenblog" type="hidden" />
+                    <form:input name="body" path="body" id="hiddenblog" type="hidden" />
                 </div>
-                <button type="submit" class="btn btn-lg btn-success">Save Blog Entry</button>
+                <div class="alert alert-warning" id="form-warning">Please fill out the required fields first.</div>
+                <button id="form-submit" type="submit" class="btn btn-lg btn-success">Save Blog Entry</button>
             </form:form>
         </div>
 
