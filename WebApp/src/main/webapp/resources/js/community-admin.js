@@ -60,5 +60,25 @@ $(function(){  // Wait til all resources loaded...
         });
     });
 
+    $("#form-warning").hide();
+
+    $("#form-submit").click(function(e) {
+        e.preventDefault();
+
+        // validation
+        var title = $("input[name=title]", "#blog-entry-form").val();
+        var body = $("input[name=body]", "#blog-entry-form").val();
+
+        if (!title || !body) {
+            // show error message
+            $("#form-warning").show();
+            return;
+        } else {
+            $("#form-warning").hide();
+        }
+
+        $("#blog-entry-form").submit();
+    });
+
 });
 
