@@ -53,5 +53,12 @@ $(function(){  // Wait til all resources loaded...
         return false;
     });
 
+    $("#new-blog").click(function(e){
+
+        $.get( "blog.html", function( data ) {
+            $( "#admin_middle" ).html( data );
+        });
+    });
+
 });
 
