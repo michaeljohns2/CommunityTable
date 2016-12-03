@@ -40,14 +40,13 @@
     document.addEventListener('DOMContentLoaded', function () {
         $('#summernote').summernote({
             placeholder: 'blog entry...',
-            height: 500,                 // set editor height
-            minHeight: 200,             // set minimum height of editor
-            maxHeight: null,             // set maximum height of editor
-            focus: true,                  // set focus to editable area after initializing summernote
+            height: 500,
+            minHeight: 200,
+            maxHeight: null,
+            focus: true,                  
             callbacks: {
                 onChange: function(contents, $editable) {
-                    console.log('onChange:', contents, $editable);
-
+                    //console.log('onChange:', contents, $editable);
                     $('#hiddenblog').val(contents);
                 }
             }
