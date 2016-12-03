@@ -10,6 +10,7 @@ public class BlogModel {
     private String subject;
     private String body;
     private Date createdDate;
+    private String blogId;
 
     public String getSubject() {
         return subject;
@@ -33,5 +34,13 @@ public class BlogModel {
 
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
+    }
+
+    public String getBlogId() {
+        return blogId;
+    }
+
+    public void setBlogId(String blogId) {
+        this.blogId = blogId;
     }
 }
