@@ -17,23 +17,26 @@
 <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
 
-<div align="center">
-    <form:form action="/CommunityTables/admin/blog.html" method="post" commandName="blogForm">
-        <h2>Blog Entry</h2>
 
-        <div>
-            Subject: <form:input path="subject" />
+<div id="admin-blog-create" >
+    <section class="row">
+
+        <div align="center">
+            <h2>Blog Entry</h2>
+            <form:form id="blog-entry-form" action="/CommunityTables/admin/blog.html" method="post" commandName="blogForm">
+
+                <div class="form-group">
+                    <form:input name="title" path="subject" type="text" class="form-control input-lg" placeholder="Blog Title" />
+                </div>
+                <div class="form-group">
+                    <div id="summernote"></div>
+                    <form:input name="body" path="body" id="hiddenblog" type="hidden" />
+                </div>
+                <button id="form-submit" type="submit" class="btn btn-lg btn-success">Save Blog Entry</button>
+            </form:form>
         </div>
 
-        <p></p>
-
-        <div id="summernote"></div>
-        <form:input path="body" id="hiddenblog" type="hidden" />
-
-        <div>
-            <input type="submit" value="Save Blog Entry"/>
-        </div>
-    </form:form>
+    </section>
 </div>
 
 <script>
@@ -43,7 +46,7 @@
             height: 500,
             minHeight: 200,
             maxHeight: null,
-            focus: true,                  
+            focus: true,
             callbacks: {
                 onChange: function(contents, $editable) {
                     //console.log('onChange:', contents, $editable);
