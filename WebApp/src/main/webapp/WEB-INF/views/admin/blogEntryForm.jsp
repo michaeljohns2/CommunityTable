@@ -5,18 +5,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Blog Entry</title>
+
+    <link rel="stylesheet" type="text/css" href="/CommunityTables/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/CommunityTables/resources/css/community.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
 </head>
 <body>
-
-<!-- include bootstrap and jquery (until refactored out) -->
-<link rel="stylesheet" type="text/css" href="/CommunityTables/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/CommunityTables/resources/css/community.css">
-<script type="text/javascript" src="/CommunityTables/webjars/jquery/3.1.1/dist/jquery.min.js"></script>
-<script type="text/javascript" src="/CommunityTables/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
-<!-- include summernote css/js-->
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
-
 
 <div id="admin-blog-create" >
     <section class="row">
@@ -39,8 +33,14 @@
     </section>
 </div>
 
+<script type="text/javascript" src="/CommunityTables/webjars/jquery/3.1.1/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/CommunityTables/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+//    document.addEventListener('DOMContentLoaded', function () {
+    $(function () {
+
         $('#summernote').summernote({
             placeholder: 'blog entry...',
             height: 500,
