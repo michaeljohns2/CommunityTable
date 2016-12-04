@@ -23,6 +23,27 @@
 
         <div class="col-sm-6 wrap" id="admin_middle">
             ${admin_main}
+
+            <c:if test="${not empty blogList}">
+                <table border="0">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Created On</th>
+                        <th>Actions</th>
+                    </tr>
+
+                    <tbody>
+                    <c:forEach var="blogEntry" items="${blogList}">
+                        <tr>
+                            <td>${blogEntry.getSubject()}</td>
+                            <td>${blogEntry.getCreatedDateForDisplay()}</td>
+                            <td><a href="/admin/blog/delete/${blogEntry.getBlogId()}">delete</a></td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </c:if>
+
         </div>
 
         <div class="col-sm-3" id="admin_right">
