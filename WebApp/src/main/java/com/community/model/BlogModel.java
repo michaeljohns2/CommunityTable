@@ -1,5 +1,6 @@
 package com.community.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -42,5 +43,15 @@ public class BlogModel {
 
     public void setBlogId(String blogId) {
         this.blogId = blogId;
+    }
+
+    // A virtual property used to control display formatting.
+    public String getCreatedDateForDisplay() {
+        if (this.createdDate == null) {
+            return "missing created date";
+        }
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd hh:mm");
+        return format.format(this.createdDate);
     }
 }

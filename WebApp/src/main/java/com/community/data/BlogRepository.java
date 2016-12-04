@@ -31,12 +31,24 @@ public class BlogRepository extends BaseRepository {
         BsonString subject = (BsonString)blogDoc.get(BLOG_SUBJECT);
         blogModel.setSubject(subject.getValue().toString());
 
-        BsonBinary bsonBody = (BsonBinary)blogDoc.get(BLOG_BODY);
-        String body = new String(bsonBody.getData());
+        // Attempt to get blog content as string from BSON binary data.
+        Object bodyObject = blogDoc.get(BLOG_BODY);
+        String body = "Unable to retrieve blog content.";
+        if (bodyObject instanceof BsonBinary) {
+            BsonBinary bsonBody = (BsonBinary)bodyObject;
+            body = new String(bsonBody.getData());
+        }
         blogModel.setBody(body);
 
-        BsonDateTime createdDate = (BsonDateTime)blogDoc.get(BLOG_CREATED_DATE);
-        blogModel.setCreatedDate(new Date(createdDate.getValue()));
+        // Attempt to get created date.
+        Object createdDateObject = blogDoc.get(BLOG_CREATED_DATE);
+        BsonDateTime createdDate = null;
+        if (createdDateObject instanceof BsonDateTime) {
+            createdDate = (BsonDateTime)createdDateObject;
+            if (createdDate != null) {
+                blogModel.setCreatedDate(new Date(createdDate.getValue()));
+            }
+        }
 
         BsonObjectId id = (BsonObjectId)blogDoc.get("_id");
         if (id != null) {

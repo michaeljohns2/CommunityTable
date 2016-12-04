@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
@@ -39,7 +40,10 @@ public class AdminController {
         // header & nav (admin)
         ModelUtils.addCommonAdminAttrs(model);
 
-        model.addAttribute("admin_main", "This is where content will be displayed based on left nav selection.");
+        model.addAttribute("admin_main", mgr.getMessage("admin.maincontent"));
+
+        List<BlogModel> blogs = blogRepo.getAllBlogs();
+        model.addAttribute("blogList", blogs);
 
         // Load admin/index.jsp view.
         return "/admin/index";
@@ -83,7 +87,7 @@ public class AdminController {
         }
 
         // Load admin/index.jsp view.
-        return "/admin/index";
+        return "redirect:/admin/index.html";
     }
 }
 
