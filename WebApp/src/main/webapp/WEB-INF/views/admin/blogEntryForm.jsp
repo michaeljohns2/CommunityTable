@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="form-group">
-                    <div id="summernote"></div>
+                    <div id="summernote"><p><br></p></div>
                     <form:input name="body" path="body" id="hiddenblog" type="hidden" />
                 </div>
                 <button id="form-submit" type="submit" class="btn btn-lg btn-success">Save Blog Entry</button>
@@ -41,27 +41,66 @@
 
 </div>
 
-<script>
+<script type="text/javascript">
     //on document load
     $(function () {
 
+        /**
+         Having issues with dropdowns in summernote (within CT not when used outside).
+        */
+        function registerDropdownHandler(btnGroupName){
+            $('.btn-group.'+btnGroupName+' .dropdown-toggle').click(function(ev){
+
+                var title = $(this).attr("data-original-title");
+                console.log("... '.dropdown-togge clicked' for ",title);
+
+                var ddm = $('.btn-group.'+btnGroupName+' .dropdown-menu');
+
+                //if not currently visible, hide everything prior to toggle()
+                if (!ddm.is(":visible"))
+                    $('#admin-blog-create .dropdown-menu').hide();
+
+                //toggle this drop-down
+                ddm.toggle();
+
+                return false;
+            });
+        }
+
         $('#summernote').summernote({
-            placeholder: 'blog entry...',
+            placeholder: 'Write your blog entry here...',
             height: 500,
             minHeight: 200,
-            maxHeight: null,
-            focus: true,
             callbacks: {
                 onChange: function(contents, $editable) {
                     $('#hiddenblog').val(contents);
                 },
                 onInit: function(){
                     console.log('...summernote is launched...');
+
                     //summernote defaults to justifycenter
                     $('#summernote').summernote('justifyLeft');
+
+                    /*fix an issue with dropdown-menu (due to something in our setup) */
+
+                    //(1) register handlers
+                    ["note-style","note-fontname","note-color","note-para","note-table"].forEach(function (item, index, array) {
+                        registerDropdownHandler(item);
+                    });
+
+                    //(2) close drop-down if an item within is clicked
+                    $("#admin-blog-create .dropdown-menu").click(function(ev) {
+                        console.log("... '.dropdown-menu clicked' ");
+                        $(this).hide();
+
+                        return false;
+                    });
                 },
                 onFocus: function() {
 //                    console.log('...editable area is focused');
+                },
+                onBlur: function() {
+//                    console.log('...editable area is now blurred');
                 }
             }
         });
