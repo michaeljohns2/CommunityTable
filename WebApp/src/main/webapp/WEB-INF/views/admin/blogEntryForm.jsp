@@ -38,7 +38,7 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
 
 <script>
-//    document.addEventListener('DOMContentLoaded', function () {
+    //on document load
     $(function () {
 
         $('#summernote').summernote({
@@ -49,12 +49,12 @@
             focus: true,
             callbacks: {
                 onChange: function(contents, $editable) {
-                    //console.log('onChange:', contents, $editable);
                     $('#hiddenblog').val(contents);
                 }
             }
         });
 
+        //summernote defaults to justifycenter
         $('#summernote').summernote('justifyLeft');
     });
 </script>
