@@ -15,6 +15,14 @@
     <script type="text/javascript" src="/CommunityTables/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/CommunityTables/webjars/summernote/0.8.2/dist/summernote.js"></script>
 
+    <style type = "text/css">
+        .summernote h1, .summernote h2, .summernote h3, .summernote h4, .summernote h5, .summernote h6,
+        .note-style h1, .note-style h2, .note-style h3, .note-style h4, .note-style h5, .note-style h6,
+        .note-editable h1, .note-editable h2, .note-editable h3, .note-editable h4, .note-editable h5, .note-editable h6 {
+            color: black;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -52,7 +60,7 @@
             $('.btn-group.'+btnGroupName+' .dropdown-toggle').click(function(ev){
 
                 var title = $(this).attr("data-original-title");
-                console.log("... '.dropdown-togge clicked' for ",title);
+//                console.log("... '.dropdown-togge clicked' for ",title);
 
                 var ddm = $('.btn-group.'+btnGroupName+' .dropdown-menu');
 
@@ -62,7 +70,6 @@
 
                 //toggle this drop-down
                 ddm.toggle();
-
                 return false;
             });
         }
@@ -76,9 +83,9 @@
                     $('#hiddenblog').val(contents);
                 },
                 onInit: function(){
-                    console.log('...summernote is launched...');
+//                    console.log('...summernote is launched...');
 
-                    //summernote defaults to justifycenter
+                    //use default format
                     $('#summernote').summernote('justifyLeft');
 
                     /*fix an issue with dropdown-menu (due to something in our setup) */
@@ -90,9 +97,8 @@
 
                     //(2) close drop-down if an item within is clicked
                     $("#admin-blog-create .dropdown-menu").click(function(ev) {
-                        console.log("... '.dropdown-menu clicked' ");
+//                        console.log("... '.dropdown-menu clicked' ");
                         $(this).hide();
-
                         return false;
                     });
                 },
