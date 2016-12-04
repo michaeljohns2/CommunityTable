@@ -14,6 +14,7 @@
         <div class="col-sm-3" id="admin_left">
             <ul class="nav nav-pills nav-stacked">
                 <li><a id="js-get-emails" href="#">Display All Emails</a></li>
+                <li><a id="new-blog" href="#">Create new blog</a></li>
             </ul>
             <%--
             <c:import url="../shared/_admin_nav.jsp"/>
