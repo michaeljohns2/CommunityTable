@@ -12,12 +12,14 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
@@ -39,7 +41,10 @@ public class AdminController {
         // header & nav (admin)
         ModelUtils.addCommonAdminAttrs(model);
 
-        model.addAttribute("admin_main", "This is where content will be displayed based on left nav selection.");
+        model.addAttribute("admin_main", mgr.getMessage("admin.maincontent"));
+
+        List<BlogModel> blogs = blogRepo.getAllBlogs();
+        model.addAttribute("blogList", blogs);
 
         // Load admin/index.jsp view.
         return "/admin/index";
@@ -83,8 +88,20 @@ public class AdminController {
         }
 
         // Load admin/index.jsp view.
-        return "/admin/index";
+        return "redirect:/admin/index.html";
     }
+
+    @RequestMapping(value="/admin/deleteBlog", method=RequestMethod.GET)
+    public String deleteBlog(HttpServletRequest request) {
+        String id = request.getParameter("id");
+        if (id != null) {
+            blogRepo.deleteBlog(id);
+        }
+
+        return "redirect:/admin/index.html";
+    }
+
+
 }
 
 

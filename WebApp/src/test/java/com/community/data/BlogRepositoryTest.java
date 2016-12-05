@@ -48,4 +48,52 @@ public class BlogRepositoryTest extends BlogRepository {
         }
     }
 
+    @Test
+    public void getBlogsTest() {
+        try {
+            BlogModel blog = new BlogModel();
+            blog.setSubject("Test subject");
+            blog.setBody("Sample blog body foo bacon Sample blog body foo bacon Sample " +
+                    "blog body foo bacon Sample blog body foo bacon Sample blog body foo bacon ");
+
+            blog.setCreatedDate(new Date());
+            this.saveBlogEntry(blog);
+
+            List<BlogModel> blogs = this.getAllBlogs();
+            assertTrue(blogs.size() == 1);
+
+            // TODO assert blog values are correct.
+
+        } catch (Exception e) {
+            LOG.error(e.getMessage(),e);
+            fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void deleteBlogsTest() {
+        try {
+            BlogModel blog = new BlogModel();
+            blog.setSubject("Test subject");
+            blog.setBody("body");
+
+            blog.setCreatedDate(new Date());
+            this.saveBlogEntry(blog);
+
+            List<BlogModel> blogs = this.getAllBlogs();
+            assertTrue(blogs.size() == 1);
+            blog = blogs.get(0);
+
+            // Ensure blog was deleted.
+            this.deleteBlog(blog.getBlogId());
+            blogs = this.getAllBlogs();
+            assertTrue(blogs.size() == 0);
+
+        } catch (Exception e) {
+            LOG.error(e.getMessage(),e);
+            fail(e.getMessage());
+        }
+    }
+
+
 }
