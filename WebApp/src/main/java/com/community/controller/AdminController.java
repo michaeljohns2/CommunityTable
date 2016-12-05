@@ -12,6 +12,7 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -89,6 +90,18 @@ public class AdminController {
         // Load admin/index.jsp view.
         return "redirect:/admin/index.html";
     }
+
+    @RequestMapping(value="/admin/deleteBlog", method=RequestMethod.GET)
+    public String deleteBlog(HttpServletRequest request) {
+        String id = request.getParameter("id");
+        if (id != null) {
+            blogRepo.deleteBlog(id);
+        }
+
+        return "redirect:/admin/index.html";
+    }
+
+
 }
 
 

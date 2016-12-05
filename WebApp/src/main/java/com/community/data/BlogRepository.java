@@ -1,11 +1,14 @@
 package com.community.data;
 
+import com.community.Exceptions.EmailNotFoundException;
 import com.community.model.BlogModel;
 import com.community.model.EmailAddressModel;
+import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.*;
+import org.bson.types.ObjectId;
 import org.springframework.stereotype.Component;
 
 import java.net.UnknownHostException;
@@ -93,5 +96,21 @@ public class BlogRepository extends BaseRepository {
         bDoc.put(BLOG_CREATED_DATE, new BsonDateTime(blogModel.getCreatedDate().getTime()));//long
 
         blogCollection.insertOne(bDoc);
+    }
+
+
+    public void deleteBlog(String blogId) throws EmailNotFoundException {
+
+        MongoDatabase db = this.getMongoDatabase();
+        MongoCollection<Document> blogCollection = db.getCollection(BLOG_COLLECTION);
+
+        BasicDBObject query = new BasicDBObject();
+        query.put("_id", new ObjectId(blogId));
+
+        long resultCount = blogCollection.count(query);
+
+        if (resultCount > 0) {
+            blogCollection.deleteOne(query);
+        }
     }
 }
