@@ -11,7 +11,7 @@
 <div class="container" id="admin-dashboard" >
     <section class="row">
 
-        <div class="col-sm-3" id="admin_left">
+        <div class="col-sm-2" id="admin_left">
             <ul class="nav nav-pills nav-stacked">
                 <li><a id="js-get-emails" href="#">Display All Emails</a></li>
                 <li><a id="new-blog" href="#">Create new blog</a></li>
@@ -21,11 +21,11 @@
             --%>
         </div>
 
-        <div class="col-sm-6 wrap" id="admin_middle">
+        <div class="col-sm-8 wrap" id="admin_middle">
             ${admin_main}
         </div>
 
-        <div class="col-sm-3" id="admin_right">
+        <div class="col-sm-2" id="admin_right">
             ${admin_main_actions}
         </div>
     </section>
