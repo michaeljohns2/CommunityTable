@@ -37,7 +37,7 @@
                         <tr>
                             <td>${blogEntry.getSubject()}</td>
                             <td>${blogEntry.getCreatedDateForDisplay()}</td>
-                            <td><a href="/admin/blog/delete/${blogEntry.getBlogId()}">delete</a></td>
+                            <td><a href="/CommunityTables/admin/deleteBlog.html?id=${blogEntry.getBlogId()}">delete</a></td>
                         </tr>
                     </c:forEach>
                     </tbody>
