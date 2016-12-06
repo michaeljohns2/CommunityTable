@@ -11,10 +11,13 @@ import org.bson.*;
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Component;
 
+import javax.management.Query;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static com.mongodb.client.model.Filters.eq;
 
 /**
  * This repository class provides access to Blog entries.
@@ -61,6 +64,28 @@ public class BlogRepository extends BaseRepository {
         return blogModel;
     }
 
+    public BlogModel getBlog(String id) {
+        if ((id == null) | id.equals("")) {return null;}
+        MongoDatabase db = this.getMongoDatabase();
+        MongoCollection<BsonDocument> blogCollection = db.getCollection(BLOG_COLLECTION, BsonDocument.class);
+
+        BasicDBObject query = new BasicDBObject();
+        query.put("_id", new ObjectId(id));
+
+        FindIterable<BsonDocument> results = blogCollection.find(query);
+        BsonDocument result = results.first();
+        if (result==null) {
+            return null;
+        } else {
+            try {
+                BlogModel blog = mapBlog(result);
+                return blog;
+            }
+            catch (Exception e) {
+                return null;
+            }
+        }
+    }
 
     public List<BlogModel> getAllBlogs() {
         final List<BlogModel> blogs = new ArrayList<BlogModel>();
