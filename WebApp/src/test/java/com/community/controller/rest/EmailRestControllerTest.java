@@ -51,6 +51,16 @@ public class EmailRestControllerTest {
     }
 
     @Test
+    public void getEmails_Repo_Test() {
+        controller.addEmail("test1@test1.com");
+        controller.addEmail("test2@test2.com");
+        controller.addEmail("test3@test3.com");
+        List<EmailAddressModel> emails = controller.getEmails();
+        Assert.assertNotNull(emails);
+        Assert.assertTrue(emails.size() == 3);
+    }
+
+    @Test
     public void addEmail_AddOne_Test() {
 
         EmailAddressModel model = controller.addEmail("test@test.com");
@@ -101,10 +111,29 @@ public class EmailRestControllerTest {
     }
 
     @Test
-    public void addEmail_getEmailsAsString_Success_Test() {
+    public void addEmail_getEmailsAsString_1Email_Test() {
+        EmailAddressModel model = controller.addEmail("test@test.com");
+        String result = controller.getEmailsAsString();
+        Assert.assertTrue(result.equals(String.format("{ \"result\" : \"%s\" }", "test@test.com")));
+    }
+
+    @Test
+    public void addEmail_getEmailsAsString_2Emails_Test() {
         EmailAddressModel model = controller.addEmail("test@test.com");
         model = controller.addEmail("test1@test1.com");
         String result = controller.getEmailsAsString();
-        Assert.assertTrue(result.equals("test@test.com,test1@test1.com") || result.equals("test1@test1.com,test@test.com"));
+        Assert.assertTrue(result.equals(String.format("{ \"result\" : \"%s\" }","test@test.com,test1@test1.com")) ||
+                result.equals(String.format("{ \"result\" : \"%s\" }","test1@test1.com,test@test.com")));
+    }
+
+    @Test
+    public void addEmail_getEmailsAsString_NoEmails_Test() {
+        String result = controller.getEmailsAsString();
+        assert(result.equals(String.format("{ \"result\" : \"%s\" }","")));
+    }
+
+    @Test
+    public void pingPong_Test() {
+        assert(controller.ping().equals("pong"));
     }
 }

@@ -4,6 +4,7 @@ import com.community.Exceptions.EmailNotFoundException;
 import com.community.data.EmailRepository;
 import com.community.model.EmailAddressModel;
 import com.community.utils.MessageManager;
+import com.community.utils.ModelUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,13 +41,8 @@ public class EmailController {
 
         MessageManager mgr = MessageManager.getInstance();
 
-        // header
-        model.addAttribute("brand", mgr.getMessage("index.brand"));
-        model.addAttribute("motto", mgr.getMessage("index.motto"));
-
-        //nav
-        model.addAttribute("first_nav_title", mgr.getMessage("index.first_nav_title"));
-        model.addAttribute("second_nav_title", mgr.getMessage("index.second_nav_title"));
+        // header & nav
+        ModelUtils.addCommonAttrs(model);
 
         // emailDeleted
         model.addAttribute("first_title", mgr.getMessage("emailDeleted.first_title"));

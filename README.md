@@ -30,12 +30,40 @@ Reference our [Team Formation Sprint](https://github.com/michaeljohns2/Community
 ### Rationale for Backlog Order
 The backlog is ordered by value generated to our stakeholders, namely Community Table TN (the first customer for our open source products). We (as well as our key stakeholder) are starting from scratch (levering other open source software frameworks where feasible). PBIs are groomed to represent excellent users stories within our team's [Definition of Ready](https://github.com/michaeljohns2/CommunityTable/blob/master/sprint0.md#definition-of-ready) and have been estimated by the development team.
 
+## Sprint 2 (11/14-11/25)
+
+Our sprint progress is documented at the following link:
+[Sprint 2 (11/14-11/25)](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/sprint2.md)
+
+### Release 2 Notes
+
+1. About Page (backed by highly customizable templates); also supports Google Map API for dynamic location with graceful fallback if missing.
+ 
+ ![Example About Page](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/about_content.png) 
+
+2. Vision Page (also uses templates) to more deeply express the focus and future of the organization.
+
+ ![Example Vision Page-1](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/vision_content_1.png)
+ 
+ _(continued...)_
+ 
+ ![Example Vision Page-2](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/vision_content_2.png)
+
+3. Admin Portal for sensitive site operations, e.g. Member Communication (see below) and Blog Management (estimated sprint3). 
+
+ ![Admin Portal](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/admin_login.png)
+
+4. Allow authorized admins to get a list of emails, ready to copy/paste into email message for ad-hoc communication
+ with registered members. This is the first feature to use the new Admin Portal (see above).
+
+ ![Email Lists (Admin)](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/admin_list_emails.png)
+
 ## Sprint 1 (10/8-11/11)
 
 Our sprint progress is documented at the following link:
 [Sprint 1 (10/8-11/11)](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/sprint1.md)
 
-### Release Notes
+### Release 1 Notes
 1. Compelling site landing page 
 
  ![Example Landing Page with Email Registration](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint1/community_table_tn_landing_13NOV2016.png)

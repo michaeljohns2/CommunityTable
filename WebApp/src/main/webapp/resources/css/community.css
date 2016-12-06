@@ -26,7 +26,6 @@ body {
     background-image: linear-gradient(rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 0.7)), url('../img/neighbors-table.jpg');
     height: 100%;
     background-size: cover;
-    padding: 10px;
     margin-bottom: 80px;
 }
 
@@ -80,6 +79,10 @@ GLOBAL CLASSES
     line-height: 1.6em;
 }
 
+.wrap {
+    word-wrap:break-word;
+}
+
 /****
  PAGE TEMPLATE STYLING
 *****/
@@ -103,6 +106,14 @@ GLOBAL CLASSES
 #admin-dashboard {
     color: #FFFFFF;
     background-color: #333333;
+    min-height: 80vh;
+}
+
+#admin_left, #admin_right {
+    background: #E4B04A;
+    border: #2B2C2A solid 1px;
+    border-radius: 5px;
+    min-height: 80vh;
 }
 
 #footer {

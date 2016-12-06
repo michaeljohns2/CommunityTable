@@ -20,6 +20,7 @@ $(function(){  // Wait til all resources loaded...
             $.ajax({
                 method:'GET',
                 cache:false,
+                dataType: 'json',
                 url: '/CommunityTables/rest/emailsAsString.json'
                 , beforeSend: function( xhr ) {
                     if (header != '' && token != '') {
@@ -28,7 +29,7 @@ $(function(){  // Wait til all resources loaded...
                 }
                 ,success:function(result)//we got the response
                 {
-                    $( '#admin-main-content' ).text(result);
+                    $('#admin_middle').text(result.result);
                 }
                 ,error:function(exception){
                     //push the exception response text into the fail block on index
@@ -50,6 +51,33 @@ $(function(){  // Wait til all resources loaded...
         });
 
         return false;
+    });
+
+    $("#new-blog").click(function(e){
+
+        $.get( "blog.html", function( data ) {
+            $( "#admin_middle" ).html( data );
+        });
+    });
+
+    $("#form-warning").hide();
+
+    $("#form-submit").click(function(e) {
+        e.preventDefault();
+
+        // validation
+        var title = $("input[name=title]", "#blog-entry-form").val();
+        var body = $("input[name=body]", "#blog-entry-form").val();
+
+        if (!title || !body) {
+            // show error message
+            $("#form-warning").show();
+            return;
+        } else {
+            $("#form-warning").hide();
+        }
+
+        $("#blog-entry-form").submit();
     });
 
 });
