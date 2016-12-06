@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * This class represents a blog entry.
  */
-public class BlogModel {
+public class BlogModel implements Comparable<BlogModel> {
 
     private String subject;
     private String body;
@@ -53,5 +53,11 @@ public class BlogModel {
 
         SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd hh:mm");
         return format.format(this.createdDate);
+    }
+
+    @Override
+    public int compareTo(BlogModel compareBlogModel) {
+        //descending order
+        return compareBlogModel.getCreatedDate().compareTo(this.getCreatedDate());
     }
 }

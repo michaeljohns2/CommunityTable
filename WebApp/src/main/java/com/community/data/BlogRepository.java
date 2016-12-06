@@ -10,10 +10,12 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.*;
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Component;
+//import org.springframework.data
 
 import javax.management.Query;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -93,9 +95,12 @@ public class BlogRepository extends BaseRepository {
         MongoCollection<BsonDocument> blogCollection = db.getCollection(BLOG_COLLECTION, BsonDocument.class);
 
         FindIterable<BsonDocument> results = blogCollection.find();
+
         for (BsonDocument result : results) {
             blogs.add(mapBlog(result));
         }
+
+        Collections.sort(blogs);
 
         return blogs;
     }
