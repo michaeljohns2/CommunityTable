@@ -172,6 +172,11 @@
           <version>1.2.5</version>
           <scope>test</scope>
       </dependency>
+      <dependency>
+          <groupId>com.github.fakemongo</groupId>
+          <artifactId>fongo</artifactId>
+          <version>RELEASE</version>
+      </dependency>
   </dependencies>
   
   <build>
