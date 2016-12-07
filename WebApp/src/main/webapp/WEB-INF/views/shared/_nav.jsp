@@ -14,7 +14,7 @@
                 <li><a href="/CommunityTables">${nav_title_1}</a></li>
                 <li><a href="/CommunityTables/about.html">${nav_title_2}</a></li>
                 <li><a href="/CommunityTables/vision.html">${nav_title_3}</a></li>
-                <li><a href="/CommunityTables/blogs.html">Table Talk</a></li>
+                <li><a href="/CommunityTables/blogs.html">${nav_title_blog}</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
