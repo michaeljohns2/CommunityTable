@@ -35,8 +35,17 @@ public class AdminController {
     private BlogRepository blogRepo;
 
     @RequestMapping("/admin/index")
-    public String index(Model model) {
+    public String index(Model model, HttpServletRequest request) {
         MessageManager mgr = MessageManager.getInstance();
+
+        // Check for a confirmation message in session.
+        String confirmation = (String) request.getSession().getAttribute("admin_confirmation");
+        if (confirmation != null)
+        {
+            // Copy to display attribute and delete from session.
+            model.addAttribute("admin_confirmation", confirmation);
+            request.getSession().setAttribute("admin_confirmation", null);
+        }
 
         // header & nav (admin)
         ModelUtils.addCommonAdminAttrs(model);
@@ -92,12 +101,18 @@ public class AdminController {
     }
 
     @RequestMapping(value="/admin/deleteBlog", method=RequestMethod.GET)
-    public String deleteBlog(HttpServletRequest request) {
+    public String deleteBlog(Model model, HttpServletRequest request) {
         String id = request.getParameter("id");
         if (id != null) {
             blogRepo.deleteBlog(id);
         }
 
+        MessageManager mgr = MessageManager.getInstance();
+        model.addAttribute("admin_main", mgr.getMessage("admin.maincontent"));
+
+        request.getSession().setAttribute("admin_confirmation", mgr.getMessage("admin.blog_delete_confirmation"));
+
+        // Load admin/index.jsp view.
         return "redirect:/admin/index.html";
     }
 

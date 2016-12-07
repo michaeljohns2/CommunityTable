@@ -22,7 +22,16 @@
         </div>
 
         <div class="col-sm-6 wrap" id="admin_middle">
-            ${admin_main}
+
+            <c:if test="${not empty admin_confirmation}">
+                <div class="admin-confirmation">
+                ${admin_confirmation}
+                </div>
+            </c:if>
+
+            <div>
+                ${admin_main}
+            </div>
 
             <c:if test="${not empty blogList}">
                 <table border="0">

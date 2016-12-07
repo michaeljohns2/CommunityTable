@@ -57,6 +57,10 @@ public class BlogModel implements Comparable<BlogModel> {
 
     @Override
     public int compareTo(BlogModel compareBlogModel) {
+        if (compareBlogModel.getCreatedDate() == null) {
+            return 0;
+        }
+
         //descending order
         return compareBlogModel.getCreatedDate().compareTo(this.getCreatedDate());
     }
