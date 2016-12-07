@@ -25,7 +25,7 @@ public class BlogController {
     @Autowired
     BlogRepository blogRepo;
 
-    @RequestMapping(value="/"+blogName, method= RequestMethod.GET)
+    @RequestMapping(value="/"+blogName+"/all", method= RequestMethod.GET)
     public String displayBlogEntries(Model model) {
         List<BlogModel> blogs = blogRepo.getAllBlogs();
         model.addAttribute("listBlogModel",blogs);
