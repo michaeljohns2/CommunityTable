@@ -3,7 +3,6 @@ package com.community.data;
 import com.community.utils.ConfigManager;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
-import com.mongodb.MongoCredential;
 import com.mongodb.client.MongoDatabase;
 
 import java.util.ResourceBundle;

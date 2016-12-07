@@ -2,17 +2,13 @@ package com.community.controller.rest;
 
 import com.community.Exceptions.ApiException;
 import com.community.Exceptions.ApiServerException;
-import com.community.Exceptions.EmailSendException;
 import com.community.data.EmailRepository;
 import com.community.model.ApiErrorDetail;
 import com.community.model.EmailAddressModel;
 import com.community.model.EmailModel;
 import com.community.model.service.EmailBuilder;
-import com.community.model.service.EmailSender;
 import com.community.model.service.IEmailSender;
 import com.community.utils.MessageManager;
-import com.fasterxml.jackson.annotation.JsonRawValue;
-import com.fasterxml.jackson.annotation.JsonValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

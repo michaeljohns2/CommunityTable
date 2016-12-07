@@ -2,7 +2,6 @@ package com.community.data;
 
 import com.community.Exceptions.EmailNotFoundException;
 import com.community.model.BlogModel;
-import com.community.model.EmailAddressModel;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
@@ -10,9 +9,7 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.*;
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Component;
-//import org.springframework.data
 
-import javax.management.Query;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collections;
