@@ -57,11 +57,12 @@ $(function(){  // Wait til all resources loaded...
 
         $.get( "blog.html", function( data ) {
             $( "#admin_middle" ).html( data );
+            $.getScript("/CommunityTables/resources/js/community-admin-blog.js");
         });
 
     });
 
-    $("#form-warning").hide();
+    //$("#form-warning").hide();
 
     $("#form-submit").click(function(e) {
         e.preventDefault();

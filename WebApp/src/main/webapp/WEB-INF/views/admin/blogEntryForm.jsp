@@ -26,7 +26,7 @@
                 <div class="form-group">
                      <span id="helpBody" class="help-block">Your blog must have <em>some</em> content. Please add
                         content and try again.</span>
-                    <div id="summernote"><p><br></p></div>
+                    <div id="summernote"><p></p></div>
                     <form:hidden path="body" id="hiddenblog" />
                 </div>
                 <button id="form-submit" type="submit" class="btn btn-lg btn-success">Save Blog Entry</button>
