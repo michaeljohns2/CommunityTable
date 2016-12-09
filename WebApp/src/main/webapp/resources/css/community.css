@@ -8,7 +8,7 @@
 
  */
 
-@import url(http://fonts.googleapis.com/css?family=Amatic+SC|Andika|Cutive|Lato);
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC|Andika|Cutive|Lato:100,300,400,900);
 
 /****
  BASIC ELEMENT STYLING
@@ -20,8 +20,8 @@ html {
 
 body {
     color: #EFE0B9;
-    font: 18px/30px Lato, Helvetica, Arial, sans-serif;
-    font-weight: 200;
+    font: 22px/34px Lato, Helvetica, Arial, sans-serif;
+    font-weight: 300;
     /* TODO: move this to only the landing page */
     background-image: linear-gradient(rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 0.7)), url('../img/neighbors-table.jpg');
     height: 100%;
@@ -36,6 +36,10 @@ h1, h2, h3 {
 h1 { font-size: 2.3em; }
 h2 { font-size: 1.69em; }
 h3 { font-size: 1.2em; }
+
+p {
+    margin: 0 0 20px;
+}
 
 .navbar {
     background-color: transparent;
@@ -76,6 +80,12 @@ GLOBAL CLASSES
 .large-text {
     font-size: 1.6em;
     line-height: 1.6em;
+}
+
+.single-blog-list {
+    border-radius: 4px;
+    box-shadow: -3px 5px 10px 3px #888;
+    padding: 1px 15px 5px;
 }
 
 /* Hover on the blog table in the admin */
@@ -122,9 +132,9 @@ GLOBAL CLASSES
 }
 
 #about-page, #vision-page, #blog-list, #blog-detail {
-    background-color: #646464;
-    padding: 0 30px 30px 30px;
-    border-radius: .6em;
+    background-color: rgba(100, 100, 100, .7);
+    padding: 4px 30px 30px 30px;
+    border-radius: 8px;
 }
 
 #footer {
