@@ -7,7 +7,7 @@
 
 <div class="container" id="landing-page">
     <section id="first" class="row">
-        <div>
+        <div class="col-sm-12">
             <h1 class="first_title">${first_title}</h1>
             <p class="first_body">
                 ${first_body}
@@ -16,7 +16,7 @@
     </section>
 
     <section id="second" class="row">
-        <div>
+        <div class="col-sm-12">
             <h1 class="second_title">${second_title}</h1>
             <p class="second_body">
                 ${second_body}

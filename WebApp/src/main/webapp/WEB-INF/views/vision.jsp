@@ -7,7 +7,7 @@
 
 <div class="container" id="vision-page">
     <section class="row">
-        <div>
+        <div class="col-sm-12">
             <h1 class="title_1">${title_1}</h1>
             <p class="body_1">
                 ${body_1}
@@ -16,7 +16,7 @@
     </section>
 
     <section class="row">
-        <div>
+        <div class="col-sm-12">
             <h1 class="title_2">${title_2}</h1>
             <p class="body_2">
                 ${body_2}
@@ -24,7 +24,7 @@
         </div>
     </section>
     <section class="row">
-        <div>
+        <div class="col-sm-12">
             <h1 class="title_3">${title_3}</h1>
             <p class="body_3">
                 ${body_3}
@@ -33,7 +33,7 @@
     </section>
 
     <section class="row">
-        <div>
+        <div class="col-sm-12">
             <h1 class="title_4">${title_4}</h1>
             <p class="body_4">
                 ${body_4}
@@ -41,7 +41,7 @@
         </div>
     </section>
     <section class="row">
-        <div>
+        <div class="col-sm-12">
             <h1 class="title_5">${title_5}</h1>
             <p class="body_5">
                 ${body_5}
@@ -50,7 +50,7 @@
     </section>
 
     <section class="row">
-        <div>
+        <div class="col-sm-12">
             <h1 class="title_6">${title_6}</h1>
             <p class="body_6">
                 ${body_6}
@@ -59,7 +59,7 @@
     </section>
 
     <section class="row">
-        <div>
+        <div class="col-sm-12">
             <h1 class="title_7">${title_7}</h1>
             <p class="body_7">
                 ${body_7}
@@ -67,6 +67,5 @@
         </div>
     </section>
 </div><!--/.container-->
-
 
 <c:import url="shared/_footer.jsp"/>
