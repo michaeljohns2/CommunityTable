@@ -19,6 +19,7 @@ public interface DataConstants {
     String BLOG_COLLECTION = "blogCollection";
     String BLOG_SUBJECT = "blogSubject";
     String BLOG_BODY = "blogBody";
+    String BLOG_FEATURED_IMG = "blogFeaturedImg";
     String BLOG_CREATED_DATE = "blogCreatedDate";
 
 

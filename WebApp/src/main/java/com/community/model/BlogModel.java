@@ -10,6 +10,7 @@ public class BlogModel implements Comparable<BlogModel> {
 
     private String subject;
     private String body;
+    private String featuredImg;
     private Date createdDate;
     private String blogId;
 
@@ -27,6 +28,14 @@ public class BlogModel implements Comparable<BlogModel> {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public String getFeaturedImg() {
+        return featuredImg;
+    }
+
+    public void setFeaturedImg(String featuredImg) {
+        this.featuredImg = featuredImg;
     }
 
     public Date getCreatedDate() {

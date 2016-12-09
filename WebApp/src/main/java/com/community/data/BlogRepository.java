@@ -120,6 +120,7 @@ public class BlogRepository extends BaseRepository {
         BsonDocument bDoc = new BsonDocument();
         bDoc.put(BLOG_SUBJECT, new BsonString(blogModel.getSubject()));//String
         bDoc.put(BLOG_BODY, new BsonBinary(blogModel.getBody().getBytes()));//byte[]
+        bDoc.put(BLOG_FEATURED_IMG, new BsonBinary(blogModel.getFeaturedImg().getBytes()));//byte[]
         bDoc.put(BLOG_CREATED_DATE, new BsonDateTime(blogModel.getCreatedDate().getTime()));//long
 
         blogCollection.insertOne(bDoc);
