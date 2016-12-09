@@ -53,7 +53,7 @@ Our burndown is based on the completion of each user story's [Sprint Task Checkl
 
 Subsequently, our Definition of Done has a checklist item for "Acceptance criteria completed" which corresponds to the specific acceptance criteria of each user story (also shown above).
 
-![Burndown Chart Sprint 3](https://image-charts.com/chart?cht=lc&chd=t:26.00,23.11,20.22,17.33,14.44,11.56,8.67,5.78,2.89,0.00|26.00,26.00,26.00,24.00,24.00,24.00&chco=2196F3,FF5722&chxt=_1,y&chxl=0:|1|2|3|4|5|6|7|8|9|10|&chs=600x200&chtt=Burndown%20Chart%20Sprint%203&chg=20,0,1,3)
+![Burndown Chart Sprint 3](https://image-charts.com/chart?cht=lc&chd=t:23.00,20.44,17.89,15.33,12.78,10.22,7.67,5.11,2.56,0.00|23.00,23.00,23.00,21.00,21.00,15.00&chco=2196F3,FF5722&chxt=_1,y&chxl=0:|1|2|3|4|5|6|7|8|9|10|&chs=600x200&chtt=Burndown%20Chart%20Sprint%203&chg=20,0,1,3)
 
 ## Daily Scrums (1-day sample)
 

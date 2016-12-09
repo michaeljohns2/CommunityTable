@@ -4,9 +4,6 @@ import com.community.Exceptions.EmailSendException;
 import com.community.model.EmailModel;
 import com.community.utils.ConfigManager;
 import com.jcraft.jsch.*;
-import org.springframework.stereotype.Service;
-
-import java.util.ResourceBundle;
 
 /**
  * This class is responsible for sending emails.

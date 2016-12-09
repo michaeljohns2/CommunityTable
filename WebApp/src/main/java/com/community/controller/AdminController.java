@@ -1,7 +1,6 @@
 package com.community.controller;
 
 import com.community.data.BlogRepository;
-import com.community.data.EmailRepository;
 import com.community.model.BlogModel;
 import com.community.utils.MessageManager;
 import com.community.utils.ModelUtils;
@@ -18,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
-import java.util.ResourceBundle;
 
 /**
  * This is the controller for the administrative section of the site.
@@ -33,13 +32,25 @@ public class AdminController {
     private BlogRepository blogRepo;
 
     @RequestMapping("/admin/index")
-    public String index(Model model) {
+    public String index(Model model, HttpServletRequest request) {
         MessageManager mgr = MessageManager.getInstance();
+
+        // Check for a confirmation message in session.
+        String confirmation = (String) request.getSession().getAttribute("admin_confirmation");
+        if (confirmation != null)
+        {
+            // Copy to display attribute and delete from session.
+            model.addAttribute("admin_confirmation", confirmation);
+            request.getSession().setAttribute("admin_confirmation", null);
+        }
 
         // header & nav (admin)
         ModelUtils.addCommonAdminAttrs(model);
 
-        model.addAttribute("admin_main", "This is where content will be displayed based on left nav selection.");
+        model.addAttribute("admin_main", mgr.getMessage("admin.maincontent"));
+
+        List<BlogModel> blogs = blogRepo.getAllBlogs();
+        model.addAttribute("blogList", blogs);
 
         // Load admin/index.jsp view.
         return "/admin/index";
@@ -83,8 +94,26 @@ public class AdminController {
         }
 
         // Load admin/index.jsp view.
-        return "/admin/index";
+        return "redirect:/admin/index.html";
     }
+
+    @RequestMapping(value="/admin/deleteBlog", method=RequestMethod.GET)
+    public String deleteBlog(Model model, HttpServletRequest request) {
+        String id = request.getParameter("id");
+        if (id != null) {
+            blogRepo.deleteBlog(id);
+        }
+
+        MessageManager mgr = MessageManager.getInstance();
+        model.addAttribute("admin_main", mgr.getMessage("admin.maincontent"));
+
+        request.getSession().setAttribute("admin_confirmation", mgr.getMessage("admin.blog_delete_confirmation"));
+
+        // Load admin/index.jsp view.
+        return "redirect:/admin/index.html";
+    }
+
+
 }
 
 

@@ -22,7 +22,37 @@
         </div>
 
         <div class="col-sm-8 wrap" id="admin_middle">
-            ${admin_main}
+
+            <c:if test="${not empty admin_confirmation}">
+                <div class="admin-confirmation">
+                ${admin_confirmation}
+                </div>
+            </c:if>
+
+            <div>
+                ${admin_main}
+            </div>
+
+            <c:if test="${not empty blogList}">
+                <table border="0">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Created On</th>
+                        <th>Actions</th>
+                    </tr>
+
+                    <tbody>
+                    <c:forEach var="blogEntry" items="${blogList}">
+                        <tr>
+                            <td>${blogEntry.getSubject()}</td>
+                            <td>${blogEntry.getCreatedDateForDisplay()}</td>
+                            <td><a href="/CommunityTables/admin/deleteBlog.html?id=${blogEntry.getBlogId()}">delete</a></td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </c:if>
+
         </div>
 
         <div class="col-sm-2" id="admin_right">
