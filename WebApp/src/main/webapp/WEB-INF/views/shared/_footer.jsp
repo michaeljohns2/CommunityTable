@@ -16,7 +16,5 @@
     <script type="text/javascript" src="/CommunityTables/resources/js/ping.js"></script>
     <script type="text/javascript" src="/CommunityTables/resources/js/community.js"></script>
 
-    <script type="text/javascript" src="/CommunityTables/resources/js/community-admin.js"></script>
-
 </body>
 </html>

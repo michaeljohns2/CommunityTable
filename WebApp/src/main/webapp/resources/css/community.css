@@ -8,7 +8,7 @@
 
  */
 
-@import url(http://fonts.googleapis.com/css?family=Amatic+SC|Andika);
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC|Andika|Cutive|Lato:100,300,400,900);
 
 /****
  BASIC ELEMENT STYLING
@@ -20,8 +20,8 @@ html {
 
 body {
     color: #EFE0B9;
-    font: 18px/30px Andika, Helvetica, Arial, sans-serif;
-    font-weight: 200;
+    font: 22px/34px Lato, Helvetica, Arial, sans-serif;
+    font-weight: 300;
     /* TODO: move this to only the landing page */
     background-image: linear-gradient(rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 0.7)), url('../img/neighbors-table.jpg');
     height: 100%;
@@ -30,13 +30,16 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: 'Amatic SC', Georgia, cursive;
+    font-family: Cutive, Georgia, serif;
     color: #F3F3F3;
 }
-h1 { font-size: 3.2em; }
-h2 { font-size: 2.4em; }
-h3 { font-size: 1.6em; }
+h1 { font-size: 2.3em; }
+h2 { font-size: 1.69em; }
+h3 { font-size: 1.2em; }
 
+p {
+    margin: 0 0 20px;
+}
 
 .navbar {
     background-color: transparent;
@@ -44,8 +47,8 @@ h3 { font-size: 1.6em; }
 }
 
 .navbar-default .navbar-brand {
-    font-family: 'Amatic SC', Georgia, cursive;
-    font-size: 32px;
+    font-family:  Cutive, Georgia, serif;
+    font-size: 22px;
     color: #E4B04A;
 }
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
@@ -79,6 +82,15 @@ GLOBAL CLASSES
     line-height: 1.6em;
 }
 
+.single-blog-list {
+    padding: 1px 15px 5px;
+}
+
+/* Hover on the blog table in the admin */
+.table-hover>tbody>tr:hover {
+    background-color: #E4B04A;
+}
+
 .wrap {
     word-wrap:break-word;
 }
@@ -107,6 +119,7 @@ GLOBAL CLASSES
     color: #FFFFFF;
     background-color: #333333;
     min-height: 80vh;
+    width: 100%;
 }
 
 #admin_left, #admin_right {
@@ -114,6 +127,12 @@ GLOBAL CLASSES
     border: #2B2C2A solid 1px;
     border-radius: 5px;
     min-height: 80vh;
+}
+
+#about-page, #vision-page, #blog-list, #blog-detail {
+    background-color: rgba(100, 100, 100, .7);
+    padding: 4px 30px 30px 30px;
+    border-radius: 8px;
 }
 
 #footer {

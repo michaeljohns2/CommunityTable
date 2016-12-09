@@ -58,6 +58,7 @@ $(function(){  // Wait til all resources loaded...
         $.get( "blog.html", function( data ) {
             $( "#admin_middle" ).html( data );
         });
+
     });
 
     $("#form-warning").hide();
