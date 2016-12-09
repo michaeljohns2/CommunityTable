@@ -10,7 +10,7 @@ import java.util.Date;
  */
 public class BlogModel implements Comparable<BlogModel> {
 
-    private static final int MAX_PREVIEW_LENGTH = 15;
+    private static final int MAX_PREVIEW_LENGTH = 50;
 
     private String subject;
     private String body;
