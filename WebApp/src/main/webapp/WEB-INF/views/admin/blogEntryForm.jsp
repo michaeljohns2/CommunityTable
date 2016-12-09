@@ -11,9 +11,12 @@
 
                 <div class="form-group">
                     <form:input name="title" path="subject" type="text" class="form-control input-lg" placeholder="Add blog title here"/>
+                    <span id="helpTitle" class="help-block">Your blog must have a title.</span>
                 </div>
 
                 <div class="form-group">
+                    <span id="helpBody" class="help-block">Your blog must have <em>some</em> content. Please add
+                        content and try again.</span>
                     <div class="form-control input-lg" id="summernote"></div>
                     <form:input name="body" path="body" id="hiddenblog" type="hidden" />
                 </div>
@@ -27,6 +30,8 @@
 <script type="text/javascript">
     //on document load
     $(function () {
+
+        $('.help-block').hide();
 
         /**
          Having issues with dropdowns in summernote (within CT not when used outside).
