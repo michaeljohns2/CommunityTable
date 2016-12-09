@@ -17,7 +17,7 @@
 
     <section class="row">
         <div class="col-sm-12">
-            <h1 class="title_2">${title_2}</h1>
+            <h2 class="title_2">${title_2}</h2>
             <p class="body_2">
                 ${body_2}
             </p>
@@ -25,7 +25,7 @@
     </section>
     <section class="row">
         <div class="col-sm-12">
-            <h1 class="title_3">${title_3}</h1>
+            <h2 class="title_3">${title_3}</h2>
             <p class="body_3">
                 ${body_3}
             </p>
@@ -34,7 +34,7 @@
 
     <section class="row">
         <div class="col-sm-12">
-            <h1 class="title_4">${title_4}</h1>
+            <h2 class="title_4">${title_4}</h2>
             <p class="body_4">
                 ${body_4}
             </p>
@@ -42,7 +42,7 @@
     </section>
     <section class="row">
         <div class="col-sm-12">
-            <h1 class="title_5">${title_5}</h1>
+            <h2 class="title_5">${title_5}</h2>
             <p class="body_5">
                 ${body_5}
             </p>
@@ -51,7 +51,7 @@
 
     <section class="row">
         <div class="col-sm-12">
-            <h1 class="title_6">${title_6}</h1>
+            <h2 class="title_6">${title_6}</h2>
             <p class="body_6">
                 ${body_6}
             </p>
@@ -60,7 +60,7 @@
 
     <section class="row">
         <div class="col-sm-12">
-            <h1 class="title_7">${title_7}</h1>
+            <h2 class="title_7">${title_7}</h2>
             <p class="body_7">
                 ${body_7}
             </p>

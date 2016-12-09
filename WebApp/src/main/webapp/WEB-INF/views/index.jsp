@@ -17,7 +17,7 @@
 
     <section id="second" class="row">
         <div class="col-sm-12">
-            <h1 class="second_title">${second_title}</h1>
+            <h2 class="second_title">${second_title}</h2>
             <p class="second_body">
                 ${second_body}
             </p>
