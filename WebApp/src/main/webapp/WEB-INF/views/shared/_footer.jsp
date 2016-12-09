@@ -6,7 +6,7 @@
                 (c) CommunityTable 2016
             </div>
             <div class="pull-right">
-                <a class="small" href="admin/index.html" title="Admin Dashboard">Login</a>
+                <a class="small" href="/CommunityTables/admin/index.html" title="Admin Dashboard">Login</a>
             </div>
         </div>
     </footer>
