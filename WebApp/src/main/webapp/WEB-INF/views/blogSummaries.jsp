@@ -17,6 +17,10 @@
             </div>
 
             <div>
+                ${blogEntry.getBodyPreview()}
+            </div>
+
+            <div>
                 <a href="/CommunityTables/blog/${blogEntry.getBlogId()}.html">(Read full entry)</a>
             </div>
         </c:forEach>
