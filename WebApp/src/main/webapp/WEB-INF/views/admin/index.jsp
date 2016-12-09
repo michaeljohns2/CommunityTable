@@ -35,9 +35,9 @@
                 </div>
             </c:if>
 
-            <div>
+            <h1>
                 ${admin_main}
-            </div>
+            </h1>
 
             <c:if test="${not empty blogList}">
                 <table class="table table-condensed table-hover">

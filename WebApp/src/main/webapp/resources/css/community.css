@@ -78,6 +78,11 @@ GLOBAL CLASSES
     line-height: 1.6em;
 }
 
+/* Hover on the blog table in the admin */
+.table-hover>tbody>tr:hover {
+    background-color: #E4B04A;
+}
+
 .wrap {
     word-wrap:break-word;
 }
@@ -114,6 +119,12 @@ GLOBAL CLASSES
     border: #2B2C2A solid 1px;
     border-radius: 5px;
     min-height: 80vh;
+}
+
+#about-page, #vision-page, #blog-list {
+    background-color: #646464;
+    padding: 0 30px 30px 30px;
+    border-radius: .6em;
 }
 
 #footer {
