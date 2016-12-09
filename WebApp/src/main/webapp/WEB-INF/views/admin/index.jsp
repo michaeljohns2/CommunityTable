@@ -12,7 +12,7 @@
     <section class="row">
 
         <div class="col-sm-2" id="admin_left">
-            <ul class="nav nav-pills nav-stacked">
+            <ul class="nav nav-pills nav-stacked small">
                 <!-- TODO: write the js so that this loads the Admin index which displays all blogs
                 <li><a id="admin-index" href="#"><span class="glyphicon glyphicon-home"></span> List all Blogs</a></li>
                 -->

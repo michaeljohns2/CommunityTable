@@ -117,16 +117,23 @@ GLOBAL CLASSES
 
 #admin-dashboard {
     color: #FFFFFF;
-    background-color: #333333;
+    background-color: #E4B04A;
     min-height: 80vh;
     width: 100%;
 }
 
-#admin_left, #admin_right {
-    background: #E4B04A;
-    border: #2B2C2A solid 1px;
-    border-radius: 5px;
+#admin_middle {
+    background: #2B2C2A;
     min-height: 80vh;
+    height: 100%;
+}
+
+.summernote h1, .summernote h2, .summernote h3, .summernote h4, .summernote h5, .summernote h6,
+.note-style h1, .note-style h2, .note-style h3, .note-style h4, .note-style h5, .note-style h6,
+.note-editable h1, .note-editable h2, .note-editable h3, .note-editable h4, .note-editable h5, .note-editable h6,
+.note-editor.note-frame .note-editing-area .note-editable {
+    color: white;
+    background-color: #2B2C2A;
 }
 
 #about-page, #vision-page, #blog-list, #blog-detail {

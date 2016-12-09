@@ -2,20 +2,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<style type = "text/css">
-        .summernote h1, .summernote h2, .summernote h3, .summernote h4, .summernote h5, .summernote h6,
-        .note-style h1, .note-style h2, .note-style h3, .note-style h4, .note-style h5, .note-style h6,
-        .note-editable h1, .note-editable h2, .note-editable h3, .note-editable h4, .note-editable h5, .note-editable h6,
-        .note-editor.note-frame .note-editing-area .note-editable {
-            color: white;
-            background-color: #2B2C2A;
-        }
-</style>
-
 <div id="admin-blog-create" >
     <section class="row">
 
-        <div align="center">
+        <div class="col-sm-12 center">
             <h2>Add New Blog Entry</h2>
             <form:form id="blog-entry-form" action="/CommunityTables/admin/blog.html" method="post" commandName="blogForm">
 
@@ -26,7 +16,8 @@
 
                 <div class="form-group">
                     <label class="custom-file">
-                        <input type="file" id="featured-img" class="custom-file-input form-control input-lg">
+                        Set Featured Image: <input type="file" id="featured-img"
+                                           class="custom-file-input form-control input-lg">
                         <span class="custom-file-control"></span>
                     </label>
                     <form:hidden path="featuredImg" id="hiddenfeaturedimg" />
