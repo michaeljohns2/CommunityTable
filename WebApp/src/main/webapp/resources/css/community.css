@@ -121,7 +121,7 @@ GLOBAL CLASSES
     min-height: 80vh;
 }
 
-#about-page, #vision-page, #blog-list {
+#about-page, #vision-page, #blog-list, #blog-detail {
     background-color: #646464;
     padding: 0 30px 30px 30px;
     border-radius: .6em;
