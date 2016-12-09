@@ -1,5 +1,7 @@
 package com.community.model;
 
+import org.jsoup.Jsoup;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -8,8 +10,11 @@ import java.util.Date;
  */
 public class BlogModel implements Comparable<BlogModel> {
 
+    private static final int MAX_PREVIEW_LENGTH = 50;
+
     private String subject;
     private String body;
+    private String featuredImg;
     private Date createdDate;
     private String blogId;
 
@@ -27,6 +32,14 @@ public class BlogModel implements Comparable<BlogModel> {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public String getFeaturedImg() {
+        return featuredImg;
+    }
+
+    public void setFeaturedImg(String featuredImg) {
+        this.featuredImg = featuredImg;
     }
 
     public Date getCreatedDate() {
@@ -51,8 +64,20 @@ public class BlogModel implements Comparable<BlogModel> {
             return "missing created date";
         }
 
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd hh:mm");
+        SimpleDateFormat format = new SimpleDateFormat("d MMM yyyy HH:mm");
         return format.format(this.createdDate);
+    }
+
+    public String getBodyPreview()
+    {
+        // Replace HTML nbsp first to avoid extra spaces.
+        String preview = body.replace("&nbsp;", " ");
+
+        preview = Jsoup.parse(preview, "ISO-8859-1").text();
+        if (preview.length() > MAX_PREVIEW_LENGTH) {
+            preview = preview.substring(0, MAX_PREVIEW_LENGTH);
+        }
+        return preview;
     }
 
     @Override

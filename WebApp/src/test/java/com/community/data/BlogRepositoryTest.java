@@ -40,6 +40,8 @@ public class BlogRepositoryTest extends BlogRepository {
     private String testBody2 = "Sample blog body foo bacon Sample blog body foo bacon Sample " +
             "blog body foo bacon Sample blog body foo bacon Sample blog body foo bacon2 ";
 
+    private String testFeaturedImg = "";
+
     @Test
     public void saveBlogTest() {
         try {
@@ -47,7 +49,7 @@ public class BlogRepositoryTest extends BlogRepository {
             blog.setSubject("Test subject");
             blog.setBody("Sample blog body foo bacon Sample blog body foo bacon Sample " +
                     "blog body foo bacon Sample blog body foo bacon Sample blog body foo bacon ");
-
+            blog.setFeaturedImg(testFeaturedImg);
             blog.setCreatedDate(new Date());
             this.saveBlogEntry(blog);
         } catch (Exception e) {
@@ -62,7 +64,7 @@ public class BlogRepositoryTest extends BlogRepository {
             BlogModel blog = new BlogModel();
             blog.setSubject(testSubject);
             blog.setBody(testBody);
-
+            blog.setFeaturedImg(testFeaturedImg);
             blog.setCreatedDate(new Date());
             this.saveBlogEntry(blog);
 
@@ -91,7 +93,7 @@ public class BlogRepositoryTest extends BlogRepository {
             BlogModel blog = new BlogModel();
             blog.setSubject(testSubject);
             blog.setBody(testBody);
-
+            blog.setFeaturedImg(testFeaturedImg);
             blog.setCreatedDate(new Date());
             this.saveBlogEntry(blog);
 
@@ -111,7 +113,7 @@ public class BlogRepositoryTest extends BlogRepository {
             BlogModel blog = new BlogModel();
             blog.setSubject(testSubject);
             blog.setBody(testBody);
-
+            blog.setFeaturedImg(testFeaturedImg);
             blog.setCreatedDate(new Date());
             this.saveBlogEntry(blog);
 
@@ -136,6 +138,7 @@ public class BlogRepositoryTest extends BlogRepository {
             BlogModel blog = new BlogModel();
             blog.setSubject(testSubject);
             blog.setBody(testBody);
+            blog.setFeaturedImg(testFeaturedImg);
             Date dt = ft.parse("2016-12-01");
             blog.setCreatedDate(dt);
             this.saveBlogEntry(blog);
@@ -143,6 +146,7 @@ public class BlogRepositoryTest extends BlogRepository {
             BlogModel blog2 = new BlogModel();
             blog2.setSubject(testSubject2);
             blog2.setBody(testBody2);
+            blog2.setFeaturedImg(testFeaturedImg);
             Date dt2 = ft.parse("2016-12-02");
             blog2.setCreatedDate(dt2);
             this.saveBlogEntry(blog2);
@@ -170,7 +174,7 @@ public class BlogRepositoryTest extends BlogRepository {
             BlogModel blog = new BlogModel();
             blog.setSubject("Test subject");
             blog.setBody("body");
-
+            blog.setFeaturedImg(testFeaturedImg);
             blog.setCreatedDate(new Date());
             this.saveBlogEntry(blog);
 
@@ -188,6 +192,4 @@ public class BlogRepositoryTest extends BlogRepository {
             fail(e.getMessage());
         }
     }
-
-
 }
