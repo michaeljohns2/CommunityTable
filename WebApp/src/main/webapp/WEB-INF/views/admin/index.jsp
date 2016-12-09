@@ -13,7 +13,9 @@
 
         <div class="col-sm-2" id="admin_left">
             <ul class="nav nav-pills nav-stacked">
+                <!-- TODO: write the js so that this loads the Admin index which displays all blogs
                 <li><a id="admin-index" href="#"><span class="glyphicon glyphicon-home"></span> List all Blogs</a></li>
+                -->
                 <li><a id="new-blog" href="#"><span class="glyphicon glyphicon-pencil"></span> Create new blog</a></li>
                 <li><a id="js-get-emails" href="#"><span class="glyphicon glyphicon-list-alt"></span> Display All
                     Emails</a></li>
@@ -26,8 +28,10 @@
         <div class="col-sm-8 wrap" id="admin_middle">
 
             <c:if test="${not empty admin_confirmation}">
-                <div class="admin-confirmation">
-                ${admin_confirmation}
+                <div class="admin-confirmation alert alert-info alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    ${admin_confirmation}
                 </div>
             </c:if>
 
