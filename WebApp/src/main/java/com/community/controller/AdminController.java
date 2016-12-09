@@ -82,7 +82,7 @@ public class AdminController {
     }
 
     @RequestMapping(value="/admin/blog", method=RequestMethod.POST)
-    public String saveBlog(@ModelAttribute("blogForm") BlogModel blog) {
+    public String saveBlog(@ModelAttribute("blogForm") BlogModel blog, Model model, HttpServletRequest request) {
 
         // Set blog date to now.
         blog.setCreatedDate(new Date());
@@ -92,6 +92,11 @@ public class AdminController {
         } catch (Exception ex) {
             // TODO handle save errors.
         }
+
+        MessageManager mgr = MessageManager.getInstance();
+        model.addAttribute("admin_main", mgr.getMessage("admin.maincontent"));
+
+        request.getSession().setAttribute("admin_confirmation", mgr.getMessage("admin.blog_save_confirmation"));
 
         // Load admin/index.jsp view.
         return "redirect:/admin/index.html";
