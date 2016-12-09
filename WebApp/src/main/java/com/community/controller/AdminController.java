@@ -1,7 +1,6 @@
 package com.community.controller;
 
 import com.community.data.BlogRepository;
-import com.community.data.EmailRepository;
 import com.community.model.BlogModel;
 import com.community.utils.MessageManager;
 import com.community.utils.ModelUtils;
@@ -12,7 +11,6 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -21,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.ResourceBundle;
 
 /**
  * This is the controller for the administrative section of the site.

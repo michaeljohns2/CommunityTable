@@ -39,8 +39,6 @@ public class JavaMailEmailSender implements IEmailSender {
         properties.put("mail.smtp.port", ConfigManager.getInstance().getSetting(ConfigManager.SMTP_PORT_KEY));
 
         //Address 'PKIX path building failed ... unable to find valid certification path to requested target'
-//        properties.put("mail.smtp.socketFactory.port", ConfigManager.getInstance().getSetting(ConfigManager.SMTP_PORT_KEY));
-//        properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         properties.put("mail.smtp.ssl.trust","*");//use naive
 
         Session session = Session.getDefaultInstance(properties,

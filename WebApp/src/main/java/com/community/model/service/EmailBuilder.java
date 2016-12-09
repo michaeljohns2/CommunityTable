@@ -5,13 +5,10 @@ import com.community.Exceptions.TemplateNotFoundException;
 import com.community.model.EmailAddressModel;
 import com.community.model.EmailModel;
 import com.community.utils.ConfigManager;
-import jdk.nashorn.internal.runtime.regexp.joni.Config;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.net.URL;
-import java.util.ResourceBundle;
 import java.util.Scanner;
 
 /**
