@@ -22,10 +22,12 @@ public class IndexController {
         ModelUtils.addCommonAttrs(model);
 
         // index
-        model.addAttribute("first_title", mgr.getMessage("index.first_title"));
-        model.addAttribute("first_body", mgr.getMessage("index.first_body"));
-        model.addAttribute("second_title", mgr.getMessage("index.second_title"));
-        model.addAttribute("second_body", mgr.getMessage("index.second_body"));
+        model.addAttribute("title_1", mgr.getMessage("index.title_1"));
+        model.addAttribute("body_1", mgr.getMessage("index.body_1"));
+        model.addAttribute("title_2", mgr.getMessage("index.title_2"));
+        model.addAttribute("body_2", mgr.getMessage("index.body_2"));
+        model.addAttribute("title_3", mgr.getMessage("index.title_3"));
+        model.addAttribute("body_3", mgr.getMessage("index.body_3"));
 
         // email
         model.addAttribute("submit_label", mgr.getMessage("email.submit.label"));
