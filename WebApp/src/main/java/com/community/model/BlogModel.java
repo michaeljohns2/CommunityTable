@@ -1,6 +1,8 @@
 package com.community.model;
 
 import org.jsoup.Jsoup;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,7 +12,9 @@ import java.util.Date;
  */
 public class BlogModel implements Comparable<BlogModel> {
 
-    private static final int MAX_PREVIEW_LENGTH = 50;
+    final private static Logger log = LoggerFactory.getLogger(BlogModel.class);
+
+    private static final int MAX_PREVIEW_LENGTH = 300;
 
     private String subject;
     private String body;
@@ -36,6 +40,14 @@ public class BlogModel implements Comparable<BlogModel> {
 
     public String getFeaturedImg() {
         return featuredImg;
+    }
+
+    /**
+     * This is a derived method. It IS used within BlogDetail.jsp.
+     * @return
+     */
+    public String getFeaturedImgRelativeUrl(){
+        return "blog/"+getBlogId()+"/featured-img.html";
     }
 
     public void setFeaturedImg(String featuredImg) {
@@ -70,13 +82,18 @@ public class BlogModel implements Comparable<BlogModel> {
 
     public String getBodyPreview()
     {
-        // Replace HTML nbsp first to avoid extra spaces.
-        String preview = body.replace("&nbsp;", " ");
+        String preview = "No preview available...";
 
-        preview = Jsoup.parse(preview, "ISO-8859-1").text();
-        if (preview.length() > MAX_PREVIEW_LENGTH) {
-            preview = preview.substring(0, MAX_PREVIEW_LENGTH);
+        // Replace HTML nbsp first to avoid extra spaces.
+        try {
+            preview = Jsoup.parse(body.replace("&nbsp;", " "), "ISO-8859-1").text();
+            if (preview.length() > MAX_PREVIEW_LENGTH) {
+                return preview.substring(0, MAX_PREVIEW_LENGTH)+"...";
+            }
+        } catch(Exception e){
+            log.error("... blog preview could not be parsed.",e);
         }
+
         return preview;
     }
 
