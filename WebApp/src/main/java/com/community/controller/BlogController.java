@@ -54,8 +54,37 @@ public class BlogController {
             return "blogNotFound";
         } else {
             model.addAttribute("blogModel", blog);
+            model.addAttribute("blog_img_format",determineImgFormat(blog));
             return "blogDetail";
         }
+    }
+
+    /**
+     * Need to set the mime type, so have to peek.
+     *
+     * @param blog
+     */
+    private String determineImgFormat(BlogModel blog){
+
+        String featuredImg = blog.getFeaturedImg();
+
+        // (1) ::: NO FEATURED IMG
+        if (featuredImg.isEmpty()) {
+
+            // get name of default featured img resource (expect it to be on classpath)
+            String defImgName = MessageManager.getInstance().getMessage("default.featured.img");
+
+            // get file extension of image to use as the format
+            return defImgName.substring(defImgName.lastIndexOf('.') + 1).trim();
+        }
+
+        // (2) ::: HAVE FEATURED IMG
+
+        // featuredImg is stored as a base64 data url so separate into parts
+        String[] parts = Base64Utils.separateBase64DataUrlToParts(featuredImg);
+
+        // get format from parts, e.g. 'png' or 'jpeg'
+        return Base64Utils.getBase64ImgFormatFromParts(parts);
     }
 
     @RequestMapping(value="/blog/{id}/featured-img", method= RequestMethod.GET)
