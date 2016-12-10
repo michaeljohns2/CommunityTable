@@ -11,7 +11,7 @@
     <meta property="og:title" content="${blogEntry.getSubject()}" />
     <meta property="og:description" content="${blogEntry.getBodyPreview()}" />
     <meta property="og:image" content="http://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/${blogEntry.getFeaturedImgRelativeUrl()}" />
-    <meta property="og:image:type" content="image/${blog_img_format}" />
+    <meta property="og:image:type" content="${featured_img_mime_type}" />
 
     <%-- These tags are used to enable AJAX calls to bypass Spring anti-CSRF --%>
     <meta name="_csrf" content="${_csrf.token}"/>

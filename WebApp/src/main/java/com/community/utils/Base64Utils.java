@@ -2,6 +2,7 @@ package com.community.utils;
 
 import com.google.common.io.ByteStreams;
 
+import javax.activation.MimetypesFileTypeMap;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
@@ -76,6 +77,11 @@ public class Base64Utils {
         }
     }
 
+    public static String mimeTypeForExtension(String ext){
+        final MimetypesFileTypeMap fileTypeMap = new MimetypesFileTypeMap();
+        return fileTypeMap.getContentType("test."+ext);
+    }
+
     public static void main(String[] args) throws IOException {
 
 //        String[] parts = separateBase64DataUrlToParts("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADwCAYAAAA+VemSAAAgAEl...==");
@@ -83,21 +89,21 @@ public class Base64Utils {
 //        System.out.println("Format: "+getBase64ImgFormatFromParts(parts));
 //        System.out.println("Data: "+getBase64ImgDataFromParts(parts));
 
-        // get name of default featured img resource (expect it to be on classpath)
-        String defImgName = MessageManager.getInstance().getMessage("default.featured.img");
-        System.out.println("Default Img Name: "+defImgName);
+//        // get name of default featured img resource (expect it to be on classpath)
+//        String defImgName = MessageManager.getInstance().getMessage("default.featured.img");
+//        System.out.println("Default Img Name: "+defImgName);
+//
+//        // get file extension of image to use as the format
+//        String imgFormat = defImgName.substring(defImgName.lastIndexOf('.') + 1).trim();
+//        System.out.println("Img Format: "+imgFormat);
+//
+//        // load the resource and copy to stream
+//        try(ByteArrayOutputStream imgos = new ByteArrayOutputStream()){
+//            ByteStreams.copy(Base64Utils.class.getClassLoader().getResourceAsStream(defImgName), imgos);
+//            System.out.println("Byte[] Length: "+imgos.toByteArray().length);
+//        }
 
-        // get file extension of image to use as the format
-        String imgFormat = defImgName.substring(defImgName.lastIndexOf('.') + 1).trim();
-        System.out.println("Img Format: "+imgFormat);
+        System.out.println(mimeTypeForExtension("tif"));
 
-        // load the resource and copy to stream
-        try(ByteArrayOutputStream imgos = new ByteArrayOutputStream()){
-            ByteStreams.copy(Base64Utils.class.getClassLoader().getResourceAsStream(defImgName), imgos);
-            System.out.println("Byte[] Length: "+imgos.toByteArray().length);
-        }
-
-        // stream into response
-//        writeImgToResponse(imgFormat, imgos.toByteArray(), response);
     }
 }
