@@ -155,6 +155,16 @@ start-tomcat-test:
 		-v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps \
 		tomcat:8.5 bash
 
+install-docker-ubuntu-16.04:
+	sudo apt-get update
+	sudo apt-get install linux-image-extra-(uname -r) linux-image-extra-virtual
+	sudo apt-get update
+	sudo apt-get install docker-engine
+	sudo service docker start
+	sudo docker run hello-world
+
+
+
 # deployment
 deploy:
 	cd /root/CommunityTable/ && \
