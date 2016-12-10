@@ -21,7 +21,7 @@ restart-nginx: kill-nginx start-nginx
 restart-email: kill-email start-email
 
 create-docker-network:
-	sudo docker network create -d bridge my-bridge-network
+	sudo docker network create -d bridge ct-network
 
 generage-email-certs:
 	touch smtpd.key
