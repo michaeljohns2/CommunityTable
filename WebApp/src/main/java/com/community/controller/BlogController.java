@@ -2,6 +2,7 @@ package com.community.controller;
 
 import com.community.data.BlogRepository;
 import com.community.model.BlogModel;
+import com.community.utils.MessageManager;
 import com.community.utils.ModelUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,8 +29,12 @@ public class BlogController {
 
     @RequestMapping(value="/blogs", method= RequestMethod.GET)
     public String displayBlogEntries(Model model) {
+        MessageManager mgr = MessageManager.getInstance();
+
         // header & nav
         ModelUtils.addCommonAttrs(model);
+
+        model.addAttribute("title_1", mgr.getMessage("blogsummaries.title_1"));
 
         List<BlogModel> blogs = blogRepo.getAllBlogs();
         model.addAttribute("blogList", blogs);

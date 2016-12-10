@@ -9,16 +9,17 @@
 <c:import url="shared/_header.jsp"/>
 <c:import url="shared/_nav.jsp"/>
 
-<div class="container">
-    <c:if test="${not empty blogEntry}">
-        <div>
-            ${blogEntry.getSubject()} (${blogEntry.getCreatedDateForDisplay()})
-        </div>
+<div class="container" id="blog-detail">
+    <section class="row">
+        <c:if test="${not empty blogEntry}">
+            <h1>${blogEntry.getSubject()}</h1>
+            <p class="small">Published on: ${blogEntry.getCreatedDateForDisplay()}</p>
 
-        <div>
-            ${blogEntry.getBody()}
-        </div>
-    </c:if>
+            <div class="body">
+                ${blogEntry.getBody()}
+            </div>
+        </c:if>
+    </section>
 </div>
 
 <c:import url="shared/_footer.jsp"/>
