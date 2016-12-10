@@ -14,7 +14,7 @@ $(function(){
         if (!title || !body) {
             // show error message
             if(!title){
-                $("#helpTitle").show();
+                $("#helpTitle").show().closest('.form-group').addClass(' has-error');
             }else{
                 $("#helpBody").show();
             }

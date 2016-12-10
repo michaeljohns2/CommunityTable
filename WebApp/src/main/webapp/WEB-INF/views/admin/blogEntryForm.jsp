@@ -10,7 +10,8 @@
             <form:form id="blog-entry-form" action="/CommunityTables/admin/blog.html" method="post" commandName="blogForm">
 
                 <div class="form-group">
-                    <form:input name="title" path="subject" type="text" class="form-control input-lg" placeholder="Add blog title here"/>
+                    <form:input id="blogTitle" name="title" path="subject" type="text" class="form-control input-lg"
+                                placeholder="Add blog title here"/>
                     <span id="helpTitle" class="help-block">Your blog must have a title.</span>
                 </div>
 
