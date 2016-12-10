@@ -165,7 +165,7 @@ install-docker-ubuntu-16.04:
 	sudo apt-get update
 	apt-cache policy docker-engine
 	sudo apt-get update
-	sudo apt-get install linux-image-extra-(uname -r) linux-image-extra-virtual
+	sudo apt-get install linux-image-extra-`uname -r` linux-image-extra-virtual
 	sudo apt-get update
 	sudo apt-get install docker-engine
 	sudo service docker start
