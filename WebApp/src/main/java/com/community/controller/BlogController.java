@@ -2,8 +2,10 @@ package com.community.controller;
 
 import com.community.data.BlogRepository;
 import com.community.model.BlogModel;
+import com.community.utils.Base64Utils;
 import com.community.utils.MessageManager;
 import com.community.utils.ModelUtils;
+import com.google.common.io.ByteStreams;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,18 +13,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.imageio.ImageIO;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
-
-/**
- * Created by plaskorski on 12/6/16.
- */
 @Controller
 public class BlogController {
-
-    // KJD for now just using static mapping paths to get it to run...
-    //private final String blogName = "TableTalk";
-    // private final String blogName = "blog";
 
     @Autowired
     BlogRepository blogRepo;
@@ -55,5 +56,69 @@ public class BlogController {
             model.addAttribute("blogModel", blog);
             return "blogDetail";
         }
+    }
+
+    @RequestMapping(value="/blog/{id}/featured-img", method= RequestMethod.GET)
+    public void getBlogEntryFeaturedImg(@PathVariable("id") String id, HttpServletResponse response) throws Exception {
+
+         /*
+         * Adapted from http://stackoverflow.com/questions/33938704/spring-mvc-how-to-return-an-image-from-controller
+         */
+        try (ByteArrayOutputStream imgos = new ByteArrayOutputStream()) {
+
+            //NOTE: only getting blog model populated for featured image (to speed up GET)
+            BlogModel blog = blogRepo.getBlog(id,true);
+
+            String featuredImg = blog.getFeaturedImg();
+
+            // (1) ::: NO FEATURED IMG
+            if (featuredImg.isEmpty()){
+
+                // get name of default featured img resource (expect it to be on classpath)
+                String defImgName = MessageManager.getInstance().getMessage("default.featured.img");
+
+                // get file extension of image to use as the format
+                String imgFormat = defImgName.substring(defImgName.lastIndexOf('.') + 1).trim();
+
+                // load the resource and copy to stream
+                ByteStreams.copy(this.getClass().getClassLoader().getResourceAsStream(defImgName), imgos);
+
+                // stream into response
+                writeImgToResponse(imgFormat, imgos.toByteArray(), response);
+                return;
+            }
+
+            // (2) ::: HAVE FEATURED IMG
+
+            // featuredImg is stored as a base64 data url so separate into parts
+            String[] parts = Base64Utils.separateBase64DataUrlToParts(featuredImg);
+
+            // get format from parts, e.g. 'png' or 'jpeg'
+            String imgFormat = Base64Utils.getBase64ImgFormatFromParts(parts);
+
+            // get the data from parts
+            BufferedImage image = Base64Utils.decodeToBufferedImage(Base64Utils.getBase64ImgDataFromParts(parts));
+
+            // write image into stream
+            ImageIO.write(image,imgFormat,imgos);
+
+            // stream into response
+            writeImgToResponse(imgFormat,imgos.toByteArray(),response);
+
+        } catch (Exception e) {
+            response.sendError(HttpServletResponse.SC_NOT_FOUND);
+        }
+    }
+
+    private void writeImgToResponse(String imgFormat, byte[] imgBytes, HttpServletResponse response) throws IOException {
+
+        response.setHeader("Cache-Control", "no-store");
+        response.setHeader("Pragma", "no-cache");
+        response.setDateHeader("Expires", 0);
+        response.setContentType("image/"+imgFormat);
+        ServletOutputStream responseOutputStream = response.getOutputStream();
+        responseOutputStream.write(imgBytes);
+        responseOutputStream.flush();
+        responseOutputStream.close();
     }
 }

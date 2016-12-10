@@ -20,7 +20,7 @@
                     </a>
                     <p class="small">Published on: ${blogEntry.getCreatedDateForDisplay()}</p>
                     <p>
-                        <!-- TODO: Blog excerpt goes here -->
+                        ${blogEntry.getBodyPreview()}
                     </p>
                     <a class="btn btn-warning" href="/CommunityTables/blog/${blogEntry.getBlogId()}.html">Read full
                         entry</a>

@@ -6,7 +6,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:import url="shared/_header.jsp"/>
+<c:import url="shared/_blog_header.jsp"/>
 <c:import url="shared/_nav.jsp"/>
 
 <div class="container" id="blog-detail">

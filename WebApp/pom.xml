@@ -148,12 +148,11 @@
           <scope>test</scope>
       </dependency>
 
-      <!-- SLF4J dependency for Fongo (may not be needed ultimately) -->
+      <!-- SLF4J dependency for Fongo (also used for logging elsewhere) -->
       <dependency>
           <groupId>ch.qos.logback</groupId>
           <artifactId>logback-classic</artifactId>
           <version>1.1.1</version>
-          <scope>test</scope>
       </dependency>
 
       <!--SSH Connection dependency for sending emails-->
@@ -162,6 +161,7 @@
           <artifactId>jsch</artifactId>
           <version>0.1.46</version>
       </dependency>
+
       <!-- Cucumber-Java -->
       <!-- within https://github.com/cucumber/cucumber-jvm -->
       <dependency>
