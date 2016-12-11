@@ -45,13 +45,20 @@ public class BlogController {
     public String displayBlogEntry(@PathVariable("id") String id, Model model) {
         // header & nav
         ModelUtils.addCommonAttrs(model);
+        BlogModel blog = null;
 
-        BlogModel blog = blogRepo.getBlog(id);
-        model.addAttribute("blogEntry", blog);
+        try {
+            blog = blogRepo.getBlog(id);
+        } catch (Exception ex) {
+            // An exception may occur if the ID is an invalid format.
+            // This can happen since it is exposed in the UI.
+            // If it occurs treat it as blog not found.
+        }
 
         if (blog == null) {
             return "blogNotFound";
         } else {
+            model.addAttribute("blogEntry", blog);
             model.addAttribute("blogModel", blog);
             model.addAttribute("featured_img_mime_type",determineImgMimeType(blog));
             return "blogDetail";
