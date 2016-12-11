@@ -2,7 +2,6 @@ package com.community.data;
 
 import com.community.Exceptions.EmailNotFoundException;
 import com.community.model.BlogModel;
-import com.community.model.EmailAddressModel;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
@@ -13,8 +12,11 @@ import org.springframework.stereotype.Component;
 
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+
+import static com.mongodb.client.model.Filters.eq;
 
 /**
  * This repository class provides access to Blog entries.
@@ -22,44 +24,100 @@ import java.util.List;
 @Component
 public class BlogRepository extends BaseRepository {
 
-    private BlogModel mapBlog(BsonDocument blogDoc) {
-        if ((blogDoc.get(BLOG_SUBJECT) == null) ||
-                (blogDoc.get(BLOG_BODY) == null) ||
-                (blogDoc.get(BLOG_CREATED_DATE) == null)) {
-            throw new RuntimeException("Stored blog object is invalid.");
-        }
+    private BlogModel mapBlog(BsonDocument blogDoc, boolean featuredImgOnly) {
 
+        // Initiate model.
         BlogModel blogModel = new BlogModel();
 
-        BsonString subject = (BsonString)blogDoc.get(BLOG_SUBJECT);
-        blogModel.setSubject(subject.getValue().toString());
+        // skip this if only asking for featuredImg (speed up GET request)
+        if (!featuredImgOnly) {
 
-        // Attempt to get blog content as string from BSON binary data.
-        Object bodyObject = blogDoc.get(BLOG_BODY);
-        String body = "Unable to retrieve blog content.";
-        if (bodyObject instanceof BsonBinary) {
-            BsonBinary bsonBody = (BsonBinary)bodyObject;
-            body = new String(bsonBody.getData());
-        }
-        blogModel.setBody(body);
+            //Some of these are large objects, so just getting them 1x.
+            BsonString subject = null;
+            Object bodyObject = null;
+            Object createdDateObject = null;
 
-        // Attempt to get created date.
-        Object createdDateObject = blogDoc.get(BLOG_CREATED_DATE);
-        BsonDateTime createdDate = null;
-        if (createdDateObject instanceof BsonDateTime) {
-            createdDate = (BsonDateTime)createdDateObject;
-            if (createdDate != null) {
-                blogModel.setCreatedDate(new Date(createdDate.getValue()));
+            try {
+                subject = (BsonString) blogDoc.get(BLOG_SUBJECT);
+                bodyObject = blogDoc.get(BLOG_BODY);
+                createdDateObject = blogDoc.get(BLOG_CREATED_DATE);
+                if (
+                        subject == null ||
+                                bodyObject == null ||
+                                createdDateObject == null) {
+                    throw new RuntimeException("Stored blog object is invalid.");
+                }
+            } catch (Exception e) {
+                throw new RuntimeException("Stored blog object is invalid.");
+            }
+
+            // Set blog subject and id.
+            blogModel.setSubject(subject.getValue().toString());
+            BsonObjectId id = (BsonObjectId) blogDoc.get("_id");
+            if (id != null) {
+                blogModel.setBlogId(id.getValue().toString());
+            }
+
+            // Attempt to get blog content as string from BSON binary data.
+            String body = "Unable to retrieve blog content.";
+            if (bodyObject instanceof BsonBinary) {
+                BsonBinary bson = (BsonBinary) bodyObject;
+                body = new String(bson.getData());
+            }
+            blogModel.setBody(body);
+
+            // Attempt to get created date.
+            BsonDateTime createdDate = null;
+            if (createdDateObject instanceof BsonDateTime) {
+                createdDate = (BsonDateTime) createdDateObject;
+                if (createdDate != null) {
+                    blogModel.setCreatedDate(new Date(createdDate.getValue()));
+                }
             }
         }
 
-        BsonObjectId id = (BsonObjectId)blogDoc.get("_id");
-        if (id != null) {
-            blogModel.setBlogId(id.getValue().toString());
+        //Attempt to get featured img
+        String img = "";
+        Object featuredImgObject = null;
+        try {
+            featuredImgObject = blogDoc.get(BLOG_FEATURED_IMG);
+        } catch(Exception ignore){}
+        if (featuredImgObject != null && featuredImgObject instanceof BsonBinary) {
+            BsonBinary bson = (BsonBinary)featuredImgObject;
+            img = new String(bson.getData());
         }
+        blogModel.setFeaturedImg(img);
 
         return blogModel;
     }
+
+    public BlogModel getBlog(String id){
+        return getBlog(id, false);
+    }
+
+    public BlogModel getBlog(String id, boolean featuredImgOnly) {
+        if ((id == null) | id.equals("")) {return null;}
+        MongoDatabase db = this.getMongoDatabase();
+        MongoCollection<BsonDocument> blogCollection = db.getCollection(BLOG_COLLECTION, BsonDocument.class);
+
+        BasicDBObject query = new BasicDBObject();
+        query.put("_id", new ObjectId(id));
+
+        FindIterable<BsonDocument> results = blogCollection.find(query);
+        BsonDocument result = results.first();
+        if (result==null) {
+            return null;
+        } else {
+            try {
+                BlogModel blog = mapBlog(result,featuredImgOnly);
+                return blog;
+            }
+            catch (Exception e) {
+                return null;
+            }
+        }
+    }
+
 
 
     public List<BlogModel> getAllBlogs() {
@@ -68,9 +126,12 @@ public class BlogRepository extends BaseRepository {
         MongoCollection<BsonDocument> blogCollection = db.getCollection(BLOG_COLLECTION, BsonDocument.class);
 
         FindIterable<BsonDocument> results = blogCollection.find();
+
         for (BsonDocument result : results) {
-            blogs.add(mapBlog(result));
+            blogs.add(mapBlog(result,false));
         }
+
+        Collections.sort(blogs);
 
         return blogs;
     }
@@ -93,6 +154,7 @@ public class BlogRepository extends BaseRepository {
         BsonDocument bDoc = new BsonDocument();
         bDoc.put(BLOG_SUBJECT, new BsonString(blogModel.getSubject()));//String
         bDoc.put(BLOG_BODY, new BsonBinary(blogModel.getBody().getBytes()));//byte[]
+        bDoc.put(BLOG_FEATURED_IMG, new BsonBinary(blogModel.getFeaturedImg().getBytes()));//byte[]
         bDoc.put(BLOG_CREATED_DATE, new BsonDateTime(blogModel.getCreatedDate().getTime()));//long
 
         blogCollection.insertOne(bDoc);

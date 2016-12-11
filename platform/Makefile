@@ -20,6 +20,9 @@ restart-nginx: kill-nginx start-nginx
 
 restart-email: kill-email start-email
 
+create-docker-network:
+	sudo docker network create -d bridge ct-network
+
 generage-email-certs:
 	touch smtpd.key
 	chmod 600 smtpd.key
@@ -154,6 +157,24 @@ start-tomcat-test:
 		-v /usr/local/tomcat/conf:/usr/local/tomcat/conf \
 		-v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps \
 		tomcat:8.5 bash
+
+install-docker-ubuntu-16.04:
+	sudo apt-get update
+	sudo apt-get install apt-transport-https ca-certificates
+	sudo apt-key adv \
+		--keyserver hkp://ha.pool.sks-keyservers.net:80 \
+		--recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+	echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | sudo tee /etc/apt/sources.list.d/docker.list
+	sudo apt-get update
+	apt-cache policy docker-engine
+	sudo apt-get update
+	sudo apt-get install linux-image-extra-`uname -r` linux-image-extra-virtual
+	sudo apt-get update
+	sudo apt-get install docker-engine
+	sudo service docker start
+	sudo docker run hello-world
+
+
 
 # deployment
 deploy:

@@ -30,7 +30,6 @@
           <version>0.8.2</version>
       </dependency>
 
-
       <!-- Servlet / JSTL Libraries -->
         <!-- http://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 
@@ -116,6 +115,12 @@
           <version>1.4.7</version>
       </dependency>
 
+      <!-- HTML parsing -->
+      <dependency>
+          <groupId>org.jsoup</groupId>
+          <artifactId>jsoup</artifactId>
+          <version>1.8.3</version>
+      </dependency>
 
       <!-- ##### TEST DEPENDENCIES ##### -->
       <dependency>
@@ -139,16 +144,15 @@
       <dependency>
           <groupId>com.github.fakemongo</groupId>
           <artifactId>fongo</artifactId>
-          <version>2.0.9</version>
+          <version>RELEASE</version>
           <scope>test</scope>
       </dependency>
 
-      <!-- SLF4J dependency for Fongo (may not be needed ultimately) -->
+      <!-- SLF4J dependency for Fongo (also used for logging elsewhere) -->
       <dependency>
           <groupId>ch.qos.logback</groupId>
           <artifactId>logback-classic</artifactId>
           <version>1.1.1</version>
-          <scope>test</scope>
       </dependency>
 
       <!--SSH Connection dependency for sending emails-->
@@ -157,6 +161,7 @@
           <artifactId>jsch</artifactId>
           <version>0.1.46</version>
       </dependency>
+
       <!-- Cucumber-Java -->
       <!-- within https://github.com/cucumber/cucumber-jvm -->
       <dependency>

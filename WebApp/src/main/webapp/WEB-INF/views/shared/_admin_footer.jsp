@@ -14,6 +14,7 @@
     <script type="text/javascript" src="/CommunityTables/webjars/jquery/3.1.1/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/CommunityTables/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/CommunityTables/resources/js/ping.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
     <script type="text/javascript" src="/CommunityTables/resources/js/community-admin.js"></script>
 
 </body>

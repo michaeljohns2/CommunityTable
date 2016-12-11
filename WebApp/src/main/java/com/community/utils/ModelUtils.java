@@ -59,5 +59,6 @@ public class ModelUtils {
         model.addAttribute("nav_title_1", mgr.getMessage("nav_title_1"));
         model.addAttribute("nav_title_2", mgr.getMessage("nav_title_2"));
         model.addAttribute("nav_title_3", mgr.getMessage("nav_title_3"));
+        model.addAttribute("nav_title_blog", mgr.getMessage("nav_title_blog"));
     }
 }

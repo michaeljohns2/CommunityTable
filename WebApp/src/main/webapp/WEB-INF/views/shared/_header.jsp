@@ -12,6 +12,7 @@
 
         <title>${title}</title>
         <link rel="stylesheet" type="text/css" href="/CommunityTables/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/CommunityTables/resources/css/community.css">
     </head>
     <body>
