@@ -49,15 +49,15 @@ resulting WAR file to tomcat.
 
 1. User Story: _Admin create blog entry_
 
-![Admin create blog entry](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/user-stories-1.png?raw=true)
+![Admin create blog entry](https://raw.githubusercontent.com/michaeljohns2/CommunityTable/master/readme/sprint3/user-story-1.png?raw=true)
 
 2. User Story: _Admin delete blog entry_
 
-![Admin delete blog entry_](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/user-stories-2.png?raw=true)
+![Admin delete blog entry_](https://raw.githubusercontent.com/michaeljohns2/CommunityTable/master/readme/sprint3/user-story-2.png?raw=true)
 
 3. User Story: _Public view blog entries_
 
-![Public view blog entries](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/user-stories-3.png?raw=true)
+![Public view blog entries](https://raw.githubusercontent.com/michaeljohns2/CommunityTable/master/readme/sprint3/user-story-3.png?raw=true)
 
 ### Behavior-Driven Development & Unit Tests
 
