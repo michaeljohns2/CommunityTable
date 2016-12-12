@@ -17,8 +17,7 @@ The forecast correlated to the next three stories from our [Ordered Product Back
 
 ## Actual
 
-We were able to hit our forecasted value in the sprint (reference our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done)).
-A summary of [release3](https://github.com/michaeljohns2/CommunityTable/blob/master/README.md#release-3-notes) is is given in the main readme.
+We were able to hit our forecasted value in the sprint. A summary of [release3](https://github.com/michaeljohns2/CommunityTable/blob/master/README.md#release-3-notes) is is given in the main readme.
 
 ### Pull Requests
 
@@ -46,17 +45,15 @@ We continued to use and refine our [CI/CD process](https://github.com/michaeljoh
 
 ### Behavior-Driven Development & Unit Tests
 
-@todo -- update
+We used Cucumber to add a new BDD test the blog create and list functions managed by [AdminController](https://github.com/michaeljohns2/CommunityTable/blob/master/WebApp/src/main/java/com/community/controller/AdminController.java).
+The feature exercises the sorting for display and preview function when listing blogs.
 
-We used Cucumber to add a new BDD test the send email functions (and possible errors) managed by [EmailRestController](https://github.com/michaeljohns2/CommunityTable/blob/master/WebApp/src/main/java/com/community/controller/rest/EmailRestController.java).
-The feature exercises the detection of duplicate emails and other errors that may occur during send.
+![cucumber test](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/cucumber_test.png)
 
-![cucumber welcome send](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/cucumber_welcome_send.png)
-
-We also increased out unit tests to 29, bringing the project to 63% class and 50% of line coverage. While we always aim for maximum coverage,
+We also increased out unit tests to 37, bringing the project to 64% class and 48% of line coverage. While we always aim for maximum coverage,
 our primary focus is on core business logic, allowing more trivial plumbing and object classes to have lower coverage.
 
-![unit tests](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/unit_tests_sprint2.png)
+![unit tests](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/unit_tests_coverage.png)
 
 ## Burndown
 
