@@ -49,11 +49,11 @@ Our sprint progress is documented at the following link:
 
  ![List Blogs](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/list_blogs.png) 
 
-4. Any blog can be viewed in full by clicking on either the title or the 'Preview' button.
+4. Any blog can be viewed in full by clicking on either the title or the 'Read full entry' button.
 
  ![View Blog](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/view_blog.png) 
 
-5. Share blog url to popular social media platforms such as FaceBook, using featured image and exposed via [Open Graph](http://ogp.me/) meta tags to render previews. 
+5. Share blog url to popular social media platforms such as Facebook, using featured image and exposed via [Open Graph](http://ogp.me/) meta tags to render previews. 
 
  ![Example Blog Social Media](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/blog_social_media.png) 
  
