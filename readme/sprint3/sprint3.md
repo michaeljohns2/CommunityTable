@@ -18,6 +18,7 @@ The forecast correlated to the next three stories from our [Ordered Product Back
 ## Actual
 
 We were able to hit our forecasted value in the sprint. A summary of [release3](https://github.com/michaeljohns2/CommunityTable/blob/master/README.md#release-3-notes) is is given in the main readme.
+Also you can visit our live [incubation site](http://community-tables.vinodhalaharvi.com:8080/CommunityTables/index.html) for more interaction with the latest and greatest.
 
 ### Pull Requests
 
