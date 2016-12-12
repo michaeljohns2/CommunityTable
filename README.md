@@ -30,6 +30,37 @@ Reference our [Team Formation Sprint](https://github.com/michaeljohns2/Community
 ### Rationale for Backlog Order
 The backlog is ordered by value generated to our stakeholders, namely Community Table TN (the first customer for our open source products). We (as well as our key stakeholder) are starting from scratch (levering other open source software frameworks where feasible). PBIs are groomed to represent excellent users stories within our team's [Definition of Ready](https://github.com/michaeljohns2/CommunityTable/blob/master/sprint0.md#definition-of-ready) and have been estimated by the development team.
 
+## Sprint 3 (11/28 - 12/11)
+
+Our sprint progress is documented at the following link:
+[Sprint 3 (11/28-12/11)](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/sprint3.md)
+
+### Release 3 Notes
+
+1. Create a rich-text blog within the Admin Portal (established in Sprint-2). Creator can optionally set a featured image when creating (see #5 below).
+
+ ![Create Blog](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/create_blog.png) 
+
+2. Manage created blogs within the Admin Portal, to include support to delete blogs.  
+
+ ![Manage Blogs](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/manage_blogs.png) 
+
+3. Site has a new public section where blogs are initially listed by configurable excerpt.
+
+ ![List Blogs](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/list_blogs.png) 
+
+4. Any blog can be viewed in full by clicking on either the title or the 'Preview' button.
+
+ ![View Blog](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/view_blog.png) 
+
+5. Share blog url to popular social media platforms such as FaceBook, using featured image and exposed via [Open Graph](http://ogp.me/) meta tags to render previews. 
+
+ ![Example Blog Social Media](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/blog_social_media.png) 
+ 
+ If no featured image is provided, then a site configured default image is provided.
+  
+ ![Example Default Img Blog Social Media](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/blog_social_media_default.png) 
+
 ## Sprint 2 (11/14-11/25)
 
 Our sprint progress is documented at the following link:

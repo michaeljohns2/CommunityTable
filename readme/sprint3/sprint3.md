@@ -2,7 +2,10 @@
 
 ## Forecast
 
-We forecasted we could get **26 story points** done during this sprint.
+Using Yesterday's Weather Pattern, we forecasted we could commit to **26 story points** during this sprint.
+This forecast is up 10 points from our Sprint-2 forecast, which was affected by team member Thanksgiving Holiday plans and up 5 points from our Sprint-1 forecast. 
+We were confident that our now evolved team would be able to hit this increased velocity through tight communication, use of our CI/CD processes, 
+and generally increased comfort level with the project goals, skill mix, and technology applied. 
 
 The forecast correlated to the next three stories from our [Ordered Product Backlog](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#initial-product-backlog-order), with the 'Vision' Page story being introduced based on stakeholder feedback after release1:
 
@@ -15,53 +18,45 @@ The forecast correlated to the next three stories from our [Ordered Product Back
 ## Actual
 
 We were able to hit our forecasted value in the sprint (reference our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done)).
- 
-@todo
+A summary of [release3](https://github.com/michaeljohns2/CommunityTable/blob/master/README.md#release-3-notes) is is given in the main readme.
 
 ### Pull Requests
 
-We have created and merged in 15 pull requests in this sprint. An example is here:
+We created and merged in 15 pull requests in this sprint. Here is an example of a pull request:
 
 ![pull request example](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/shawn-pull-request.png)
 
 ### Continuous Integration / Continuous Deployment
 
-@todo
-
-#### Git WebHook
-
-Each commit to our master `CommunityTable` repository triggers a jenkins job. 
-
-![jenkins webhook](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/jenkins_webhook.png)
-
-#### Jenkins Jobs
-
-The jobs are configured in Jenkins to inject deployment specific properties, then run `mvn clean install`, then copy the 
-resulting WAR file to tomcat.
-
-![jenkins jobs](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/jenkins.png)
-
-#### Jenkins Slackbot
-
-![jenkins webhook](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/jenkins_webhook.png)
+We continued to use and refine our [CI/CD process](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/sprint2.md#continuous-integration--continuous-deployment) fully adopted in Sprint-2.
 
 ### Acceptance Criteria and Sprint Tasks 
 
 1. User Story: _Admin create blog entry_
 
-![Admin create blog entry](https://raw.githubusercontent.com/michaeljohns2/CommunityTable/master/readme/sprint3/user-story-1.png?raw=true)
+ ![Admin create blog entry](https://raw.githubusercontent.com/michaeljohns2/CommunityTable/master/readme/sprint3/user-story-1.png?raw=true)
 
 2. User Story: _Admin delete blog entry_
 
-![Admin delete blog entry_](https://raw.githubusercontent.com/michaeljohns2/CommunityTable/master/readme/sprint3/user-story-2.png?raw=true)
+ ![Admin delete blog entry_](https://raw.githubusercontent.com/michaeljohns2/CommunityTable/master/readme/sprint3/user-story-2.png?raw=true)
 
 3. User Story: _Public view blog entries_
 
-![Public view blog entries](https://raw.githubusercontent.com/michaeljohns2/CommunityTable/master/readme/sprint3/user-story-3.png?raw=true)
+ ![Public view blog entries](https://raw.githubusercontent.com/michaeljohns2/CommunityTable/master/readme/sprint3/user-story-3.png?raw=true)
 
 ### Behavior-Driven Development & Unit Tests
 
-@todo
+@todo -- update
+
+We used Cucumber to add a new BDD test the send email functions (and possible errors) managed by [EmailRestController](https://github.com/michaeljohns2/CommunityTable/blob/master/WebApp/src/main/java/com/community/controller/rest/EmailRestController.java).
+The feature exercises the detection of duplicate emails and other errors that may occur during send.
+
+![cucumber welcome send](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/cucumber_welcome_send.png)
+
+We also increased out unit tests to 29, bringing the project to 63% class and 50% of line coverage. While we always aim for maximum coverage,
+our primary focus is on core business logic, allowing more trivial plumbing and object classes to have lower coverage.
+
+![unit tests](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint2/unit_tests_sprint2.png)
 
 ## Burndown
 
@@ -153,17 +148,13 @@ Our Team met as a group at least 2x per week to synchronize and elevate obstacle
 | 8 DEC | Optional Team Meeting |
 | 11 DEC | Sprint Review & Retrospective |
 
-1. Example of a peer code review (part of our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done))
-
-@todo
-
-2. Example of a standing team meeting
+1. Example of a standing team meeting
  
-@todo
+ ![Standing Team Meeting](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/team_meeting_20161205.png?raw=true)
 
-3. Example of mob programming:
+2. Example of peer programming (part of our [Definition of Done](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint0/sprint0.md#definition-of-done)):
 
-![Mob Programming](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/mob-programming.png?raw=true)
+ ![Mob Programming](https://github.com/michaeljohns2/CommunityTable/blob/master/readme/sprint3/mob-programming.png?raw=true)
 
 ## Sprint Review and Retrospective
 
@@ -171,8 +162,27 @@ We conducted our sprint review with stakeholders and Scrum Team retrospective 11
 
 ### Stakeholder Feeback
 
-@todo
+Stakeholder was pleased with the progress made in Sprint-3 and the simplicity of use of the new blog features. She offered the following feedback:
+
+* Images with text inline would be useful in the future
+* Maybe more beefy blog support (either developed or a service such as WordPress) in the future but she anticipates the feature meeting her needs in the near-term to mid-term
  
 ### Scrum Team Retrospective
 
-@todo
+We conducted a plus-delta retrospective. The first item listed in the delta's is the one we will carry forward to implement in Sprint-4.
+
+#### Plus
+
+* This was universally agreed to be our best sprint, we hit the ground running more quickly than in the past
+* No technical debt - stories were completed, we again hit our marks due to team communication and participation
+* Skill mix of team continues to payoff where various members can jump in to contribute when needed
+* Separating committed stories into separate channels (#1 retrospective item from Sprint-2) was helpful to allow deeper communication without so much cross-chatter
+* We used an impediment board for the first time with success
+
+
+#### Delta
+
+* Turn up the good: the impediment board should be more heavily used going forward (we will implement this in Sprint-4)
+* Team members regret not committing sooner to rigorously learning the technology in use for the project; whereas earlier in the sprints 
+those who only worked front-end could avoid most of local environment for Mongo and Tomcat, later sprints including this one put a squeeze on them to really understand in order to support
+* Standup participation was incomplete for some this sprint; they recognize that they as well as the team suffers without full use of that vital tool for a healthy scrum team
